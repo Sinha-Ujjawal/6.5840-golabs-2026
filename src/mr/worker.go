@@ -30,8 +30,8 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 	if len(task.InputFiles) == 0 {
 		return []string{}, []uint{}, nil
 	}
-	buckettedKeyValues := make(map[uint]map[string][]string)
-	var ok bool
+	bucketIdToTempOutputFd := make(map[uint]*os.File)
+	bucketIdToBufioWriter := make(map[uint]*bufio.Writer)
 	for _, file := range task.InputFiles {
 		content, err := os.ReadFile(file)
 		if err != nil {
@@ -42,27 +42,70 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 			log.Printf("Worker %d: Map for file: `%s` => %d kvs\n", os.Getpid(), file, len(kvs))
 			for _, kv := range kvs {
 				bucketId := uint(ihash(kv.Key) % int(task.NReduce))
-				var bucket map[string][]string
-				if bucket, ok = buckettedKeyValues[bucketId]; !ok {
-					bucket = make(map[string][]string)
-					buckettedKeyValues[bucketId] = bucket
+				var tempOutputFd *os.File
+				var tempBufioWriter *bufio.Writer
+				var ok bool
+				isFirst := false
+				if tempBufioWriter, ok = bucketIdToBufioWriter[bucketId]; !ok {
+					isFirst = true
+					tempOutputFd, err = os.CreateTemp("", fmt.Sprintf("mr-%d-%d-*", task.TaskId, bucketId))
+					if err != nil {
+						log.Printf("Worker %d: Error while creating output file `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						return nil, nil, err
+					}
+					log.Printf("Worker %d: Writing for Bucket Id: %d to %s\n", os.Getpid(), bucketId, tempOutputFd.Name())
+					tempBufioWriter = bufio.NewWriter(tempOutputFd)
+					_, err = tempBufioWriter.WriteString("[")
+					if err != nil {
+						log.Printf("Worker %d: Error while writing '[' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						return nil, nil, err
+					}
+					bucketIdToTempOutputFd[bucketId] = tempOutputFd
+					bucketIdToBufioWriter[bucketId] = tempBufioWriter
 				}
-				bucket[kv.Key] = append(bucket[kv.Key], kv.Value)
+				if !isFirst {
+					_, err = tempBufioWriter.WriteString(",")
+					if err != nil {
+						log.Printf("Worker %d: Error while writing ',' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						return nil, nil, err
+					}
+				}
+				jsonBytes, err := json.Marshal(kv)
+				if err != nil {
+					return nil, nil, err
+				}
+				_, err = tempBufioWriter.Write(jsonBytes)
+				if err != nil {
+					log.Printf("Worker %d: Error while writing map output to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+					return nil, nil, err
+				}
 			}
 		}
 	}
 	var outputFiles []string
 	var bucketIds []uint
-	for bucketId, bucket := range buckettedKeyValues {
-		outputFile := fmt.Sprintf("mr-%d-%d", task.TaskId, bucketId)
-		log.Printf("Worker %d: Writing for Bucket Id: %d to %s\n", os.Getpid(), bucketId, outputFile)
-		jsonBytes, err := json.Marshal(bucket)
+	for bucketId, tempOutputFd := range bucketIdToTempOutputFd {
+		tempBufioWriter := bucketIdToBufioWriter[bucketId]
+		_, err := tempBufioWriter.WriteString("]")
 		if err != nil {
+			log.Printf("Worker %d: Error while writing ']' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
 			return nil, nil, err
 		}
-		err = os.WriteFile(outputFile, jsonBytes, 0644)
+		err = tempBufioWriter.Flush()
 		if err != nil {
-			log.Printf("Worker %d: Error while writing map output to `%s`: %+v\n", os.Getpid(), outputFile, err)
+			log.Printf("Worker %d: Error while flushing to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+			return nil, nil, err
+		}
+		err = tempOutputFd.Close()
+		if err != nil {
+			log.Printf("Worker %d: Error while closing file `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+			return nil, nil, err
+		}
+		outputFile := fmt.Sprintf("mr-%d-%d", task.TaskId, bucketId)
+		log.Printf("Worker %d: Renaming `%s` to `%s`\n", os.Getpid(), tempOutputFd.Name(), outputFile)
+		err = os.Rename(tempOutputFd.Name(), outputFile)
+		if err != nil {
+			log.Printf("Worker %d: Error while renaming `%s` to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), outputFile, err)
 			return nil, nil, err
 		}
 		outputFiles = append(outputFiles, outputFile)
@@ -82,46 +125,52 @@ func handleReduce(task TaskInput, reducef func(string, []string) string) ([]stri
 			log.Printf("Worker %d: Error while reading file `%s`: %+v\n", os.Getpid(), file, err)
 			return nil, err
 		} else {
-			bucket := make(map[string][]string)
-			err := json.Unmarshal(content, &bucket)
+			kvArray := []KeyValue{}
+			err := json.Unmarshal(content, &kvArray)
 			if err != nil {
-				log.Printf("Worker %d: Cannot unmarshal file `%s` into map[string][]string bucket type: %+v\n", os.Getpid(), file, err)
+				log.Printf("Worker %d: Cannot unmarshal file `%s` into []KeyValue: %+v\n", os.Getpid(), file, err)
 				return nil, err
 			}
-			for k, vs := range bucket {
-				kvs[k] = append(kvs[k], vs...)
+			for _, kv := range kvArray {
+				kvs[kv.Key] = append(kvs[kv.Key], kv.Value)
 			}
 		}
 	}
-	outputFile := fmt.Sprintf("mr-out-%d", task.TaskId)
-	outputFD, err := os.Create(outputFile)
+	tempOutputFd, err := os.CreateTemp("", fmt.Sprintf("mr-out-%d-*", task.TaskId))
 	if err != nil {
-		log.Printf("Worker %d: Cannot create file `%s` for writing reduce task output: %+v\n", os.Getpid(), outputFile, err)
+		log.Printf("Worker %d: Cannot create file `%s` for writing reduce task output: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
 		return nil, err
 	}
-	defer outputFD.Close()
-	outputFileWriter := bufio.NewWriter(outputFD)
+	defer tempOutputFd.Close()
+	tempOutputBufioWriter := bufio.NewWriter(tempOutputFd)
 	firstLine := true
 	for k, vs := range kvs {
 		v := reducef(k, vs)
 		if firstLine {
 			firstLine = false
 		} else {
-			_, err := outputFileWriter.WriteString("\n")
+			_, err := tempOutputBufioWriter.WriteString("\n")
 			if err != nil {
-				log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), outputFile, k, v, err)
+				log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), tempOutputFd.Name(), k, v, err)
 				return nil, err
 			}
 		}
-		_, err := fmt.Fprintf(outputFileWriter, "%v %v", k, v)
+		_, err := fmt.Fprintf(tempOutputBufioWriter, "%v %v", k, v)
 		if err != nil {
-			log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), outputFile, k, v, err)
+			log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), tempOutputFd.Name(), k, v, err)
 			return nil, err
 		}
 	}
-	err = outputFileWriter.Flush()
+	err = tempOutputBufioWriter.Flush()
 	if err != nil {
-		log.Printf("Worker %d: Cannot flush file `%s` to disk: %+v\n", os.Getpid(), outputFile, err)
+		log.Printf("Worker %d: Cannot flush file `%s` to disk: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+		return nil, err
+	}
+	outputFile := fmt.Sprintf("mr-out-%d", task.TaskId)
+	log.Printf("Worker %d: Renaming `%s` to `%s`\n", os.Getpid(), tempOutputFd.Name(), outputFile)
+	err = os.Rename(tempOutputFd.Name(), outputFile)
+	if err != nil {
+		log.Printf("Worker %d: Error while renaming `%s` to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), outputFile, err)
 		return nil, err
 	}
 	return []string{outputFile}, nil
