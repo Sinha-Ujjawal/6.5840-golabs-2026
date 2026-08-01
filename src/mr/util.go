@@ -44,7 +44,7 @@ func runMRchan(files []string, app string, n int, c chan int, sock string) {
 	// give the coordinator time to create the sockets.
 	time.Sleep(1 * time.Second)
 
-	for i := 0; i < n; i++ {
+	for i := range n {
 		startWorker(app, i, c, sock)
 	}
 	if err := coord.Wait(); err != nil {
@@ -135,6 +135,7 @@ func findFiles(dir, s string) []string {
 }
 
 func findFilesPre(dir, s, pre string) []string {
+	_ = pre
 	files := findFiles(dir, s)
 	for i, f := range files {
 		files[i] = filepath.Join("..", f)

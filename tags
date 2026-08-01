@@ -1,0 +1,1382 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/usinha/probe/mit-ocw/6.5840/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(MAINS)	src/Makefile	/^$(MAINS): % : .FORCE check-version %-build$/;"	t
+$(addsuffix -build, $(MAINS))	src/Makefile	/^$(addsuffix -build, $(MAINS)): %-build : .FORCE check-version$/;"	t
+%	Makefile	/^%: check-%$/;"	t
+%	src/Makefile	/^$(MAINS): % : .FORCE check-version %-build$/;"	t
+%-build	src/Makefile	/^$(addsuffix -build, $(MAINS)): %-build : .FORCE check-version$/;"	t
+Acquire	src/kvsrv1/lock/lock.go	/^func (lk *Lock) Acquire() {$/;"	f	struct:lock.Lock
+AddServer	src/labrpc/labrpc.go	/^func (rn *Network) AddServer(servername interface{}, rs *Server) {$/;"	f	struct:labrpc.Network
+AddService	src/labrpc/labrpc.go	/^func (rs *Server) AddService(svc *Service) {$/;"	f	struct:labrpc.Server
+AddService	src/tester1/config.go	/^func (cfg *Config) AddService(svc any) {$/;"	f	struct:tester.Config
+AddService	src/tester1/sockrpc/rpcsrv.go	/^func (rpcs *RPCSrv) AddService(svc any) {$/;"	f	struct:sockrpc.RPCSrv
+Annotate	src/tester1/annotator.go	/^func Annotate(tag, desp, details string) {$/;"	f	package:tester
+AnnotateCheckerBegin	src/tester1/annotation.go	/^func AnnotateCheckerBegin(details string) {$/;"	f	package:tester
+AnnotateCheckerEnd	src/tester1/annotation.go	/^func AnnotateCheckerEnd(desp, details, color string) {$/;"	f	package:tester
+AnnotateCheckerFailure	src/tester1/annotation.go	/^func AnnotateCheckerFailure(desp, details string) {$/;"	f	package:tester
+AnnotateCheckerFailureBeforeExit	src/tester1/annotation.go	/^func AnnotateCheckerFailureBeforeExit(desp, details string) {$/;"	f	package:tester
+AnnotateCheckerNeutral	src/tester1/annotation.go	/^func AnnotateCheckerNeutral(desp, details string) {$/;"	f	package:tester
+AnnotateCheckerSuccess	src/tester1/annotation.go	/^func AnnotateCheckerSuccess(desp, details string) {$/;"	f	package:tester
+AnnotateClearFailure	src/tester1/annotation.go	/^func AnnotateClearFailure() {$/;"	f	package:tester
+AnnotateConnection	src/tester1/annotation.go	/^func AnnotateConnection(connection []bool) {$/;"	f	package:tester
+AnnotateContinuous	src/tester1/annotation.go	/^func AnnotateContinuous(tag, desp, details string) {$/;"	f	package:tester
+AnnotateContinuousColor	src/tester1/annotation.go	/^func AnnotateContinuousColor(tag, desp, details, bgcolor string) {$/;"	f	package:tester
+AnnotateContinuousEnd	src/tester1/annotation.go	/^func AnnotateContinuousEnd(tag string) {$/;"	f	package:tester
+AnnotateInfo	src/tester1/annotation.go	/^func AnnotateInfo(desp, details string) {$/;"	f	package:tester
+AnnotateInfoInterval	src/tester1/annotation.go	/^func AnnotateInfoInterval(start int64, desp, details string) {$/;"	f	package:tester
+AnnotateInterval	src/tester1/annotation.go	/^func AnnotateInterval(tag string, start int64, desp, details string) {$/;"	f	package:tester
+AnnotateIntervalColor	src/tester1/annotation.go	/^func AnnotateIntervalColor($/;"	f	package:tester
+AnnotatePoint	src/tester1/annotation.go	/^func AnnotatePoint(tag, desp, details string) {$/;"	f	package:tester
+AnnotatePointColor	src/tester1/annotation.go	/^func AnnotatePointColor($/;"	f	package:tester
+AnnotateRestart	src/tester1/annotation.go	/^func AnnotateRestart(servers []int) {$/;"	f	package:tester
+AnnotateRestartAll	src/tester1/annotation.go	/^func AnnotateRestartAll() {$/;"	f	package:tester
+AnnotateShutdown	src/tester1/annotation.go	/^func AnnotateShutdown(servers []int) {$/;"	f	package:tester
+AnnotateShutdownAll	src/tester1/annotation.go	/^func AnnotateShutdownAll() {$/;"	f	package:tester
+AnnotateTest	src/tester1/annotation.go	/^func AnnotateTest(desp string, nservers int) {$/;"	f	package:tester
+AnnotateTwoPartitions	src/tester1/annotation.go	/^func AnnotateTwoPartitions(p1 []int, p2 []int) {$/;"	f	package:tester
+Annotation	src/tester1/annotation.go	/^type Annotation struct {$/;"	s	package:tester
+Append	src/kvtest1/porcupine.go	/^func (log *OpLog) Append(op porcupine.Operation) {$/;"	f	struct:kvtest.OpLog
+ApplyErr	src/raft1/proxy.go	/^func (tp *TesterProxy) ApplyErr(index int, err string) {$/;"	f	struct:raft.TesterProxy
+ApplyErr	src/raft1/server.go	/^	ApplyErr(int, string)$/;"	n	interface:raft.Itester
+ApplyErr	src/raft1/test.go	/^func (ts *Test) ApplyErr(i int, err string) {$/;"	f	struct:raft.Test
+ApplyErrArgs	src/raft1/test.go	/^type ApplyErrArgs struct {$/;"	s	package:raft
+ApplyErrRPC	src/raft1/test.go	/^func (ts *Test) ApplyErrRPC(args *ApplyErrArgs, reply *ApplyErrReply) {$/;"	f	struct:raft.Test
+ApplyErrReply	src/raft1/test.go	/^type ApplyErrReply struct{}$/;"	s	package:raft
+ApplyMsg	src/raftapi/raftapi.go	/^type ApplyMsg struct {$/;"	s	package:raftapi
+Args	src/tester1/sockrpc/rpcclnt.go	/^	Args   []byte$/;"	m	struct:sockrpc.RPCArgs	typeref:typename:[]byte
+Args	src/tester1/testsrv.go	/^	Args   []byte$/;"	m	struct:tester.ForwardArgs	typeref:typename:[]byte
+Attempt	src/mr/rpc.go	/^	Attempt     uint$/;"	m	struct:mr.TaskOutput	typeref:typename:uint
+Attempt	src/mr/rpc.go	/^	Attempt    uint$/;"	m	struct:mr.TaskInput	typeref:typename:uint
+Begin	src/tester1/config.go	/^func (cfg *Config) Begin(description string) {$/;"	f	struct:tester.Config
+BucketIds	src/mr/rpc.go	/^	BucketIds   []uint$/;"	m	struct:mr.TaskOutput	typeref:typename:[]uint
+ByKey	src/main/mrsequential.go	/^type ByKey []mr.KeyValue$/;"	t	package:main	typeref:typename:[]mr.KeyValue
+BytesTotal	src/tester1/config.go	/^func (cfg *Config) BytesTotal() int64 {$/;"	f	struct:tester.Config	typeref:typename:int64
+COLOR_FAILURE	src/tester1/annotation.go	/^	COLOR_FAILURE string = "#FFCDD2"$/;"	c	package:tester	typeref:typename:string
+COLOR_FAULT	src/tester1/annotation.go	/^	COLOR_FAULT   string = "#B3E5FC"$/;"	c	package:tester	typeref:typename:string
+COLOR_INFO	src/tester1/annotation.go	/^	COLOR_INFO    string = "#FAFAFA"$/;"	c	package:tester	typeref:typename:string
+COLOR_NEUTRAL	src/tester1/annotation.go	/^	COLOR_NEUTRAL string = "#FFECB3"$/;"	c	package:tester	typeref:typename:string
+COLOR_SUCCESS	src/tester1/annotation.go	/^	COLOR_SUCCESS string = "#C8E6C9"$/;"	c	package:tester	typeref:typename:string
+COLOR_USER	src/tester1/annotation.go	/^	COLOR_USER    string = "#FFF176"$/;"	c	package:tester	typeref:typename:string
+Call	src/labrpc/labrpc.go	/^func (e *ClientEnd) Call(svcMeth string, args interface{}, reply interface{}) bool {$/;"	f	struct:labrpc.ClientEnd	typeref:typename:bool
+Call	src/tester1/clnts.go	/^func (clnt *Clnt) Call(server, method string, args interface{}, reply interface{}) bool {$/;"	f	struct:tester.Clnt	typeref:typename:bool
+Call	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) Call(method string, args any, rep any) bool {$/;"	f	struct:tester.DaemonClnt	typeref:typename:bool
+Call	src/tester1/testclnt.go	/^func (tc *TesterClnt) Call(method string, args any, rep any) bool {$/;"	f	struct:tester.TesterClnt	typeref:typename:bool
+Cfg	src/kvtest1/kvtest.go	/^	Cfg  *tester.Config$/;"	m	struct:kvtest.TestClerk	typeref:typename:*tester.Config
+ChangeConfigTo	src/shardkv1/shardctrler/shardctrler.go	/^func (sck *ShardCtrler) ChangeConfigTo(new *shardcfg.ShardConfig) {$/;"	f	struct:shardctrler.ShardCtrler
+CheckAppends	src/kvtest1/kvtest.go	/^func (ts *Test) CheckAppends(es []EntryN, nclnt int, rs []ClntRes, ver rpc.Tversion) {$/;"	f	struct:kvtest.Test
+CheckConfig	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) CheckConfig(t *testing.T, groups []tester.Tgid) {$/;"	f	struct:shardcfg.ShardConfig
+CheckGet	src/kvtest1/kvtest.go	/^func (ts *Test) CheckGet(ck IKVClerk, key, value string, version rpc.Tversion) {$/;"	f	struct:kvtest.Test
+CheckLogs	src/raft1/proxy.go	/^func (tp *TesterProxy) CheckLogs(index int, m raftapi.ApplyMsg) (string, bool) {$/;"	f	struct:raft.TesterProxy	typeref:typename:(string, bool)
+CheckLogs	src/raft1/server.go	/^	CheckLogs(int, raftapi.ApplyMsg) (string, bool)$/;"	n	interface:raft.Itester	typeref:typename:(string, bool)
+CheckLogs	src/raft1/test.go	/^func (ts *Test) CheckLogs(i int, m raftapi.ApplyMsg) (string, bool) {$/;"	f	struct:raft.Test	typeref:typename:(string, bool)
+CheckLogsArgs	src/raft1/test.go	/^type CheckLogsArgs struct {$/;"	s	package:raft
+CheckLogsRPC	src/raft1/test.go	/^func (ts *Test) CheckLogsRPC(args *CheckLogsArgs, reply *CheckLogsReply) {$/;"	f	struct:raft.Test
+CheckLogsReply	src/raft1/test.go	/^type CheckLogsReply struct {$/;"	s	package:raft
+CheckPorcupine	src/kvtest1/porcupine.go	/^func (ts *Test) CheckPorcupine() {$/;"	f	unknown:kvtest.Test
+CheckPorcupineT	src/kvtest1/porcupine.go	/^func (ts *Test) CheckPorcupineT(nsec time.Duration) {$/;"	f	unknown:kvtest.Test
+CheckPutConcurrent	src/kvtest1/kvtest.go	/^func (ts *Test) CheckPutConcurrent(ck IKVClerk, key string, rs []ClntRes, res *ClntRes, reliable/;"	f	struct:kvtest.Test
+CheckTimeout	src/tester1/config.go	/^func (cfg *Config) CheckTimeout() {$/;"	f	struct:tester.Config
+CheckerBegin	src/tester1/annotation.go	/^type CheckerBegin struct {$/;"	s	package:tester
+Checkpoint	src/tester1/persister.go	/^func (ps *Persister) Checkpoint() *Persister {$/;"	f	struct:tester.Persister	typeref:typename:*Persister
+CheckpointPersister	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) CheckpointPersister(args CheckpointPersisterArgs, reply *CheckpointPersiste/;"	f	struct:tester.DaemonSrv
+CheckpointPersisterArgs	src/tester1/daemonsrv.go	/^type CheckpointPersisterArgs struct{}$/;"	s	package:tester
+CheckpointPersisterReply	src/tester1/daemonsrv.go	/^type CheckpointPersisterReply struct {$/;"	s	package:tester
+Cleanup	src/kvtest1/kvtest.go	/^func (ts *Test) Cleanup() {$/;"	f	struct:kvtest.Test
+Cleanup	src/labrpc/labrpc.go	/^func (rn *Network) Cleanup() {$/;"	f	struct:labrpc.Network
+Cleanup	src/tester1/config.go	/^func (cfg *Config) Cleanup() {$/;"	f	struct:tester.Config
+Clerk	src/kvraft1/client.go	/^type Clerk struct {$/;"	s	package:kvraft
+Clerk	src/kvsrv1/client.go	/^type Clerk struct {$/;"	s	package:kvsrv
+Clerk	src/shardkv1/client.go	/^type Clerk struct {$/;"	s	package:shardkv
+Clerk	src/shardkv1/shardgrp/client.go	/^type Clerk struct {$/;"	s	package:shardgrp
+ClientEnd	src/labrpc/labrpc.go	/^type ClientEnd struct {$/;"	s	package:labrpc
+Clnt	src/kvtest1/kvtest.go	/^	Clnt *tester.Clnt$/;"	m	struct:kvtest.TestClerk	typeref:typename:*tester.Clnt
+Clnt	src/shardkv1/shardgrp/client.go	/^	*tester.Clnt$/;"	M	struct:shardgrp.Clerk	typeref:typename:*tester.Clnt
+Clnt	src/tester1/clnts.go	/^type Clnt struct {$/;"	s	package:tester
+Clnt	src/tester1/demux/dmxclnt.go	/^	Clnt string$/;"	m	struct:demux.InitMsg	typeref:typename:string
+ClntEnd	src/tester1/demux/dmxsrv.go	/^func (dmx *DemuxSrv) ClntEnd() string {$/;"	f	struct:demux.DemuxSrv	typeref:typename:string
+ClntRes	src/kvtest1/kvtest.go	/^type ClntRes struct {$/;"	s	package:kvtest
+Clnts	src/tester1/clnts.go	/^type Clnts struct {$/;"	s	package:tester
+Clnts	src/tester1/config.go	/^	*Clnts  \/\/ The clnts in the test$/;"	M	struct:tester.Config	typeref:typename:*Clnts
+Close	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) Close() error {$/;"	f	struct:demux.DemuxClnt	typeref:typename:error
+Close	src/tester1/demux/dmxsrv.go	/^func (dmx *DemuxSrv) Close() error {$/;"	f	struct:demux.DemuxSrv	typeref:typename:error
+Close	src/tester1/demux/transport.go	/^	Close() error$/;"	n	interface:demux.TransportI	typeref:typename:error
+Close	src/tester1/demux/transport.go	/^func (t *transport) Close() error {$/;"	f	struct:demux.transport	typeref:typename:error
+Close	src/tester1/sockrpc/rpcclnt.go	/^func (rpcc *RPCClnt) Close() {$/;"	f	struct:sockrpc.RPCClnt
+Close	src/tester1/sockrpc/rpcsrv.go	/^func (rpcs *RPCSrv) Close() {$/;"	f	struct:sockrpc.RPCSrv
+Command	src/raft1/server.go	/^	Command any$/;"	m	struct:raft.StartArgs	typeref:typename:any
+Command	src/raftapi/raftapi.go	/^	Command      interface{}$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:interface{}
+CommandIndex	src/raftapi/raftapi.go	/^	CommandIndex int$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:int
+CommandValid	src/raftapi/raftapi.go	/^	CommandValid bool$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:bool
+Config	src/kvraft1/rsm/test.go	/^	*tester.Config$/;"	M	struct:rsm.Test	typeref:typename:*tester.Config
+Config	src/kvtest1/kvtest.go	/^	*tester.Config$/;"	M	struct:kvtest.Test	typeref:typename:*tester.Config
+Config	src/raft1/test.go	/^	*tester.Config$/;"	M	struct:raft.Test	typeref:typename:*tester.Config
+Config	src/tester1/config.go	/^type Config struct {$/;"	s	package:tester
+Connect	src/labrpc/labrpc.go	/^func (rn *Network) Connect(endname interface{}, servername interface{}) {$/;"	f	struct:labrpc.Network
+ConnectAll	src/tester1/clnts.go	/^func (clnt *Clnt) ConnectAll() {$/;"	f	struct:tester.Clnt
+ConnectAll	src/tester1/group.go	/^func (sg *ServerGrp) ConnectAll() {$/;"	f	struct:tester.ServerGrp
+ConnectClnts	src/kvtest1/kvtest.go	/^func (ts *Test) ConnectClnts(clnts []*tester.Clnt) {$/;"	f	struct:kvtest.Test
+ConnectOne	src/tester1/group.go	/^func (sg *ServerGrp) ConnectOne(i int) {$/;"	f	struct:tester.ServerGrp
+ConnectTo	src/tester1/clnts.go	/^func (clnt *Clnt) ConnectTo(srvs []string) {$/;"	f	struct:tester.Clnt
+Continuous	src/tester1/annotation.go	/^type Continuous struct {$/;"	s	package:tester
+Controler	src/shardkv1/test.go	/^	Controler     = tester.Tgid(0) \/\/ controler uses group 0 for a kvraft group$/;"	c	package:shardkv
+Coordinator	src/mr/coordinator.go	/^type Coordinator struct {$/;"	s	package:mr
+Copy	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) Copy() *ShardConfig {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:*ShardConfig
+Count	src/kvraft1/rsm/server.go	/^	Count int$/;"	m	struct:rsm.GetCounterReply	typeref:typename:int
+DEFAULT_N_REDUCE	src/mr/coordinator.go	/^const DEFAULT_N_REDUCE int = 10                               \/\/ Default nReduce$/;"	c	package:mr	typeref:typename:int
+DPrintf	src/kvsrv1/server.go	/^func DPrintf(format string, a ...interface{}) (n int, err error) {$/;"	f	package:kvsrv	typeref:typename:(n int, err error)
+DPrintf	src/raft1/util.go	/^func DPrintf(format string, a ...interface{}) {$/;"	f	package:raft
+DaemonClnt	src/tester1/daemonclnt.go	/^type DaemonClnt struct {$/;"	s	package:tester
+DaemonClnt	src/tester1/group.go	/^func (sg *ServerGrp) DaemonClnt(i int) *DaemonClnt {$/;"	f	struct:tester.ServerGrp	typeref:typename:*DaemonClnt
+DaemonSrv	src/tester1/daemonsrv.go	/^type DaemonSrv struct {$/;"	s	package:tester
+Data	src/tester1/demux/transport.go	/^	Data []byte$/;"	m	struct:demux.msg	typeref:typename:[]byte
+Debug	src/kvsrv1/server.go	/^const Debug = false$/;"	c	package:kvsrv
+Debug	src/raft1/util.go	/^const Debug = false$/;"	c	package:raft
+Dec	src/kvraft1/rsm/server.go	/^type Dec struct {$/;"	s	package:rsm
+Decode	src/labgob/labgob.go	/^func (dec *LabDecoder) Decode(e interface{}) error {$/;"	f	struct:labgob.LabDecoder	typeref:typename:error
+DeleteClerk	src/kvraft1/test.go	/^func (ts *Test) DeleteClerk(ck kvtest.IKVClerk) {$/;"	f	struct:kvraft.Test
+DeleteClerk	src/kvsrv1/test.go	/^func (ts *TestKV) DeleteClerk(ck kvtest.IKVClerk) {$/;"	f	struct:kvsrv.TestKV
+DeleteClerk	src/kvtest1/kvtest.go	/^	DeleteClerk(IKVClerk)$/;"	n	interface:kvtest.IClerkMaker
+DeleteClerk	src/shardkv1/test.go	/^func (ts *Test) DeleteClerk(ck kvtest.IKVClerk) {$/;"	f	struct:shardkv.Test
+DeleteClient	src/tester1/clnts.go	/^func (clnts *Clnts) DeleteClient(clnt *Clnt) {$/;"	f	struct:tester.Clnts
+DeleteEnd	src/labrpc/labrpc.go	/^func (rn *Network) DeleteEnd(endname interface{}) {$/;"	f	struct:labrpc.Network
+DeleteServer	src/labrpc/labrpc.go	/^func (rn *Network) DeleteServer(servername interface{}) {$/;"	f	struct:labrpc.Network
+DeleteShard	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) DeleteShard(s shardcfg.Tshid, num shardcfg.Tnum) rpc.Err {$/;"	f	struct:shardgrp.Clerk	typeref:typename:rpc.Err
+DeleteShard	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) DeleteShard(args *shardrpc.DeleteShardArgs, reply *shardrpc.DeleteShardReply/;"	f	struct:shardgrp.KVServer
+DeleteShardArgs	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type DeleteShardArgs struct {$/;"	s	package:shardrpc
+DeleteShardReply	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type DeleteShardReply struct {$/;"	s	package:shardrpc
+DemuxClnt	src/tester1/demux/dmxclnt.go	/^type DemuxClnt struct {$/;"	s	package:demux
+DemuxSrv	src/tester1/demux/dmxsrv.go	/^type DemuxSrv struct {$/;"	s	package:demux
+Desp	src/tester1/annotator.go	/^	Desp    string$/;"	m	struct:tester.PostAnnotatorInfoIntervalArgs	typeref:typename:string
+Desp	src/tester1/annotator.go	/^	Desp    string$/;"	m	struct:tester.PostAnnotatorPointArgs	typeref:typename:string
+Details	src/tester1/annotator.go	/^	Details string$/;"	m	struct:tester.PostAnnotatorInfoIntervalArgs	typeref:typename:string
+Details	src/tester1/annotator.go	/^	Details string$/;"	m	struct:tester.PostAnnotatorPointArgs	typeref:typename:string
+Disconnect	src/tester1/clnts.go	/^func (clnt *Clnt) Disconnect(srv string) {$/;"	f	struct:tester.Clnt
+DisconnectAll	src/tester1/clnts.go	/^func (clnt *Clnt) DisconnectAll() {$/;"	f	struct:tester.Clnt
+DisconnectAll	src/tester1/group.go	/^func (sg *ServerGrp) DisconnectAll(i int) {$/;"	f	struct:tester.ServerGrp
+Dispatch	src/labrpc/labrpc.go	/^func (rs *Server) Dispatch(srv, svcMeth, clnt string, args []byte) ([]byte, bool) {$/;"	f	struct:labrpc.Server	typeref:typename:([]byte, bool)
+DoOp	src/kvraft1/rsm/rsm.go	/^	DoOp(any) any$/;"	n	interface:rsm.StateMachine	typeref:typename:any
+DoOp	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) DoOp(req any) any {$/;"	f	struct:rsm.rsmSrv	typeref:typename:any
+DoOp	src/kvraft1/server.go	/^func (kv *KVServer) DoOp(req any) any {$/;"	f	struct:kvraft.KVServer	typeref:typename:any
+DoOp	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) DoOp(req any) any {$/;"	f	struct:shardgrp.KVServer	typeref:typename:any
+Done	src/mr/coordinator.go	/^func (c *Coordinator) Done() bool {$/;"	f	struct:mr.Coordinator	typeref:typename:bool
+ENVKEY	src/shardkv1/shardgrp/server.go	/^	ENVKEY = "65840ENV"$/;"	c	package:shardgrp
+ElectionTimeout	src/kvtest1/kvtest.go	/^const ElectionTimeout = 1 * time.Second$/;"	c	package:kvtest
+Enable	src/labrpc/labrpc.go	/^func (rn *Network) Enable(endname interface{}, enabled bool) {$/;"	f	struct:labrpc.Network
+Encode	src/labgob/labgob.go	/^func (enc *LabEncoder) Encode(e interface{}) error {$/;"	f	struct:labgob.LabEncoder	typeref:typename:error
+EncodeValue	src/labgob/labgob.go	/^func (enc *LabEncoder) EncodeValue(value reflect.Value) error {$/;"	f	struct:labgob.LabEncoder	typeref:typename:error
+End	src/tester1/config.go	/^func (cfg *Config) End() {$/;"	f	struct:tester.Config
+End	src/tester1/testsrv.go	/^	End    string \/\/ client end for server$/;"	m	struct:tester.ForwardArgs	typeref:typename:string
+EntryN	src/kvtest1/kvtest.go	/^type EntryN struct {$/;"	s	package:kvtest
+EntryV	src/kvtest1/kvtest.go	/^type EntryV struct {$/;"	s	package:kvtest
+Err	src/kvraft1/rsm/server.go	/^	Err rpc.Err$/;"	m	struct:rsm.SubmitReply	typeref:typename:rpc.Err
+Err	src/kvsrv1/rpc/rpc.go	/^	Err     Err$/;"	m	struct:rpc.GetReply	typeref:typename:Err
+Err	src/kvsrv1/rpc/rpc.go	/^	Err Err$/;"	m	struct:rpc.PutReply	typeref:typename:Err
+Err	src/kvsrv1/rpc/rpc.go	/^type Err string$/;"	t	package:rpc	typeref:typename:string
+Err	src/models1/kv.go	/^	Err     string$/;"	m	struct:models.KvOutput	typeref:typename:string
+Err	src/raft1/test.go	/^	Err    string$/;"	m	struct:raft.CheckLogsReply	typeref:typename:string
+Err	src/raft1/test.go	/^	Err   string$/;"	m	struct:raft.ApplyErrArgs	typeref:typename:string
+Err	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Err   rpc.Err$/;"	m	struct:shardrpc.FreezeShardReply	typeref:typename:rpc.Err
+Err	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Err rpc.Err$/;"	m	struct:shardrpc.DeleteShardReply	typeref:typename:rpc.Err
+Err	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Err rpc.Err$/;"	m	struct:shardrpc.InstallShardReply	typeref:typename:rpc.Err
+ErrMaybe	src/kvsrv1/rpc/rpc.go	/^	ErrMaybe = "ErrMaybe"$/;"	c	package:rpc
+ErrNoKey	src/kvsrv1/rpc/rpc.go	/^	ErrNoKey   = "ErrNoKey"$/;"	c	package:rpc
+ErrVersion	src/kvsrv1/rpc/rpc.go	/^	ErrVersion = "ErrVersion"$/;"	c	package:rpc
+ErrWrongGroup	src/kvsrv1/rpc/rpc.go	/^	ErrWrongGroup  = "ErrWrongGroup"$/;"	c	package:rpc
+ErrWrongLeader	src/kvsrv1/rpc/rpc.go	/^	ErrWrongLeader = "ErrWrongLeader"$/;"	c	package:rpc
+ExitGroup	src/tester1/config.go	/^func (cfg *Config) ExitGroup(gid Tgid) {$/;"	f	struct:tester.Config
+Fatalf	src/tester1/config.go	/^func (cfg *Config) Fatalf(format string, args ...any) {$/;"	f	struct:tester.Config
+Fcall	src/labrpc/labrpc.go	/^type Fcall func(string, string, []byte) ([]byte, bool)$/;"	t	package:labrpc	typeref:typename:func(string, string, []byte) ([]byte, bool)
+Fclnt	src/kvtest1/kvtest.go	/^type Fclnt func(int, IKVClerk, chan struct{}) ClntRes$/;"	t	package:kvtest	typeref:typename:func(int, IKVClerk, chan struct{}) ClntRes
+Fdispatch	src/labrpc/labrpc.go	/^type Fdispatch func(string, []byte) ([]byte, bool)$/;"	t	package:labrpc	typeref:typename:func(string, []byte) ([]byte, bool)
+FinalizeAnnotations	src/tester1/annotation.go	/^func FinalizeAnnotations(end string) []porcupine.Annotation {$/;"	f	package:tester	typeref:typename:[]porcupine.Annotation
+Forward	src/labrpc/labrpc.go	/^func (e *ClientEnd) Forward(svcMeth string, args []byte) ([]byte, bool) {$/;"	f	struct:labrpc.ClientEnd	typeref:typename:([]byte, bool)
+Forward	src/tester1/testsrv.go	/^func (trpc *TesterRPC) Forward(args *ForwardArgs, reply *ForwardReply) {$/;"	f	struct:tester.TesterRPC
+ForwardArgs	src/tester1/testsrv.go	/^type ForwardArgs struct {$/;"	s	package:tester
+ForwardReply	src/tester1/testsrv.go	/^type ForwardReply struct {$/;"	s	package:tester
+FrameworkInfo	src/tester1/annotation.go	/^type FrameworkInfo struct {$/;"	s	package:tester
+FreezeShard	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) FreezeShard(s shardcfg.Tshid, num shardcfg.Tnum) ([]byte, rpc.Err) {$/;"	f	struct:shardgrp.Clerk	typeref:typename:([]byte, rpc.Err)
+FreezeShard	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) FreezeShard(args *shardrpc.FreezeShardArgs, reply *shardrpc.FreezeShardReply/;"	f	struct:shardgrp.KVServer
+FreezeShardArgs	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type FreezeShardArgs struct {$/;"	s	package:shardrpc
+FreezeShardReply	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type FreezeShardReply struct {$/;"	s	package:shardrpc
+FromString	src/shardkv1/shardcfg/shardcfg.go	/^func FromString(s string) *ShardConfig {$/;"	f	package:shardcfg	typeref:typename:*ShardConfig
+FstartServer	src/tester1/daemonsrv.go	/^type FstartServer func(tc *TesterClnt, ends []*labrpc.ClientEnd, grp Tgid, srv int, persister *P/;"	t	package:tester	typeref:typename:func(tc *TesterClnt, ends []*labrpc.ClientEnd, grp Tgid, srv int, persister *Persister) []any
+GRP0	src/tester1/config.go	/^const GRP0 = 0$/;"	c	package:tester
+GenericTest	src/kvraft1/kvraft_test.go	/^func (ts *Test) GenericTest() {$/;"	f	unknown:kvraft.Test
+GenericTestSpeed	src/kvraft1/kvraft_test.go	/^func (ts *Test) GenericTestSpeed() {$/;"	f	unknown:kvraft.Test
+Get	src/kvraft1/client.go	/^func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {$/;"	f	struct:kvraft.Clerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/kvraft1/server.go	/^func (kv *KVServer) Get(args *rpc.GetArgs, reply *rpc.GetReply) {$/;"	f	struct:kvraft.KVServer
+Get	src/kvsrv1/client.go	/^func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {$/;"	f	struct:kvsrv.Clerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/kvsrv1/server.go	/^func (kv *KVServer) Get(args *rpc.GetArgs, reply *rpc.GetReply) {$/;"	f	struct:kvsrv.KVServer
+Get	src/kvtest1/kvtest.go	/^	Get(string) (string, rpc.Tversion, rpc.Err)$/;"	n	interface:kvtest.IKVClerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/kvtest1/kvtest.go	/^func (tck *TestClerk) Get(key string) (string, rpc.Tversion, rpc.Err) {$/;"	f	struct:kvtest.TestClerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/kvtest1/porcupine.go	/^func (ts *Test) Get(ck IKVClerk, key string, cli int) (string, rpc.Tversion, rpc.Err) {$/;"	f	unknown:kvtest.Test	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/kvtest1/porcupine.go	/^func Get(cfg *tester.Config, ck IKVClerk, key string, log *OpLog, cli int) (string, rpc.Tversion/;"	f	package:kvtest	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/shardkv1/client.go	/^func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {$/;"	f	struct:shardkv.Clerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {$/;"	f	struct:shardgrp.Clerk	typeref:typename:(string, rpc.Tversion, rpc.Err)
+Get	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) Get(args *rpc.GetArgs, reply *rpc.GetReply) {$/;"	f	struct:shardgrp.KVServer
+GetAnnotateTimestamp	src/tester1/annotation.go	/^func GetAnnotateTimestamp() int64 {$/;"	f	package:tester	typeref:typename:int64
+GetAnnotationFinalized	src/tester1/annotation.go	/^func GetAnnotationFinalized() bool {$/;"	f	package:tester	typeref:typename:bool
+GetAnnotatorTimestamp	src/tester1/annotator.go	/^func (trpc *TesterRPC) GetAnnotatorTimestamp($/;"	f	unknown:tester.TesterRPC
+GetAnnotatorTimestamp	src/tester1/annotator.go	/^func GetAnnotatorTimestamp() int64 {$/;"	f	package:tester	typeref:typename:int64
+GetAnnotatorTimestampArgs	src/tester1/annotator.go	/^type GetAnnotatorTimestampArgs struct { }$/;"	s	package:tester
+GetAnnotatorTimestampReply	src/tester1/annotator.go	/^type GetAnnotatorTimestampReply struct {$/;"	s	package:tester
+GetArgs	src/kvsrv1/rpc/rpc.go	/^type GetArgs struct {$/;"	s	package:rpc
+GetClerk	src/shardkv1/client.go	/^func (ck *Clerk) GetClerk(gid tester.Tgid) (*shardgrp.Clerk, bool) {$/;"	f	struct:shardkv.Clerk	typeref:typename:(*shardgrp.Clerk, bool)
+GetConnected	src/tester1/group.go	/^func (sg *ServerGrp) GetConnected() []bool {$/;"	f	struct:tester.ServerGrp	typeref:typename:[]bool
+GetCount	src/labrpc/labrpc.go	/^func (rn *Network) GetCount(servername interface{}) int {$/;"	f	struct:labrpc.Network	typeref:typename:int
+GetCount	src/labrpc/labrpc.go	/^func (rs *Server) GetCount() int {$/;"	f	struct:labrpc.Server	typeref:typename:int
+GetCounter	src/kvraft1/rsm/proxy.go	/^func (rsp *RSMproxy) GetCounter() int {$/;"	f	struct:rsm.RSMproxy	typeref:typename:int
+GetCounter	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) GetCounter() int {$/;"	f	struct:rsm.rsmSrv	typeref:typename:int
+GetCounter	src/kvraft1/rsm/test.go	/^	GetCounter() int$/;"	n	interface:rsm.IRSMServer	typeref:typename:int
+GetCounterArgs	src/kvraft1/rsm/server.go	/^type GetCounterArgs struct{}$/;"	s	package:rsm
+GetCounterRPC	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) GetCounterRPC(args *GetCounterArgs, rep *GetCounterReply) {$/;"	f	struct:rsm.rsmSrv
+GetCounterReply	src/kvraft1/rsm/server.go	/^type GetCounterReply struct {$/;"	s	package:rsm
+GetJson	src/kvtest1/kvtest.go	/^func (ts *Test) GetJson(ck IKVClerk, key string, me int, v any) rpc.Tversion {$/;"	f	struct:kvtest.Test	typeref:typename:rpc.Tversion
+GetReply	src/kvsrv1/rpc/rpc.go	/^type GetReply struct {$/;"	s	package:rpc
+GetState	src/raft1/proxy.go	/^func (rfp *Rfproxy) GetState() (int, bool) {$/;"	f	struct:raft.Rfproxy	typeref:typename:(int, bool)
+GetState	src/raft1/raft.go	/^func (rf *Raft) GetState() (int, bool) {$/;"	f	struct:raft.Raft	typeref:typename:(int, bool)
+GetState	src/raft1/server.go	/^func (rs *rfsrv) GetState() (int, bool) {$/;"	f	struct:raft.rfsrv	typeref:typename:(int, bool)
+GetState	src/raft1/test.go	/^	GetState() (int, bool)$/;"	n	interface:raft.IraftServer	typeref:typename:(int, bool)
+GetState	src/raftapi/raftapi.go	/^	GetState() (int, bool)$/;"	n	interface:raftapi.Raft	typeref:typename:(int, bool)
+GetStateArgs	src/raft1/server.go	/^type GetStateArgs struct{}$/;"	s	package:raft
+GetStateRPC	src/raft1/server.go	/^func (rs *rfsrv) GetStateRPC(args *GetStateArgs, rep *GetStateReply) {$/;"	f	struct:raft.rfsrv
+GetStateReply	src/raft1/server.go	/^type GetStateReply struct {$/;"	s	package:raft
+GetTask	src/mr/coordinator.go	/^func (c *Coordinator) GetTask(args *GetTaskArgs, reply *TaskInput) error {$/;"	f	struct:mr.Coordinator	typeref:typename:error
+GetTaskArgs	src/mr/rpc.go	/^type GetTaskArgs struct {$/;"	s	package:mr
+GetTotalBytes	src/labrpc/labrpc.go	/^func (rn *Network) GetTotalBytes() int64 {$/;"	f	struct:labrpc.Network	typeref:typename:int64
+GetTotalCount	src/labrpc/labrpc.go	/^func (rn *Network) GetTotalCount() int {$/;"	f	struct:labrpc.Network	typeref:typename:int
+Gid	src/kvraft1/rsm/test.go	/^	Gid = tester.GRP0$/;"	c	package:rsm
+Gid	src/kvraft1/test.go	/^	Gid = tester.GRP0$/;"	c	package:kvraft
+Gid1	src/shardkv1/shardcfg/shardcfg.go	/^	Gid1 = tester.Tgid(1)$/;"	c	package:shardcfg
+GidServers	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) GidServers(sh Tshid) (tester.Tgid, []string, bool) {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:(tester.Tgid, []string, bool)
+Group	src/tester1/config.go	/^func (cfg *Config) Group(gid Tgid) *ServerGrp {$/;"	f	struct:tester.Config	typeref:typename:*ServerGrp
+Groups	src/shardkv1/shardcfg/shardcfg.go	/^	Groups map[tester.Tgid][]string \/\/ gid -> servers[]$/;"	m	struct:shardcfg.ShardConfig	typeref:typename:map[tester.Tgid][]string
+Groups	src/tester1/config.go	/^	*Groups \/\/ The server groups in the test$/;"	M	struct:tester.Config	typeref:typename:*Groups
+Groups	src/tester1/group.go	/^type Groups struct {$/;"	s	package:tester
+Handler1	src/labrpc/test_test.go	/^func (js *JunkServer) Handler1(args string, reply *int) {$/;"	f	struct:labrpc.JunkServer
+Handler2	src/labrpc/test_test.go	/^func (js *JunkServer) Handler2(args int, reply *string) {$/;"	f	struct:labrpc.JunkServer
+Handler3	src/labrpc/test_test.go	/^func (js *JunkServer) Handler3(args int, reply *int) {$/;"	f	struct:labrpc.JunkServer
+Handler4	src/labrpc/test_test.go	/^func (js *JunkServer) Handler4(args *JunkArgs, reply *JunkReply) {$/;"	f	struct:labrpc.JunkServer
+Handler5	src/labrpc/test_test.go	/^func (js *JunkServer) Handler5(args JunkArgs, reply *JunkReply) {$/;"	f	struct:labrpc.JunkServer
+Handler6	src/labrpc/test_test.go	/^func (js *JunkServer) Handler6(args string, reply *int) {$/;"	f	struct:labrpc.JunkServer
+Handler7	src/labrpc/test_test.go	/^func (js *JunkServer) Handler7(args int, reply *string) {$/;"	f	struct:labrpc.JunkServer
+IClerkMaker	src/kvtest1/kvtest.go	/^type IClerkMaker interface {$/;"	i	package:kvtest
+IKVClerk	src/kvtest1/kvtest.go	/^	IKVClerk$/;"	M	struct:kvtest.TestClerk	typeref:typename:IKVClerk
+IKVClerk	src/kvtest1/kvtest.go	/^type IKVClerk interface {$/;"	i	package:kvtest
+IKVClerk	src/shardkv1/shardctrler/shardctrler.go	/^	kvtest.IKVClerk$/;"	M	struct:shardctrler.ShardCtrler	typeref:typename:kvtest.IKVClerk
+INTERGRPDELAY	src/shardkv1/test.go	/^	INTERGRPDELAY = 200            \/\/ time in ms between group changes$/;"	c	package:shardkv
+IRSMServer	src/kvraft1/rsm/test.go	/^type IRSMServer interface {$/;"	i	package:rsm
+Id	src/kvtest1/kvtest.go	/^	Id int$/;"	m	struct:kvtest.EntryN	typeref:typename:int
+Id	src/kvtest1/kvtest.go	/^	Id int$/;"	m	struct:kvtest.EntryV	typeref:typename:int
+Id	src/kvtest1/kvtest.go	/^	Id int$/;"	m	struct:kvtest.entry	typeref:typename:int
+Id	src/tester1/testsrv.go	/^	Id     int64$/;"	m	struct:tester.ForwardArgs	typeref:typename:int64
+Inc	src/kvraft1/rsm/server.go	/^type Inc struct {$/;"	s	package:rsm
+IncRep	src/kvraft1/rsm/server.go	/^type IncRep struct {$/;"	s	package:rsm
+Index	src/raft1/server.go	/^	Index  int$/;"	m	struct:raft.StartReply	typeref:typename:int
+Index	src/raft1/test.go	/^	Index int$/;"	m	struct:raft.ApplyErrArgs	typeref:typename:int
+Index	src/raft1/test.go	/^	Index int$/;"	m	struct:raft.CheckLogsArgs	typeref:typename:int
+Index	src/raft1/test.go	/^	Index int$/;"	m	struct:raft.IngestLogArgs	typeref:typename:int
+IngestLog	src/raft1/proxy.go	/^func (tp *TesterProxy) IngestLog(index int, m map[int]any) {$/;"	f	struct:raft.TesterProxy
+IngestLog	src/raft1/server.go	/^	IngestLog(int, map[int]any)$/;"	n	interface:raft.Itester
+IngestLog	src/raft1/test.go	/^func (ts *Test) IngestLog(i int, xlog map[int]any) {$/;"	f	struct:raft.Test
+IngestLogArgs	src/raft1/test.go	/^type IngestLogArgs struct {$/;"	s	package:raft
+IngestLogRPC	src/raft1/test.go	/^func (ts *Test) IngestLogRPC(args *IngestLogArgs, reply *IngestLogReply) {$/;"	f	struct:raft.Test
+IngestLogReply	src/raft1/test.go	/^type IngestLogReply struct{}$/;"	s	package:raft
+Init	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) Init(args InitArgs, reply *InitReply) {$/;"	f	struct:tester.DaemonSrv
+InitArgs	src/tester1/daemonsrv.go	/^type InitArgs struct {$/;"	s	package:tester
+InitConfig	src/shardkv1/shardctrler/shardctrler.go	/^func (sck *ShardCtrler) InitConfig(cfg *shardcfg.ShardConfig) {$/;"	f	struct:shardctrler.ShardCtrler
+InitController	src/shardkv1/shardctrler/shardctrler.go	/^func (sck *ShardCtrler) InitController() {$/;"	f	struct:shardctrler.ShardCtrler
+InitDaemon	src/tester1/daemonsrv.go	/^func InitDaemon(args []string, mks FstartServer) error {$/;"	f	package:tester	typeref:typename:error
+InitMsg	src/tester1/demux/dmxclnt.go	/^type InitMsg struct {$/;"	s	package:demux
+InitReply	src/tester1/daemonsrv.go	/^type InitReply struct{}$/;"	s	package:tester
+InitWait	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) InitWait(args InitArgs, reply *InitReply) {$/;"	f	struct:tester.DaemonSrv
+InputFiles	src/mr/rpc.go	/^	InputFiles []string$/;"	m	struct:mr.TaskInput	typeref:typename:[]string
+InstallShard	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) InstallShard(s shardcfg.Tshid, state []byte, num shardcfg.Tnum) rpc.Err {$/;"	f	struct:shardgrp.Clerk	typeref:typename:rpc.Err
+InstallShard	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) InstallShard(args *shardrpc.InstallShardArgs, reply *shardrpc.InstallShardRe/;"	f	struct:shardgrp.KVServer
+InstallShardArgs	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type InstallShardArgs struct {$/;"	s	package:shardrpc
+InstallShardReply	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^type InstallShardReply struct {$/;"	s	package:shardrpc
+IraftServer	src/raft1/test.go	/^type IraftServer interface {$/;"	i	package:raft
+IsClosed	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) IsClosed() bool {$/;"	f	struct:demux.DemuxClnt	typeref:typename:bool
+IsConnected	src/tester1/group.go	/^func (sg *ServerGrp) IsConnected(i int) bool {$/;"	f	struct:tester.ServerGrp	typeref:typename:bool
+IsLongDelays	src/labrpc/labrpc.go	/^func (rn *Network) IsLongDelays() bool {$/;"	f	struct:labrpc.Network	typeref:typename:bool
+IsMember	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) IsMember(gid tester.Tgid) bool {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:bool
+IsReliable	src/labrpc/labrpc.go	/^func (rn *Network) IsReliable() bool {$/;"	f	struct:labrpc.Network	typeref:typename:bool
+IsReliable	src/tester1/config.go	/^func (cfg *Config) IsReliable() bool {$/;"	f	struct:tester.Config	typeref:typename:bool
+Itester	src/raft1/server.go	/^type Itester interface {$/;"	i	package:raft
+Join	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) Join(servers map[tester.Tgid][]string) bool {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:bool
+JoinBalance	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) JoinBalance(servers map[tester.Tgid][]string) bool {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:bool
+JunkArgs	src/labrpc/test_test.go	/^type JunkArgs struct {$/;"	s	package:labrpc
+JunkReply	src/labrpc/test_test.go	/^type JunkReply struct {$/;"	s	package:labrpc
+JunkServer	src/labrpc/test_test.go	/^type JunkServer struct {$/;"	s	package:labrpc
+KVServer	src/kvraft1/server.go	/^type KVServer struct {$/;"	s	package:kvraft
+KVServer	src/kvsrv1/server.go	/^type KVServer struct {$/;"	s	package:kvsrv
+KVServer	src/shardkv1/shardgrp/server.go	/^type KVServer struct {$/;"	s	package:shardgrp
+Key	src/kvsrv1/rpc/rpc.go	/^	Key     string$/;"	m	struct:rpc.PutArgs	typeref:typename:string
+Key	src/kvsrv1/rpc/rpc.go	/^	Key string$/;"	m	struct:rpc.GetArgs	typeref:typename:string
+Key	src/models1/kv.go	/^	Key     string$/;"	m	struct:models.KvInput	typeref:typename:string
+Key	src/mr/worker.go	/^	Key   string$/;"	m	struct:mr.KeyValue	typeref:typename:string
+Key2Shard	src/shardkv1/shardcfg/shardcfg.go	/^func Key2Shard(key string) Tshid {$/;"	f	package:shardcfg	typeref:typename:Tshid
+KeyValue	src/mr/worker.go	/^type KeyValue struct {$/;"	s	package:mr
+Kill	src/kvraft1/rsm/test.go	/^func (rs *rsmServer) Kill() {$/;"	f	struct:rsm.rsmServer
+Kill	src/tester1/group.go	/^func (sg *ServerGrp) Kill(srvs []int) {$/;"	f	struct:tester.ServerGrp
+Kind	src/mr/rpc.go	/^	Kind        TaskKind$/;"	m	struct:mr.TaskOutput	typeref:typename:TaskKind
+Kind	src/mr/rpc.go	/^	Kind       TaskKind$/;"	m	struct:mr.TaskInput	typeref:typename:TaskKind
+KvInput	src/models1/kv.go	/^type KvInput struct {$/;"	s	package:models
+KvModel	src/models1/kv.go	/^var KvModel = porcupine.Model{$/;"	v	package:models
+KvOutput	src/models1/kv.go	/^type KvOutput struct {$/;"	s	package:models
+KvState	src/models1/kv.go	/^type KvState struct {$/;"	s	package:models
+LABS	Makefile	/^LABS=" lab1 lab2 lab3a lab3b lab3c lab3d lab4a lab4b lab4c lab5a lab5b lab5c "$/;"	m
+LONGDELAY	src/labrpc/labrpc.go	/^	LONGDELAY  = 7000 \/\/ ms$/;"	c	package:labrpc
+LabDecoder	src/labgob/labgob.go	/^type LabDecoder struct {$/;"	s	package:labgob
+LabEncoder	src/labgob/labgob.go	/^type LabEncoder struct {$/;"	s	package:labgob
+Leader	src/kvraft1/client.go	/^func (ck *Clerk) Leader() int {$/;"	f	struct:kvraft.Clerk	typeref:typename:int
+Leader	src/raft1/server.go	/^	Leader bool$/;"	m	struct:raft.GetStateReply	typeref:typename:bool
+Leader	src/raft1/server.go	/^	Leader bool$/;"	m	struct:raft.StartReply	typeref:typename:bool
+Leader	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) Leader() int {$/;"	f	struct:shardgrp.Clerk	typeref:typename:int
+Leave	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) Leave(gids []tester.Tgid) bool {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:bool
+LeaveBalance	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) LeaveBalance(gids []tester.Tgid) bool {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:bool
+Len	src/kvtest1/porcupine.go	/^func (log *OpLog) Len() int {$/;"	f	struct:kvtest.OpLog	typeref:typename:int
+Len	src/main/mrsequential.go	/^func (a ByKey) Len() int           { return len(a) }$/;"	f	type:main.ByKey	typeref:typename:int
+Less	src/main/mrsequential.go	/^func (a ByKey) Less(i, j int) bool { return a[i].Key < a[j].Key }$/;"	f	type:main.ByKey	typeref:typename:bool
+Lock	src/kvsrv1/lock/lock.go	/^type Lock struct {$/;"	s	package:lock
+Log	src/raft1/test.go	/^	Log   map[int]any$/;"	m	struct:raft.IngestLogArgs	typeref:typename:map[int]any
+LongDelays	src/labrpc/labrpc.go	/^func (rn *Network) LongDelays(yes bool) {$/;"	f	struct:labrpc.Network
+LongReordering	src/labrpc/labrpc.go	/^func (rn *Network) LongReordering(yes bool) {$/;"	f	struct:labrpc.Network
+LookupEnd	src/labrpc/labrpc.go	/^func (rn *Network) LookupEnd(endname interface{}) *ClientEnd {$/;"	f	struct:labrpc.Network	typeref:typename:*ClientEnd
+MAINS	src/Makefile	/^MAINS=kvsrv1 raft1 kvraft1$/;"	m
+MAIN_BUILDS	src/Makefile	/^MAIN_BUILDS=$(addsuffix -build, $(MAINS))$/;"	m
+MAXDELAY	src/labrpc/labrpc.go	/^	MAXDELAY   = LONGDELAY + 100$/;"	c	package:labrpc
+MAXLOGSIZE	src/raft1/raft_test.go	/^	MAXLOGSIZE = 2000$/;"	c	package:raft
+MAX_WAIT_TIME_FOR_TASK	src/mr/coordinator.go	/^const MAX_WAIT_TIME_FOR_TASK time.Duration = time.Second * 10 \/\/ Wait for max 10 seconds for t/;"	c	package:mr	typeref:typename:time.Duration
+MIT OCW 6.5840: Distributed Systems Lab	README.md	/^# MIT OCW 6.5840: Distributed Systems Lab$/;"	c
+MSGLEN	src/tester1/demux/transport.go	/^	MSGLEN = 65536$/;"	c	package:demux
+Make	src/raft1/raft.go	/^func Make(peers []*labrpc.ClientEnd, me int,$/;"	f	package:raft	typeref:typename:raftapi.Raft
+MakeClerk	src/kvraft1/client.go	/^func MakeClerk(clnt *tester.Clnt, servers []string) kvtest.IKVClerk {$/;"	f	package:kvraft	typeref:typename:kvtest.IKVClerk
+MakeClerk	src/kvraft1/test.go	/^func (ts *Test) MakeClerk() kvtest.IKVClerk {$/;"	f	struct:kvraft.Test	typeref:typename:kvtest.IKVClerk
+MakeClerk	src/kvsrv1/client.go	/^func MakeClerk(clnt *tester.Clnt, server string) kvtest.IKVClerk {$/;"	f	package:kvsrv	typeref:typename:kvtest.IKVClerk
+MakeClerk	src/kvsrv1/test.go	/^func (ts *TestKV) MakeClerk() kvtest.IKVClerk {$/;"	f	struct:kvsrv.TestKV	typeref:typename:kvtest.IKVClerk
+MakeClerk	src/kvtest1/kvtest.go	/^	MakeClerk() IKVClerk$/;"	n	interface:kvtest.IClerkMaker	typeref:typename:IKVClerk
+MakeClerk	src/kvtest1/kvtest.go	/^func (ts *Test) MakeClerk() IKVClerk {$/;"	f	struct:kvtest.Test	typeref:typename:IKVClerk
+MakeClerk	src/shardkv1/client.go	/^func MakeClerk(clnt *tester.Clnt, sck *shardctrler.ShardCtrler) kvtest.IKVClerk {$/;"	f	package:shardkv	typeref:typename:kvtest.IKVClerk
+MakeClerk	src/shardkv1/shardgrp/client.go	/^func MakeClerk(clnt *tester.Clnt, servers []string) *Clerk {$/;"	f	package:shardgrp	typeref:typename:*Clerk
+MakeClerk	src/shardkv1/test.go	/^func (ts *Test) MakeClerk() kvtest.IKVClerk {$/;"	f	struct:shardkv.Test	typeref:typename:kvtest.IKVClerk
+MakeClerkTo	src/kvraft1/test.go	/^func (ts *Test) MakeClerkTo(to []int) kvtest.IKVClerk {$/;"	f	struct:kvraft.Test	typeref:typename:kvtest.IKVClerk
+MakeClient	src/tester1/clnts.go	/^func (clnts *Clnts) MakeClient() *Clnt {$/;"	f	struct:tester.Clnts	typeref:typename:*Clnt
+MakeClientTo	src/tester1/clnts.go	/^func (clnts *Clnts) MakeClientTo(srvs []string) *Clnt {$/;"	f	struct:tester.Clnts	typeref:typename:*Clnt
+MakeConfig	src/tester1/config.go	/^func MakeConfig(t *testing.T, n int, reliable bool, prog string, args []string) *Config {$/;"	f	package:tester	typeref:typename:*Config
+MakeCoordinator	src/mr/coordinator.go	/^func MakeCoordinator(sockName string, files []string, nReduce int) *Coordinator {$/;"	f	package:mr	typeref:typename:*Coordinator
+MakeEnd	src/labrpc/labrpc.go	/^func (rn *Network) MakeEnd(endname interface{}) *ClientEnd {$/;"	f	struct:labrpc.Network	typeref:typename:*ClientEnd
+MakeGroup	src/tester1/group.go	/^func (gs *Groups) MakeGroup(prog string, args []string, gid Tgid, nsrv int) {$/;"	f	struct:tester.Groups
+MakeGroupStart	src/tester1/config.go	/^func (cfg *Config) MakeGroupStart(prog string, args []string, gid Tgid, nsrv int) {$/;"	f	struct:tester.Config
+MakeKVServer	src/kvsrv1/server.go	/^func MakeKVServer() *KVServer {$/;"	f	package:kvsrv	typeref:typename:*KVServer
+MakeKeys	src/kvtest1/kvtest.go	/^func MakeKeys(n int) []string {$/;"	f	package:kvtest	typeref:typename:[]string
+MakeLock	src/kvsrv1/lock/lock.go	/^func MakeLock(ck kvtest.IKVClerk, lockname string) *Lock {$/;"	f	package:lock	typeref:typename:*Lock
+MakeNetwork	src/labrpc/labrpc.go	/^func MakeNetwork() *Network {$/;"	f	package:labrpc	typeref:typename:*Network
+MakePartition	src/tester1/group.go	/^func (sg *ServerGrp) MakePartition(l int) ([]int, []int) {$/;"	f	struct:tester.ServerGrp	typeref:typename:([]int, []int)
+MakePersister	src/tester1/persister.go	/^func MakePersister() *Persister {$/;"	f	package:tester	typeref:typename:*Persister
+MakeRSM	src/kvraft1/rsm/rsm.go	/^func MakeRSM(servers []*labrpc.ClientEnd, me int, persister *tester.Persister, maxraftstate int,/;"	f	package:rsm	typeref:typename:*RSM
+MakeServer	src/labrpc/labrpc.go	/^func MakeServer() *Server {$/;"	f	package:labrpc	typeref:typename:*Server
+MakeService	src/labrpc/labrpc.go	/^func MakeService(rcvr interface{}) *Service {$/;"	f	package:labrpc	typeref:typename:*Service
+MakeShardConfig	src/shardkv1/shardcfg/shardcfg.go	/^func MakeShardConfig() *ShardConfig {$/;"	f	package:shardcfg	typeref:typename:*ShardConfig
+MakeShardCtrler	src/shardkv1/shardctrler/shardctrler.go	/^func MakeShardCtrler(clnt *tester.Clnt) *ShardCtrler {$/;"	f	package:shardctrler	typeref:typename:*ShardCtrler
+MakeTest	src/kvraft1/test.go	/^func MakeTest(t *testing.T, part string, nclients, nservers int, reliable bool, crash bool, part/;"	f	package:kvraft	typeref:typename:*Test
+MakeTest	src/kvtest1/kvtest.go	/^func MakeTest(t *testing.T, cfg *tester.Config, randomkeys bool, mck IClerkMaker) *Test {$/;"	f	package:kvtest	typeref:typename:*Test
+MakeTest	src/shardkv1/test.go	/^func MakeTest(t *testing.T, part string, reliable bool) *Test {$/;"	f	package:shardkv	typeref:typename:*Test
+MakeTestKV	src/kvsrv1/test.go	/^func MakeTestKV(t *testing.T, reliable bool) *TestKV {$/;"	f	package:kvsrv	typeref:typename:*TestKV
+MakeTestLeases	src/shardkv1/test.go	/^func MakeTestLeases(t *testing.T, part string, reliable bool) *Test {$/;"	f	package:shardkv	typeref:typename:*Test
+MakeTestMaxRaft	src/shardkv1/test.go	/^func MakeTestMaxRaft(t *testing.T, part string, reliable, partition bool, maxraftstate int) *Tes/;"	f	package:shardkv	typeref:typename:*Test
+Map	src/mrapps/crash.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/early_exit.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/indexer.go	/^func Map(document string, value string) (res []mr.KeyValue) {$/;"	f	package:main	typeref:typename:(res []mr.KeyValue)
+Map	src/mrapps/jobcount.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/mtiming.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/nocrash.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/rtiming.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Map	src/mrapps/wc.go	/^func Map(filename string, contents string) []mr.KeyValue {$/;"	f	package:main	typeref:typename:[]mr.KeyValue
+Marshall	src/labrpc/labrpc.go	/^func Marshall(args interface{}) []byte {$/;"	f	package:labrpc	typeref:typename:[]byte
+MaxRaftState	src/tester1/daemonclnt.go	/^var MaxRaftState int$/;"	v	package:tester	typeref:typename:int
+MemSize	src/tester1/daemonsrv.go	/^	MemSize uint64$/;"	m	struct:tester.MemSizeReply	typeref:typename:uint64
+MemSize	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) MemSize(args MemSizeArgs, reply *MemSizeReply) {$/;"	f	struct:tester.DaemonSrv
+MemSize	src/tester1/group.go	/^func (sg *ServerGrp) MemSize() uint64 {$/;"	f	struct:tester.ServerGrp	typeref:typename:uint64
+MemSizeArgs	src/tester1/daemonsrv.go	/^type MemSizeArgs struct{}$/;"	s	package:tester
+MemSizeReply	src/tester1/daemonsrv.go	/^type MemSizeReply struct {$/;"	s	package:tester
+Method	src/tester1/sockrpc/rpcclnt.go	/^	Method string$/;"	m	struct:sockrpc.RPCArgs	typeref:typename:string
+Method	src/tester1/testsrv.go	/^	Method string$/;"	m	struct:tester.ForwardArgs	typeref:typename:string
+Msg	src/raft1/test.go	/^	Msg   raftapi.ApplyMsg$/;"	m	struct:raft.CheckLogsArgs	typeref:typename:raftapi.ApplyMsg
+Mutex	src/kvtest1/porcupine.go	/^	sync.Mutex$/;"	M	struct:kvtest.OpLog	typeref:typename:sync.Mutex
+Mutex	src/tester1/demux/callmap.go	/^	sync.Mutex$/;"	M	struct:demux.callMap	typeref:typename:sync.Mutex
+N	src/kvraft1/rsm/server.go	/^	N int$/;"	m	struct:rsm.IncRep	typeref:typename:int
+N	src/kvtest1/kvtest.go	/^	N  int$/;"	m	struct:kvtest.EntryN	typeref:typename:int
+N	src/kvtest1/kvtest.go	/^	N  int$/;"	m	struct:kvtest.entry	typeref:typename:int
+N	src/tester1/group.go	/^func (sg *ServerGrp) N() int {$/;"	f	struct:tester.ServerGrp	typeref:typename:int
+NACQUIRE	src/kvsrv1/lock/lock_test.go	/^	NACQUIRE = 10$/;"	c	package:lock
+NCLNT	src/kvraft1/kvraft_test.go	/^	NCLNT = 10$/;"	c	package:kvraft
+NCLNT	src/kvsrv1/lock/lock_test.go	/^	NCLNT    = 10$/;"	c	package:lock
+NGRP	src/shardkv1/shardkv_test.go	/^	NGRP  = 8$/;"	c	package:shardkv
+NKEYS	src/shardkv1/shardkv_test.go	/^	NKEYS = 5 * shardcfg.NShards$/;"	c	package:shardkv
+NReduce	src/mr/rpc.go	/^	NReduce    uint$/;"	m	struct:mr.TaskInput	typeref:typename:uint
+NSEC	src/kvraft1/rsm/test.go	/^	NSEC = 10$/;"	c	package:rsm
+NSEC	src/kvsrv1/lock/lock_test.go	/^	NSEC     = 2$/;"	c	package:lock
+NSRV	src/kvraft1/rsm/test.go	/^	NSRV = 3$/;"	c	package:rsm
+NSRV	src/shardkv1/test.go	/^	NSRV          = 3              \/\/ servers per group$/;"	c	package:shardkv
+NShards	src/shardkv1/shardcfg/shardcfg.go	/^	NShards  = 12 \/\/ The number of shards.$/;"	c	package:shardcfg
+Name	src/tester1/sockrpc/rpcsrv.go	/^func (rpcs *RPCSrv) Name() string {$/;"	f	struct:sockrpc.RPCSrv	typeref:typename:string
+Network	src/labrpc/labrpc.go	/^type Network struct {$/;"	s	package:labrpc
+NewDecoder	src/labgob/labgob.go	/^func NewDecoder(r io.Reader) *LabDecoder {$/;"	f	package:labgob	typeref:typename:*LabDecoder
+NewDemuxClnt	src/tester1/demux/dmxclnt.go	/^func NewDemuxClnt(clnt, srv string, trans TransportI) (*DemuxClnt, error) {$/;"	f	package:demux	typeref:typename:(*DemuxClnt, error)
+NewDemuxSrv	src/tester1/demux/dmxsrv.go	/^func NewDemuxSrv(srvEnd string, srv ServerI, trans TransportI) *DemuxSrv {$/;"	f	package:demux	typeref:typename:*DemuxSrv
+NewEncoder	src/labgob/labgob.go	/^func NewEncoder(w io.Writer) *LabEncoder {$/;"	f	package:labgob	typeref:typename:*LabEncoder
+NewRPCClnt	src/tester1/sockrpc/rpcclnt.go	/^func NewRPCClnt(clntEnd, srvEnd string) *RPCClnt {$/;"	f	package:sockrpc	typeref:typename:*RPCClnt
+NewRPCSrv	src/tester1/sockrpc/rpcsrv.go	/^func NewRPCSrv(sock string) *RPCSrv {$/;"	f	package:sockrpc	typeref:typename:*RPCSrv
+NewRSMSrv	src/kvraft1/rsm/server.go	/^func NewRSMSrv(tc *tester.TesterClnt, ends []*labrpc.ClientEnd, grp tester.Tgid, srv int, persis/;"	f	package:rsm	typeref:typename:[]any
+NewRfsrv	src/raft1/server.go	/^func NewRfsrv(tc *tester.TesterClnt, ends []*labrpc.ClientEnd, grp tester.Tgid, srv int, persist/;"	f	package:raft	typeref:typename:[]any
+NewServer	src/kvraft1/server.go	/^func NewServer(tc *tester.TesterClnt, ends []*labrpc.ClientEnd, grp tester.Tgid, srv int, persis/;"	f	package:kvraft	typeref:typename:[]any
+NewServer	src/shardkv1/shardgrp/server.go	/^func NewServer(tc *tester.TesterClnt, ends []*labrpc.ClientEnd, grp tester.Tgid, srv int, persis/;"	f	package:shardgrp	typeref:typename:[]any
+NewTransport	src/tester1/demux/transport.go	/^func NewTransport(c net.Conn) TransportI {$/;"	f	package:demux	typeref:typename:TransportI
+Nmaybe	src/kvtest1/kvtest.go	/^	Nmaybe int$/;"	m	struct:kvtest.ClntRes	typeref:typename:int
+Nok	src/kvtest1/kvtest.go	/^	Nok    int$/;"	m	struct:kvtest.ClntRes	typeref:typename:int
+Null	src/kvraft1/rsm/server.go	/^type Null struct {$/;"	s	package:rsm
+NullRep	src/kvraft1/rsm/server.go	/^type NullRep struct {$/;"	s	package:rsm
+Num	src/shardkv1/shardcfg/shardcfg.go	/^	Num    Tnum                     \/\/ config number$/;"	m	struct:shardcfg.ShardConfig	typeref:typename:Tnum
+Num	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Num   shardcfg.Tnum$/;"	m	struct:shardrpc.DeleteShardArgs	typeref:typename:shardcfg.Tnum
+Num	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Num   shardcfg.Tnum$/;"	m	struct:shardrpc.FreezeShardArgs	typeref:typename:shardcfg.Tnum
+Num	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Num   shardcfg.Tnum$/;"	m	struct:shardrpc.FreezeShardReply	typeref:typename:shardcfg.Tnum
+Num	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Num   shardcfg.Tnum$/;"	m	struct:shardrpc.InstallShardArgs	typeref:typename:shardcfg.Tnum
+NumFirst	src/shardkv1/shardcfg/shardcfg.go	/^	NumFirst = Tnum(1)$/;"	c	package:shardcfg
+OK	src/kvsrv1/rpc/rpc.go	/^	OK         = "OK"$/;"	c	package:rpc
+Ok	src/tester1/demux/transport.go	/^	Ok   bool$/;"	m	struct:demux.msg	typeref:typename:bool
+Ok	src/tester1/testsrv.go	/^	Ok  bool$/;"	m	struct:tester.ForwardReply	typeref:typename:bool
+OneClientAppend	src/kvtest1/kvtest.go	/^func (ts *Test) OneClientAppend(me int, ck IKVClerk, done chan struct{}) ClntRes {$/;"	f	struct:kvtest.Test	typeref:typename:ClntRes
+OneClientPut	src/kvtest1/kvtest.go	/^func (ts *Test) OneClientPut(cli int, ck IKVClerk, ka []string, done chan struct{}) ClntRes {$/;"	f	struct:kvtest.Test	typeref:typename:ClntRes
+OnePut	src/kvtest1/kvtest.go	/^func (ts *Test) OnePut(me int, ck IKVClerk, key string, ver rpc.Tversion) (rpc.Tversion, bool) {$/;"	f	struct:kvtest.Test	typeref:typename:(rpc.Tversion, bool)
+Op	src/kvraft1/rsm/rsm.go	/^type Op struct {$/;"	s	package:rsm
+Op	src/models1/kv.go	/^	Op      uint8 \/\/ 0 => get, 1 => put$/;"	m	struct:models.KvInput	typeref:typename:uint8
+OpInc	src/tester1/config.go	/^func (cfg *Config) OpInc() {$/;"	f	struct:tester.Config
+OpLog	src/kvtest1/porcupine.go	/^type OpLog struct {$/;"	s	package:kvtest
+OutputFiles	src/mr/rpc.go	/^	OutputFiles []string$/;"	m	struct:mr.TaskOutput	typeref:typename:[]string
+Partition	src/tester1/group.go	/^func (sg *ServerGrp) Partition(p1 []int, p2 []int) {$/;"	f	struct:tester.ServerGrp
+Partitioner	src/kvtest1/kvtest.go	/^func (ts *Test) Partitioner(gid tester.Tgid, ch chan bool) {$/;"	f	struct:kvtest.Test
+PersistBytes	src/raft1/raft.go	/^func (rf *Raft) PersistBytes() int {$/;"	f	struct:raft.Raft	typeref:typename:int
+PersistBytes	src/raftapi/raftapi.go	/^	PersistBytes() int$/;"	n	interface:raftapi.Raft	typeref:typename:int
+Persister	src/tester1/persister.go	/^type Persister struct {$/;"	s	package:tester
+PostAnnotatorInfoInterval	src/tester1/annotator.go	/^func (trpc *TesterRPC) PostAnnotatorInfoInterval($/;"	f	unknown:tester.TesterRPC
+PostAnnotatorInfoInterval	src/tester1/annotator.go	/^func PostAnnotatorInfoInterval(start int64, desp, details string) {$/;"	f	package:tester
+PostAnnotatorInfoIntervalArgs	src/tester1/annotator.go	/^type PostAnnotatorInfoIntervalArgs struct {$/;"	s	package:tester
+PostAnnotatorInfoIntervalReply	src/tester1/annotator.go	/^type PostAnnotatorInfoIntervalReply struct { }$/;"	s	package:tester
+PostAnnotatorPoint	src/tester1/annotator.go	/^func (trpc *TesterRPC) PostAnnotatorPoint($/;"	f	unknown:tester.TesterRPC
+PostAnnotatorPointArgs	src/tester1/annotator.go	/^type PostAnnotatorPointArgs struct {$/;"	s	package:tester
+PostAnnotatorPointReply	src/tester1/annotator.go	/^type PostAnnotatorPointReply struct { }$/;"	s	package:tester
+Prevok	src/raft1/test.go	/^	Prevok bool$/;"	m	struct:raft.CheckLogsReply	typeref:typename:bool
+Put	src/kvraft1/client.go	/^func (ck *Clerk) Put(key string, value string, version rpc.Tversion) rpc.Err {$/;"	f	struct:kvraft.Clerk	typeref:typename:rpc.Err
+Put	src/kvraft1/server.go	/^func (kv *KVServer) Put(args *rpc.PutArgs, reply *rpc.PutReply) {$/;"	f	struct:kvraft.KVServer
+Put	src/kvsrv1/client.go	/^func (ck *Clerk) Put(key, value string, version rpc.Tversion) rpc.Err {$/;"	f	struct:kvsrv.Clerk	typeref:typename:rpc.Err
+Put	src/kvsrv1/server.go	/^func (kv *KVServer) Put(args *rpc.PutArgs, reply *rpc.PutReply) {$/;"	f	struct:kvsrv.KVServer
+Put	src/kvtest1/kvtest.go	/^	Put(string, string, rpc.Tversion) rpc.Err$/;"	n	interface:kvtest.IKVClerk	typeref:typename:rpc.Err
+Put	src/kvtest1/kvtest.go	/^func (tck *TestClerk) Put(key string, value string, version rpc.Tversion) rpc.Err {$/;"	f	struct:kvtest.TestClerk	typeref:typename:rpc.Err
+Put	src/kvtest1/porcupine.go	/^func (ts *Test) Put(ck IKVClerk, key string, value string, version rpc.Tversion, cli int) rpc.Er/;"	f	unknown:kvtest.Test	typeref:typename:rpc.Err
+Put	src/kvtest1/porcupine.go	/^func Put(cfg *tester.Config, ck IKVClerk, key string, value string, version rpc.Tversion, log *O/;"	f	package:kvtest	typeref:typename:rpc.Err
+Put	src/shardkv1/client.go	/^func (ck *Clerk) Put(key string, value string, version rpc.Tversion) rpc.Err {$/;"	f	struct:shardkv.Clerk	typeref:typename:rpc.Err
+Put	src/shardkv1/shardgrp/client.go	/^func (ck *Clerk) Put(key string, value string, version rpc.Tversion) rpc.Err {$/;"	f	struct:shardgrp.Clerk	typeref:typename:rpc.Err
+Put	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) Put(args *rpc.PutArgs, reply *rpc.PutReply) {$/;"	f	struct:shardgrp.KVServer
+PutArgs	src/kvsrv1/rpc/rpc.go	/^type PutArgs struct {$/;"	s	package:rpc
+PutAtLeastOnce	src/kvtest1/kvtest.go	/^func (ts *Test) PutAtLeastOnce(ck IKVClerk, key, value string, ver rpc.Tversion, me int) rpc.Tve/;"	f	struct:kvtest.Test	typeref:typename:rpc.Tversion
+PutAtLeastOnceJson	src/kvtest1/kvtest.go	/^func (ts *Test) PutAtLeastOnceJson(ck IKVClerk, key string, value any, ver rpc.Tversion, me int)/;"	f	struct:kvtest.Test	typeref:typename:rpc.Tversion
+PutJson	src/kvtest1/kvtest.go	/^func (ts *Test) PutJson(ck IKVClerk, key string, v any, ver rpc.Tversion, me int) rpc.Err {$/;"	f	struct:kvtest.Test	typeref:typename:rpc.Err
+PutReply	src/kvsrv1/rpc/rpc.go	/^type PutReply struct {$/;"	s	package:rpc
+Query	src/shardkv1/shardctrler/shardctrler.go	/^func (sck *ShardCtrler) Query() *shardcfg.ShardConfig {$/;"	f	struct:shardctrler.ShardCtrler	typeref:typename:*shardcfg.ShardConfig
+RACE	src/Makefile	/^RACE=-race$/;"	m
+RPC	src/tester1/sockrpc/rpcclnt.go	/^func (rpcc *RPCClnt) RPC(method string, args []byte) ([]byte, bool) {$/;"	f	struct:sockrpc.RPCClnt	typeref:typename:([]byte, bool)
+RPCArgs	src/tester1/sockrpc/rpcclnt.go	/^type RPCArgs struct {$/;"	s	package:sockrpc
+RPCClnt	src/tester1/sockrpc/rpcclnt.go	/^type RPCClnt struct {$/;"	s	package:sockrpc
+RPCClnt	src/tester1/testclnt.go	/^	*sockrpc.RPCClnt$/;"	M	struct:tester.TesterClnt	typeref:typename:*sockrpc.RPCClnt
+RPCMarshall	src/tester1/sockrpc/rpcclnt.go	/^func (rpcc *RPCClnt) RPCMarshall(method string, args any, reply any) bool {$/;"	f	struct:sockrpc.RPCClnt	typeref:typename:bool
+RPCSrv	src/tester1/sockrpc/rpcsrv.go	/^type RPCSrv struct {$/;"	s	package:sockrpc
+RPCSrv	src/tester1/testsrv.go	/^	*sockrpc.RPCSrv$/;"	M	struct:tester.TesterRPC	typeref:typename:*sockrpc.RPCSrv
+RSM	src/kvraft1/rsm/rsm.go	/^type RSM struct {$/;"	s	package:rsm
+RSMproxy	src/kvraft1/rsm/proxy.go	/^type RSMproxy struct {$/;"	s	package:rsm
+Raft	src/kvraft1/rsm/rsm.go	/^func (rsm *RSM) Raft() raftapi.Raft {$/;"	f	struct:rsm.RSM	typeref:typename:raftapi.Raft
+Raft	src/raft1/raft.go	/^type Raft struct {$/;"	s	package:raft
+Raft	src/raftapi/raftapi.go	/^type Raft interface {$/;"	i	package:raftapi
+RaftElectionTimeout	src/raft1/raft_test.go	/^const RaftElectionTimeout = 1000 * time.Millisecond$/;"	c	package:raft
+RaftSize	src/tester1/daemonsrv.go	/^	RaftSize int$/;"	m	struct:tester.StateSizeReply	typeref:typename:int
+RaftSize	src/tester1/group.go	/^func (sg *ServerGrp) RaftSize() int {$/;"	f	struct:tester.ServerGrp	typeref:typename:int
+RaftStateSize	src/tester1/persister.go	/^func (ps *Persister) RaftStateSize() int {$/;"	f	struct:tester.Persister	typeref:typename:int
+Raftstate	src/tester1/daemonsrv.go	/^	Raftstate []byte$/;"	m	struct:tester.CheckpointPersisterReply	typeref:typename:[]byte
+Raftstate	src/tester1/daemonsrv.go	/^	Raftstate []byte$/;"	m	struct:tester.InitArgs	typeref:typename:[]byte
+RandString	src/mr/util.go	/^func RandString(n int) string {$/;"	f	package:mr	typeref:typename:string
+RandValue	src/kvtest1/kvtest.go	/^func RandValue(n int) string {$/;"	f	package:kvtest	typeref:typename:string
+Randstring	src/tester1/config.go	/^func Randstring(n int) string {$/;"	f	package:tester	typeref:typename:string
+Read	src/kvtest1/porcupine.go	/^func (log *OpLog) Read() []porcupine.Operation {$/;"	f	struct:kvtest.OpLog	typeref:typename:[]porcupine.Operation
+ReadCall	src/tester1/demux/transport.go	/^	ReadCall() (Ttag, []byte, bool, error)$/;"	n	interface:demux.TransportI	typeref:typename:(Ttag, []byte, bool, error)
+ReadCall	src/tester1/demux/transport.go	/^func (t *transport) ReadCall() (Ttag, []byte, bool, error) {$/;"	f	struct:demux.transport	typeref:typename:(Ttag, []byte, bool, error)
+ReadRaftState	src/tester1/persister.go	/^func (ps *Persister) ReadRaftState() []byte {$/;"	f	struct:tester.Persister	typeref:typename:[]byte
+ReadSnapshot	src/tester1/persister.go	/^func (ps *Persister) ReadSnapshot() []byte {$/;"	f	struct:tester.Persister	typeref:typename:[]byte
+Rebalance	src/shardkv1/shardcfg/shardcfg.go	/^func (c *ShardConfig) Rebalance() {$/;"	f	struct:shardcfg.ShardConfig
+Reduce	src/mrapps/crash.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/early_exit.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/indexer.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/jobcount.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/mtiming.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/nocrash.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/rtiming.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Reduce	src/mrapps/wc.go	/^func Reduce(key string, values []string) string {$/;"	f	package:main	typeref:typename:string
+Register	src/labgob/labgob.go	/^func Register(value interface{}) {$/;"	f	package:labgob
+RegisterName	src/labgob/labgob.go	/^func RegisterName(name string, value interface{}) {$/;"	f	package:labgob
+Release	src/kvsrv1/lock/lock.go	/^func (lk *Lock) Release() {$/;"	f	struct:lock.Lock
+Reliable	src/labrpc/labrpc.go	/^func (rn *Network) Reliable(yes bool) {$/;"	f	struct:labrpc.Network
+Rep	src/kvraft1/rsm/server.go	/^	Rep any$/;"	m	struct:rsm.SubmitReply	typeref:typename:any
+Rep	src/tester1/testsrv.go	/^	Rep []byte$/;"	m	struct:tester.ForwardReply	typeref:typename:[]byte
+Req	src/kvraft1/rsm/server.go	/^	Req any$/;"	m	struct:rsm.SubmitArgs	typeref:typename:any
+RequestVote	src/raft1/raft.go	/^func (rf *Raft) RequestVote(args *RequestVoteArgs, reply *RequestVoteReply) {$/;"	f	struct:raft.Raft
+RequestVoteArgs	src/raft1/raft.go	/^type RequestVoteArgs struct {$/;"	s	package:raft
+RequestVoteReply	src/raft1/raft.go	/^type RequestVoteReply struct {$/;"	s	package:raft
+Restore	src/kvraft1/rsm/rsm.go	/^	Restore([]byte)$/;"	n	interface:rsm.StateMachine
+Restore	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) Restore(data []byte) {$/;"	f	struct:rsm.rsmSrv
+Restore	src/kvraft1/server.go	/^func (kv *KVServer) Restore(data []byte) {$/;"	f	struct:kvraft.KVServer
+Restore	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) Restore(data []byte) {$/;"	f	struct:shardgrp.KVServer
+Rfproxy	src/raft1/proxy.go	/^type Rfproxy struct {$/;"	s	package:raft
+RpcCount	src/tester1/group.go	/^func (sg *ServerGrp) RpcCount(server int) int {$/;"	f	struct:tester.ServerGrp	typeref:typename:int
+RpcTotal	src/tester1/config.go	/^func (cfg *Config) RpcTotal() int {$/;"	f	struct:tester.Config	typeref:typename:int
+SHORTDELAY	src/labrpc/labrpc.go	/^	SHORTDELAY = 27   \/\/ ms$/;"	c	package:labrpc
+Save	src/tester1/persister.go	/^func (ps *Persister) Save(raftstate []byte, snapshot []byte) {$/;"	f	struct:tester.Persister
+SendReceive	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) SendReceive(b []byte) ([]byte, bool, error) {$/;"	f	struct:demux.DemuxClnt	typeref:typename:([]byte, bool, error)
+SendTaskOutput	src/mr/coordinator.go	/^func (c *Coordinator) SendTaskOutput(args *TaskOutput, reply *SendTaskOutputReply) error {$/;"	f	struct:mr.Coordinator	typeref:typename:error
+SendTaskOutputReply	src/mr/rpc.go	/^type SendTaskOutputReply struct {$/;"	s	package:mr
+ServeRequest	src/tester1/demux/dmxsrv.go	/^	ServeRequest(clntEnd string, req []byte) ([]byte, bool)$/;"	n	interface:demux.ServerI	typeref:typename:([]byte, bool)
+ServeRequest	src/tester1/sockrpc/rpcsrv.go	/^func (rpcs *RPCSrv) ServeRequest(clntEnd string, b []byte) ([]byte, bool) {$/;"	f	struct:sockrpc.RPCSrv	typeref:typename:([]byte, bool)
+Server	src/labrpc/labrpc.go	/^type Server struct {$/;"	s	package:labrpc
+Server	src/tester1/sockrpc/rpcclnt.go	/^func (rpcc *RPCClnt) Server() string {$/;"	f	struct:sockrpc.RPCClnt	typeref:typename:string
+Server	src/tester1/srv.go	/^type Server struct {$/;"	s	package:tester
+ServerGrp	src/tester1/group.go	/^type ServerGrp struct {$/;"	s	package:tester
+ServerI	src/tester1/demux/dmxsrv.go	/^type ServerI interface {$/;"	i	package:demux
+ServerName	src/tester1/group.go	/^func ServerName(gid Tgid, i int) string {$/;"	f	package:tester	typeref:typename:string
+Servers	src/tester1/group.go	/^func (sg *ServerGrp) Servers() []int {$/;"	f	struct:tester.ServerGrp	typeref:typename:[]int
+Service	src/labrpc/labrpc.go	/^type Service struct {$/;"	s	package:labrpc
+SetAnnotationFinalized	src/tester1/annotation.go	/^func SetAnnotationFinalized() {$/;"	f	package:tester
+SetCall	src/labrpc/labrpc.go	/^func (e *ClientEnd) SetCall(f Fcall) {$/;"	f	struct:labrpc.ClientEnd
+SetDispatch	src/labrpc/labrpc.go	/^func (rs *Server) SetDispatch(f Fdispatch) {$/;"	f	struct:labrpc.Server
+SetLongDelays	src/tester1/config.go	/^func (cfg *Config) SetLongDelays(longdel bool) {$/;"	f	struct:tester.Config
+SetLongReordering	src/tester1/config.go	/^func (cfg *Config) SetLongReordering(longrel bool) {$/;"	f	struct:tester.Config
+SetReliable	src/tester1/config.go	/^func (cfg *Config) SetReliable(reliable bool) {$/;"	f	struct:tester.Config
+Shard	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Shard shardcfg.Tshid$/;"	m	struct:shardrpc.DeleteShardArgs	typeref:typename:shardcfg.Tshid
+Shard	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Shard shardcfg.Tshid$/;"	m	struct:shardrpc.FreezeShardArgs	typeref:typename:shardcfg.Tshid
+Shard	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	Shard shardcfg.Tshid$/;"	m	struct:shardrpc.InstallShardArgs	typeref:typename:shardcfg.Tshid
+ShardConfig	src/shardkv1/shardcfg/shardcfg.go	/^type ShardConfig struct {$/;"	s	package:shardcfg
+ShardCtrler	src/shardkv1/shardctrler/shardctrler.go	/^type ShardCtrler struct {$/;"	s	package:shardctrler
+ShardCtrler	src/shardkv1/test.go	/^func (ts *Test) ShardCtrler() *shardctrler.ShardCtrler {$/;"	f	struct:shardkv.Test	typeref:typename:*shardctrler.ShardCtrler
+Shards	src/shardkv1/shardcfg/shardcfg.go	/^	Shards [NShards]tester.Tgid     \/\/ shard -> gid$/;"	m	struct:shardcfg.ShardConfig	typeref:typename:[NShards]tester.Tgid
+Shutdown	src/tester1/group.go	/^func (sg *ServerGrp) Shutdown() {$/;"	f	struct:tester.ServerGrp
+ShutdownServer	src/tester1/group.go	/^func (sg *ServerGrp) ShutdownServer(i int) {$/;"	f	struct:tester.ServerGrp
+SnapShotInterval	src/raft1/server.go	/^	SnapShotInterval = 10$/;"	c	package:raft
+SnapSize	src/tester1/daemonsrv.go	/^	SnapSize int$/;"	m	struct:tester.StateSizeReply	typeref:typename:int
+Snapshot	src/kvraft1/rsm/rsm.go	/^	Snapshot() []byte$/;"	n	interface:rsm.StateMachine	typeref:typename:[]byte
+Snapshot	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) Snapshot() []byte {$/;"	f	struct:rsm.rsmSrv	typeref:typename:[]byte
+Snapshot	src/kvraft1/server.go	/^func (kv *KVServer) Snapshot() []byte {$/;"	f	struct:kvraft.KVServer	typeref:typename:[]byte
+Snapshot	src/raft1/raft.go	/^func (rf *Raft) Snapshot(index int, snapshot []byte) {$/;"	f	struct:raft.Raft
+Snapshot	src/raftapi/raftapi.go	/^	Snapshot      []byte$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:[]byte
+Snapshot	src/raftapi/raftapi.go	/^	Snapshot(index int, snapshot []byte)$/;"	n	interface:raftapi.Raft
+Snapshot	src/shardkv1/shardgrp/server.go	/^func (kv *KVServer) Snapshot() []byte {$/;"	f	struct:shardgrp.KVServer	typeref:typename:[]byte
+Snapshot	src/tester1/daemonsrv.go	/^	Snapshot  []byte$/;"	m	struct:tester.CheckpointPersisterReply	typeref:typename:[]byte
+Snapshot	src/tester1/daemonsrv.go	/^	Snapshot  []byte$/;"	m	struct:tester.InitArgs	typeref:typename:[]byte
+SnapshotIndex	src/raftapi/raftapi.go	/^	SnapshotIndex int$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:int
+SnapshotSize	src/tester1/group.go	/^func (sg *ServerGrp) SnapshotSize() int {$/;"	f	struct:tester.ServerGrp	typeref:typename:int
+SnapshotSize	src/tester1/persister.go	/^func (ps *Persister) SnapshotSize() int {$/;"	f	struct:tester.Persister	typeref:typename:int
+SnapshotTerm	src/raftapi/raftapi.go	/^	SnapshotTerm  int$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:int
+SnapshotValid	src/raftapi/raftapi.go	/^	SnapshotValid bool$/;"	m	struct:raftapi.ApplyMsg	typeref:typename:bool
+SockName	src/tester1/sockrpc/rpcsrv.go	/^func SockName(endName string) string {$/;"	f	package:sockrpc	typeref:typename:string
+SpawnClientsAndWait	src/kvtest1/kvtest.go	/^func (ts *Test) SpawnClientsAndWait(nclnt int, t time.Duration, fn Fclnt) []ClntRes {$/;"	f	struct:kvtest.Test	typeref:typename:[]ClntRes
+SpreadPuts	src/kvtest1/kvtest.go	/^func (ts *Test) SpreadPuts(ck IKVClerk, n int) ([]string, []string) {$/;"	f	struct:kvtest.Test	typeref:typename:([]string, []string)
+SpreadPutsSize	src/kvtest1/kvtest.go	/^func (ts *Test) SpreadPutsSize(ck IKVClerk, n, valsz int) ([]string, []string) {$/;"	f	struct:kvtest.Test	typeref:typename:([]string, []string)
+SrvName	src/tester1/group.go	/^func (sg *ServerGrp) SrvName(i int) string {$/;"	f	struct:tester.ServerGrp	typeref:typename:string
+SrvNames	src/tester1/group.go	/^func (sg *ServerGrp) SrvNames() []string {$/;"	f	struct:tester.ServerGrp	typeref:typename:[]string
+SrvNamesTo	src/tester1/group.go	/^func (sg *ServerGrp) SrvNamesTo(to []int) []string {$/;"	f	struct:tester.ServerGrp	typeref:typename:[]string
+Start	src/raft1/proxy.go	/^func (rfp *Rfproxy) Start(command interface{}) (int, int, bool) {$/;"	f	struct:raft.Rfproxy	typeref:typename:(int, int, bool)
+Start	src/raft1/raft.go	/^func (rf *Raft) Start(command interface{}) (int, int, bool) {$/;"	f	struct:raft.Raft	typeref:typename:(int, int, bool)
+Start	src/raft1/server.go	/^func (rs *rfsrv) Start(command interface{}) (int, int, bool) {$/;"	f	struct:raft.rfsrv	typeref:typename:(int, int, bool)
+Start	src/raft1/test.go	/^	Start(command interface{}) (int, int, bool)$/;"	n	interface:raft.IraftServer	typeref:typename:(int, int, bool)
+Start	src/raftapi/raftapi.go	/^	Start(command interface{}) (int, int, bool)$/;"	n	interface:raftapi.Raft	typeref:typename:(int, int, bool)
+Start	src/tester1/annotator.go	/^	Start   int64$/;"	m	struct:tester.PostAnnotatorInfoIntervalArgs	typeref:typename:int64
+StartArgs	src/raft1/server.go	/^type StartArgs struct {$/;"	s	package:raft
+StartKVServer	src/kvraft1/server.go	/^func StartKVServer(servers []*labrpc.ClientEnd, gid tester.Tgid, me int, persister *tester.Persi/;"	f	package:kvraft	typeref:typename:[]any
+StartKVServer	src/kvsrv1/server.go	/^func StartKVServer(tc *tester.TesterClnt, ends []*labrpc.ClientEnd, gid tester.Tgid, srv int, pe/;"	f	package:kvsrv	typeref:typename:[]any
+StartRPC	src/raft1/server.go	/^func (rs *rfsrv) StartRPC(args *StartArgs, rep *StartReply) {$/;"	f	struct:raft.rfsrv
+StartReply	src/raft1/server.go	/^type StartReply struct {$/;"	s	package:raft
+StartServer	src/tester1/group.go	/^func (sg *ServerGrp) StartServer(i int) error {$/;"	f	struct:tester.ServerGrp	typeref:typename:error
+StartServerShardGrp	src/shardkv1/shardgrp/server.go	/^func StartServerShardGrp(servers []*labrpc.ClientEnd, gid tester.Tgid, me int, persister *tester/;"	f	package:shardgrp	typeref:typename:[]any
+StartServers	src/tester1/group.go	/^func (sg *ServerGrp) StartServers() {$/;"	f	struct:tester.ServerGrp
+StartSrvs	src/tester1/group.go	/^func (sg *ServerGrp) StartSrvs(srvs []int) {$/;"	f	struct:tester.ServerGrp
+State	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	State []byte$/;"	m	struct:shardrpc.FreezeShardReply	typeref:typename:[]byte
+State	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^	State []byte$/;"	m	struct:shardrpc.InstallShardArgs	typeref:typename:[]byte
+StateMachine	src/kvraft1/rsm/rsm.go	/^type StateMachine interface {$/;"	i	package:rsm
+StateSize	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) StateSize(args StateSizeArgs, reply *StateSizeReply) {$/;"	f	struct:tester.DaemonSrv
+StateSizeArgs	src/tester1/daemonsrv.go	/^type StateSizeArgs struct{}$/;"	s	package:tester
+StateSizeReply	src/tester1/daemonsrv.go	/^type StateSizeReply struct {$/;"	s	package:tester
+String	src/shardkv1/shardcfg/shardcfg.go	/^func (cfg *ShardConfig) String() string {$/;"	f	struct:shardcfg.ShardConfig	typeref:typename:string
+Submit	src/kvraft1/rsm/proxy.go	/^func (rsp *RSMproxy) Submit(req any) (rpc.Err, any) {$/;"	f	struct:rsm.RSMproxy	typeref:typename:(rpc.Err, any)
+Submit	src/kvraft1/rsm/rsm.go	/^func (rsm *RSM) Submit(req any) (rpc.Err, any) {$/;"	f	struct:rsm.RSM	typeref:typename:(rpc.Err, any)
+Submit	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) Submit(req any) (rpc.Err, any) {$/;"	f	struct:rsm.rsmSrv	typeref:typename:(rpc.Err, any)
+Submit	src/kvraft1/rsm/test.go	/^	Submit(req any) (rpc.Err, any)$/;"	n	interface:rsm.IRSMServer	typeref:typename:(rpc.Err, any)
+SubmitArgs	src/kvraft1/rsm/server.go	/^type SubmitArgs struct {$/;"	s	package:rsm
+SubmitRPC	src/kvraft1/rsm/server.go	/^func (rs *rsmSrv) SubmitRPC(args *SubmitArgs, rep *SubmitReply) {$/;"	f	struct:rsm.rsmSrv
+SubmitReply	src/kvraft1/rsm/server.go	/^type SubmitReply struct {$/;"	s	package:rsm
+Swap	src/main/mrsequential.go	/^func (a ByKey) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }$/;"	f	type:main.ByKey
+T1	src/labgob/test_test.go	/^type T1 struct {$/;"	s	package:labgob
+T1int0	src/labgob/test_test.go	/^	T1int0    int$/;"	m	struct:labgob.T1	typeref:typename:int
+T1int1	src/labgob/test_test.go	/^	T1int1    int$/;"	m	struct:labgob.T1	typeref:typename:int
+T1string0	src/labgob/test_test.go	/^	T1string0 string$/;"	m	struct:labgob.T1	typeref:typename:string
+T1string1	src/labgob/test_test.go	/^	T1string1 string$/;"	m	struct:labgob.T1	typeref:typename:string
+T2	src/labgob/test_test.go	/^type T2 struct {$/;"	s	package:labgob
+T2map	src/labgob/test_test.go	/^	T2map   map[int]*T1$/;"	m	struct:labgob.T2	typeref:typename:map[int]*T1
+T2slice	src/labgob/test_test.go	/^	T2slice []T1$/;"	m	struct:labgob.T2	typeref:typename:[]T1
+T2t3	src/labgob/test_test.go	/^	T2t3    interface{}$/;"	m	struct:labgob.T2	typeref:typename:interface{}
+T3	src/labgob/test_test.go	/^type T3 struct {$/;"	s	package:labgob
+T3int999	src/labgob/test_test.go	/^	T3int999 int$/;"	m	struct:labgob.T3	typeref:typename:int
+T4	src/labgob/test_test.go	/^type T4 struct {$/;"	s	package:labgob
+TAG_CHECKER	src/tester1/annotation.go	/^	TAG_CHECKER   string = "$ Checker"$/;"	c	package:tester	typeref:typename:string
+TAG_INFO	src/tester1/annotation.go	/^	TAG_INFO      string = "$ Test Info"$/;"	c	package:tester	typeref:typename:string
+TAG_PARTITION	src/tester1/annotation.go	/^	TAG_PARTITION string = "$ Failure"$/;"	c	package:tester	typeref:typename:string
+Tag	src/tester1/annotator.go	/^	Tag     string$/;"	m	struct:tester.PostAnnotatorPointArgs	typeref:typename:string
+Tag	src/tester1/demux/transport.go	/^	Tag  Ttag$/;"	m	struct:demux.msg	typeref:typename:Ttag
+TaskId	src/mr/rpc.go	/^	TaskId      uint$/;"	m	struct:mr.TaskOutput	typeref:typename:uint
+TaskId	src/mr/rpc.go	/^	TaskId     uint$/;"	m	struct:mr.TaskInput	typeref:typename:uint
+TaskInput	src/mr/rpc.go	/^type TaskInput struct {$/;"	s	package:mr
+TaskKind	src/mr/rpc.go	/^type TaskKind uint$/;"	t	package:mr	typeref:typename:uint
+TaskKindAsString	src/mr/rpc.go	/^func TaskKindAsString(taskKind TaskKind) string {$/;"	f	package:mr	typeref:typename:string
+TaskKindDone	src/mr/rpc.go	/^	TaskKindDone$/;"	c	package:mr
+TaskKindMap	src/mr/rpc.go	/^	TaskKindMap TaskKind = iota$/;"	c	package:mr	typeref:type:TaskKind
+TaskKindReduce	src/mr/rpc.go	/^	TaskKindReduce$/;"	c	package:mr
+TaskOutput	src/mr/rpc.go	/^type TaskOutput struct {$/;"	s	package:mr
+Term	src/raft1/server.go	/^	Term   int$/;"	m	struct:raft.GetStateReply	typeref:typename:int
+Term	src/raft1/server.go	/^	Term   int$/;"	m	struct:raft.StartReply	typeref:typename:int
+Test	src/kvraft1/rsm/test.go	/^type Test struct {$/;"	s	package:rsm
+Test	src/kvraft1/test.go	/^	*kvtest.Test$/;"	M	struct:kvraft.Test	typeref:typename:*kvtest.Test
+Test	src/kvraft1/test.go	/^type Test struct {$/;"	s	package:kvraft
+Test	src/kvsrv1/test.go	/^	*kvtest.Test$/;"	M	struct:kvsrv.TestKV	typeref:typename:*kvtest.Test
+Test	src/kvtest1/kvtest.go	/^type Test struct {$/;"	s	package:kvtest
+Test	src/raft1/test.go	/^type Test struct {$/;"	s	package:raft
+Test	src/shardkv1/test.go	/^	*kvtest.Test$/;"	M	struct:shardkv.Test	typeref:typename:*kvtest.Test
+Test	src/shardkv1/test.go	/^type Test struct {$/;"	s	package:shardkv
+TestAcquireLockConcurrentUnreliable5C	src/shardkv1/shardkv_test.go	/^func TestAcquireLockConcurrentUnreliable5C(t *testing.T) {$/;"	f	package:shardkv
+TestBackup3B	src/raft1/raft_test.go	/^func TestBackup3B(t *testing.T) {$/;"	f	package:raft
+TestBasic	src/labrpc/test_test.go	/^func TestBasic(t *testing.T) {$/;"	f	package:labrpc
+TestBasic	src/shardkv1/shardcfg/shardcfg_test.go	/^func TestBasic(t *testing.T) {$/;"	f	package:shardcfg
+TestBasic4A	src/kvraft1/rsm/rsm_test.go	/^func TestBasic4A(t *testing.T) {$/;"	f	package:rsm
+TestBasic4B	src/kvraft1/kvraft_test.go	/^func TestBasic4B(t *testing.T) {$/;"	f	package:kvraft
+TestBasicAgree3B	src/raft1/raft_test.go	/^func TestBasicAgree3B(t *testing.T) {$/;"	f	package:raft
+TestBenchmark	src/labrpc/test_test.go	/^func TestBenchmark(t *testing.T) {$/;"	f	package:labrpc
+TestBytes	src/labrpc/test_test.go	/^func TestBytes(t *testing.T) {$/;"	f	package:labrpc
+TestCapital	src/labgob/test_test.go	/^func TestCapital(t *testing.T) {$/;"	f	package:labgob
+TestClerk	src/kvtest1/kvtest.go	/^type TestClerk struct {$/;"	s	package:kvtest
+TestConcurrent4A	src/kvraft1/rsm/rsm_test.go	/^func TestConcurrent4A(t *testing.T) {$/;"	f	package:rsm
+TestConcurrent4B	src/kvraft1/kvraft_test.go	/^func TestConcurrent4B(t *testing.T) {$/;"	f	package:kvraft
+TestConcurrentMany	src/labrpc/test_test.go	/^func TestConcurrentMany(t *testing.T) {$/;"	f	package:labrpc
+TestConcurrentOne	src/labrpc/test_test.go	/^func TestConcurrentOne(t *testing.T) {$/;"	f	package:labrpc
+TestConcurrentReliable5C	src/shardkv1/shardkv_test.go	/^func TestConcurrentReliable5C(t *testing.T) {$/;"	f	package:shardkv
+TestConcurrentStarts3B	src/raft1/raft_test.go	/^func TestConcurrentStarts3B(t *testing.T) {$/;"	f	package:raft
+TestCount3B	src/raft1/raft_test.go	/^func TestCount3B(t *testing.T) {$/;"	f	package:raft
+TestCounts	src/labrpc/test_test.go	/^func TestCounts(t *testing.T) {$/;"	f	package:labrpc
+TestCrashWorker	src/mr/mr_test.go	/^func TestCrashWorker(t *testing.T) {$/;"	f	package:mr
+TestDefault	src/labgob/test_test.go	/^func TestDefault(t *testing.T) {$/;"	f	package:labgob
+TestDeleteBasic5A	src/shardkv1/shardkv_test.go	/^func TestDeleteBasic5A(t *testing.T) {$/;"	f	package:shardkv
+TestDisconnect	src/labrpc/test_test.go	/^func TestDisconnect(t *testing.T) {$/;"	f	package:labrpc
+TestEarlyExit	src/mr/mr_test.go	/^func TestEarlyExit(t *testing.T) {$/;"	f	package:mr
+TestFailAgree3B	src/raft1/raft_test.go	/^func TestFailAgree3B(t *testing.T) {$/;"	f	package:raft
+TestFailNoAgree3B	src/raft1/raft_test.go	/^func TestFailNoAgree3B(t *testing.T) {$/;"	f	package:raft
+TestFigure83C	src/raft1/raft_test.go	/^func TestFigure83C(t *testing.T) {$/;"	f	package:raft
+TestFigure8Unreliable3C	src/raft1/raft_test.go	/^func TestFigure8Unreliable3C(t *testing.T) {$/;"	f	package:raft
+TestFollowerFailure3B	src/raft1/raft_test.go	/^func TestFollowerFailure3B(t *testing.T) {$/;"	f	package:raft
+TestGOB	src/labgob/test_test.go	/^func TestGOB(t *testing.T) {$/;"	f	package:labgob
+TestIndexer	src/mr/mr_test.go	/^func TestIndexer(t *testing.T) {$/;"	f	package:mr
+TestInitQuery5A	src/shardkv1/shardkv_test.go	/^func TestInitQuery5A(t *testing.T) {$/;"	f	package:shardkv
+TestInitialElection3A	src/raft1/raft_test.go	/^func TestInitialElection3A(t *testing.T) {$/;"	f	package:raft
+TestJobCount	src/mr/mr_test.go	/^func TestJobCount(t *testing.T) {$/;"	f	package:mr
+TestJoinBasic5A	src/shardkv1/shardkv_test.go	/^func TestJoinBasic5A(t *testing.T) {$/;"	f	package:shardkv
+TestJoinLeave5B	src/shardkv1/shardkv_test.go	/^func TestJoinLeave5B(t *testing.T) {$/;"	f	package:shardkv
+TestJoinLeaveBasic5A	src/shardkv1/shardkv_test.go	/^func TestJoinLeaveBasic5A(t *testing.T) {$/;"	f	package:shardkv
+TestKV	src/kvsrv1/test.go	/^type TestKV struct {$/;"	s	package:kvsrv
+TestKilled	src/labrpc/test_test.go	/^func TestKilled(t *testing.T) {$/;"	f	package:labrpc
+TestLeaderFailure3B	src/raft1/raft_test.go	/^func TestLeaderFailure3B(t *testing.T) {$/;"	f	package:raft
+TestLeaderFailure4A	src/kvraft1/rsm/rsm_test.go	/^func TestLeaderFailure4A(t *testing.T) {$/;"	f	package:rsm
+TestLeaderPartition4A	src/kvraft1/rsm/rsm_test.go	/^func TestLeaderPartition4A(t *testing.T) {$/;"	f	package:rsm
+TestLongDelayRace	src/labrpc/test_test.go	/^func TestLongDelayRace(t *testing.T) {$/;"	f	package:labrpc
+TestManyClientsReliable	src/kvsrv1/lock/lock_test.go	/^func TestManyClientsReliable(t *testing.T) {$/;"	f	package:lock
+TestManyClientsUnreliable	src/kvsrv1/lock/lock_test.go	/^func TestManyClientsUnreliable(t *testing.T) {$/;"	f	package:lock
+TestManyConcurrentClerkReliable5A	src/shardkv1/shardkv_test.go	/^func TestManyConcurrentClerkReliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestManyConcurrentClerkUnreliable5A	src/shardkv1/shardkv_test.go	/^func TestManyConcurrentClerkUnreliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestManyElections3A	src/raft1/raft_test.go	/^func TestManyElections3A(t *testing.T) {$/;"	f	package:raft
+TestManyJoinLeaveReliable5A	src/shardkv1/shardkv_test.go	/^func TestManyJoinLeaveReliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestManyJoinLeaveUnreliable5A	src/shardkv1/shardkv_test.go	/^func TestManyJoinLeaveUnreliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestManyPartitionsManyClients4B	src/kvraft1/kvraft_test.go	/^func TestManyPartitionsManyClients4B(t *testing.T) {$/;"	f	package:kvraft
+TestManyPartitionsOneClient4B	src/kvraft1/kvraft_test.go	/^func TestManyPartitionsOneClient4B(t *testing.T) {$/;"	f	package:kvraft
+TestMapParallel	src/mr/mr_test.go	/^func TestMapParallel(t *testing.T) {$/;"	f	package:mr
+TestMemPutManyClientsReliable	src/kvsrv1/kvsrv_test.go	/^func TestMemPutManyClientsReliable(t *testing.T) {$/;"	f	package:kvsrv
+TestOneClientReliable	src/kvsrv1/lock/lock_test.go	/^func TestOneClientReliable(t *testing.T) {$/;"	f	package:lock
+TestOneClientUnreliable	src/kvsrv1/lock/lock_test.go	/^func TestOneClientUnreliable(t *testing.T) {$/;"	f	package:lock
+TestOneConcurrentClerkReliable5A	src/shardkv1/shardkv_test.go	/^func TestOneConcurrentClerkReliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestOneConcurrentClerkUnreliable5A	src/shardkv1/shardkv_test.go	/^func TestOneConcurrentClerkUnreliable5A(t *testing.T) {$/;"	f	package:shardkv
+TestOnePartition4B	src/kvraft1/kvraft_test.go	/^func TestOnePartition4B(t *testing.T) {$/;"	f	package:kvraft
+TestPartitionControllerJoin5C	src/shardkv1/shardkv_test.go	/^func TestPartitionControllerJoin5C(t *testing.T) {$/;"	f	package:shardkv
+TestPartitionRecoveryReliableClerks5C	src/shardkv1/shardkv_test.go	/^func TestPartitionRecoveryReliableClerks5C(t *testing.T) {$/;"	f	package:shardkv
+TestPartitionRecoveryReliableNoClerk5C	src/shardkv1/shardkv_test.go	/^func TestPartitionRecoveryReliableNoClerk5C(t *testing.T) {$/;"	f	package:shardkv
+TestPartitionRecoveryUnreliableClerks5C	src/shardkv1/shardkv_test.go	/^func TestPartitionRecoveryUnreliableClerks5C(t *testing.T) {$/;"	f	package:shardkv
+TestPartitionRecoveryUnreliableNoClerk5C	src/shardkv1/shardkv_test.go	/^func TestPartitionRecoveryUnreliableNoClerk5C(t *testing.T) {$/;"	f	package:shardkv
+TestPersist13C	src/raft1/raft_test.go	/^func TestPersist13C(t *testing.T) {$/;"	f	package:raft
+TestPersist23C	src/raft1/raft_test.go	/^func TestPersist23C(t *testing.T) {$/;"	f	package:raft
+TestPersist33C	src/raft1/raft_test.go	/^func TestPersist33C(t *testing.T) {$/;"	f	package:raft
+TestPersistConcurrent4B	src/kvraft1/kvraft_test.go	/^func TestPersistConcurrent4B(t *testing.T) {$/;"	f	package:kvraft
+TestPersistConcurrentUnreliable4B	src/kvraft1/kvraft_test.go	/^func TestPersistConcurrentUnreliable4B(t *testing.T) {$/;"	f	package:kvraft
+TestPersistOneClient4B	src/kvraft1/kvraft_test.go	/^func TestPersistOneClient4B(t *testing.T) {$/;"	f	package:kvraft
+TestPersistPartition4B	src/kvraft1/kvraft_test.go	/^func TestPersistPartition4B(t *testing.T) {$/;"	f	package:kvraft
+TestPersistPartitionUnreliable4B	src/kvraft1/kvraft_test.go	/^func TestPersistPartitionUnreliable4B(t *testing.T) {$/;"	f	package:kvraft
+TestPersistPartitionUnreliableLinearizable4B	src/kvraft1/kvraft_test.go	/^func TestPersistPartitionUnreliableLinearizable4B(t *testing.T) {$/;"	f	package:kvraft
+TestProgressJoin5A	src/shardkv1/shardkv_test.go	/^func TestProgressJoin5A(t *testing.T) {$/;"	f	package:shardkv
+TestProgressShutdown5A	src/shardkv1/shardkv_test.go	/^func TestProgressShutdown5A(t *testing.T) {$/;"	f	package:shardkv
+TestPutConcurrentReliable	src/kvsrv1/kvsrv_test.go	/^func TestPutConcurrentReliable(t *testing.T) {$/;"	f	package:kvsrv
+TestRPCBytes3B	src/raft1/raft_test.go	/^func TestRPCBytes3B(t *testing.T) {$/;"	f	package:raft
+TestReElection3A	src/raft1/raft_test.go	/^func TestReElection3A(t *testing.T) {$/;"	f	package:raft
+TestRecoverCtrler5B	src/shardkv1/shardkv_test.go	/^func TestRecoverCtrler5B(t *testing.T) {$/;"	f	package:shardkv
+TestReduceParallel	src/mr/mr_test.go	/^func TestReduceParallel(t *testing.T) {$/;"	f	package:mr
+TestRegression1	src/labrpc/test_test.go	/^func TestRegression1(t *testing.T) {$/;"	f	package:labrpc
+TestRejoin3B	src/raft1/raft_test.go	/^func TestRejoin3B(t *testing.T) {$/;"	f	package:raft
+TestReliableBasic	src/kvsrv1/lock/lock_test.go	/^func TestReliableBasic(t *testing.T) {$/;"	f	package:lock
+TestReliableChurn3C	src/raft1/raft_test.go	/^func TestReliableChurn3C(t *testing.T) {$/;"	f	package:raft
+TestReliableNested	src/kvsrv1/lock/lock_test.go	/^func TestReliableNested(t *testing.T) {$/;"	f	package:lock
+TestReliablePut	src/kvsrv1/kvsrv_test.go	/^func TestReliablePut(t *testing.T) {$/;"	f	package:kvsrv
+TestRestartReplay4A	src/kvraft1/rsm/rsm_test.go	/^func TestRestartReplay4A(t *testing.T) {$/;"	f	package:rsm
+TestRestartSubmit4A	src/kvraft1/rsm/rsm_test.go	/^func TestRestartSubmit4A(t *testing.T) {$/;"	f	package:rsm
+TestShutdown4A	src/kvraft1/rsm/rsm_test.go	/^func TestShutdown4A(t *testing.T) {$/;"	f	package:rsm
+TestShutdown5A	src/shardkv1/shardkv_test.go	/^func TestShutdown5A(t *testing.T) {$/;"	f	package:shardkv
+TestSnapshot4C	src/kvraft1/rsm/rsm_test.go	/^func TestSnapshot4C(t *testing.T) {$/;"	f	package:rsm
+TestSnapshotAllCrash3D	src/raft1/raft_test.go	/^func TestSnapshotAllCrash3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotBasic3D	src/raft1/raft_test.go	/^func TestSnapshotBasic3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotInit3D	src/raft1/raft_test.go	/^func TestSnapshotInit3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotInstall3D	src/raft1/raft_test.go	/^func TestSnapshotInstall3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotInstallCrash3D	src/raft1/raft_test.go	/^func TestSnapshotInstallCrash3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotInstallUnCrash3D	src/raft1/raft_test.go	/^func TestSnapshotInstallUnCrash3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotInstallUnreliable3D	src/raft1/raft_test.go	/^func TestSnapshotInstallUnreliable3D(t *testing.T) {$/;"	f	package:raft
+TestSnapshotRPC4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotRPC4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotRecover4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotRecover4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotRecoverManyClients4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotRecoverManyClients4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotSize4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotSize4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotUnreliable4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotUnreliable4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotUnreliableRecover4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotUnreliableRecover4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotUnreliableRecoverConcurrentPartition4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotUnreliableRecoverConcurrentPartition4C(t *testing.T) {$/;"	f	package:kvraft
+TestSnapshotUnreliableRecoverConcurrentPartitionLinearizable4C	src/kvraft1/kvraft_test.go	/^func TestSnapshotUnreliableRecoverConcurrentPartitionLinearizable4C(t *testing.T) {$/;"	f	package:kvraft
+TestSpeed4B	src/kvraft1/kvraft_test.go	/^func TestSpeed4B(t *testing.T) {$/;"	f	package:kvraft
+TestSpeed4C	src/kvraft1/kvraft_test.go	/^func TestSpeed4C(t *testing.T) {$/;"	f	package:kvraft
+TestStaticOneShardGroup5A	src/shardkv1/shardkv_test.go	/^func TestStaticOneShardGroup5A(t *testing.T) {$/;"	f	package:shardkv
+TestTypes	src/labrpc/test_test.go	/^func TestTypes(t *testing.T) {$/;"	f	package:labrpc
+TestUnreliable	src/labrpc/test_test.go	/^func TestUnreliable(t *testing.T) {$/;"	f	package:labrpc
+TestUnreliable4B	src/kvraft1/kvraft_test.go	/^func TestUnreliable4B(t *testing.T) {$/;"	f	package:kvraft
+TestUnreliableAgree3C	src/raft1/raft_test.go	/^func TestUnreliableAgree3C(t *testing.T) {$/;"	f	package:raft
+TestUnreliableChurn3C	src/raft1/raft_test.go	/^func TestUnreliableChurn3C(t *testing.T) {$/;"	f	package:raft
+TestUnreliableNet	src/kvsrv1/kvsrv_test.go	/^func TestUnreliableNet(t *testing.T) {$/;"	f	package:kvsrv
+TestWc	src/mr/mr_test.go	/^func TestWc(t *testing.T) {$/;"	f	package:mr
+TesterClnt	src/raft1/proxy.go	/^	*tester.TesterClnt$/;"	M	struct:raft.TesterProxy	typeref:typename:*tester.TesterClnt
+TesterClnt	src/tester1/testclnt.go	/^type TesterClnt struct {$/;"	s	package:tester
+TesterProxy	src/raft1/proxy.go	/^type TesterProxy struct {$/;"	s	package:raft
+TesterRPC	src/tester1/testsrv.go	/^type TesterRPC struct {$/;"	s	package:tester
+Tgid	src/tester1/group.go	/^type Tgid int$/;"	t	package:tester	typeref:typename:int
+Timestamp	src/tester1/annotator.go	/^	Timestamp int64$/;"	m	struct:tester.GetAnnotatorTimestampReply	typeref:typename:int64
+Tnum	src/shardkv1/shardcfg/shardcfg.go	/^type Tnum int$/;"	t	package:shardcfg	typeref:typename:int
+TransportI	src/tester1/demux/transport.go	/^type TransportI interface {$/;"	i	package:demux
+Tshid	src/shardkv1/shardcfg/shardcfg.go	/^type Tshid int$/;"	t	package:shardcfg	typeref:typename:int
+Ttag	src/tester1/demux/dmxclnt.go	/^type Ttag uint32$/;"	t	package:demux	typeref:typename:uint32
+Tversion	src/kvsrv1/rpc/rpc.go	/^type Tversion uint64$/;"	t	package:rpc	typeref:typename:uint64
+Unmarshall	src/labrpc/labrpc.go	/^func Unmarshall(b []byte, repl interface{}) {$/;"	f	package:labrpc
+UseRaftStateMachine	src/tester1/daemonclnt.go	/^var UseRaftStateMachine bool \/\/ to plug in another raft besided raft1$/;"	v	package:tester	typeref:typename:bool
+V	src/kvtest1/kvtest.go	/^	V  rpc.Tversion$/;"	m	struct:kvtest.EntryV	typeref:typename:rpc.Tversion
+VER	src/Makefile	/^VER=$(shell go version | grep -q 'go1.17.[012345]'; echo $$?)$/;"	m
+VERB	src/Makefile	/^VERB=-v$/;"	m
+Value	src/kvsrv1/rpc/rpc.go	/^	Value   string$/;"	m	struct:rpc.GetReply	typeref:typename:string
+Value	src/kvsrv1/rpc/rpc.go	/^	Value   string$/;"	m	struct:rpc.PutArgs	typeref:typename:string
+Value	src/models1/kv.go	/^	Value   string$/;"	m	struct:models.KvInput	typeref:typename:string
+Value	src/models1/kv.go	/^	Value   string$/;"	m	struct:models.KvOutput	typeref:typename:string
+Value	src/models1/kv.go	/^	Value   string$/;"	m	struct:models.KvState	typeref:typename:string
+Value	src/mr/worker.go	/^	Value string$/;"	m	struct:mr.KeyValue	typeref:typename:string
+Version	src/kvsrv1/rpc/rpc.go	/^	Version Tversion$/;"	m	struct:rpc.GetReply	typeref:typename:Tversion
+Version	src/kvsrv1/rpc/rpc.go	/^	Version Tversion$/;"	m	struct:rpc.PutArgs	typeref:typename:Tversion
+Version	src/models1/kv.go	/^	Version uint64$/;"	m	struct:models.KvInput	typeref:typename:uint64
+Version	src/models1/kv.go	/^	Version uint64$/;"	m	struct:models.KvOutput	typeref:typename:uint64
+Version	src/models1/kv.go	/^	Version uint64$/;"	m	struct:models.KvState	typeref:typename:uint64
+Worker	src/mr/worker.go	/^func Worker($/;"	f	package:mr
+WriteCall	src/tester1/demux/transport.go	/^	WriteCall(Ttag, []byte, bool) error$/;"	n	interface:demux.TransportI	typeref:typename:error
+WriteCall	src/tester1/demux/transport.go	/^func (t *transport) WriteCall(tag Ttag, d []byte, ok bool) error {$/;"	f	struct:demux.transport	typeref:typename:error
+X	src/labrpc/test_test.go	/^	X int$/;"	m	struct:labrpc.JunkArgs	typeref:typename:int
+X	src/labrpc/test_test.go	/^	X string$/;"	m	struct:labrpc.JunkReply	typeref:typename:string
+Yes	src/labgob/test_test.go	/^	Yes int$/;"	m	struct:labgob.T4	typeref:typename:int
+all	src/Makefile	/^all: mr kvsrv1 lock1 raft1 rsm1 kvraft1 shardkv$/;"	t
+all	src/tester1/group.go	/^func (sg *ServerGrp) all() []int {$/;"	f	struct:tester.ServerGrp	typeref:typename:[]int
+allowedL	src/tester1/clnts.go	/^func (clnt *Clnt) allowedL(server string) bool {$/;"	f	struct:tester.Clnt	typeref:typename:bool
+analyze	src/shardkv1/shardcfg/shardcfg.go	/^func analyze(c *ShardConfig) (tester.Tgid, int, tester.Tgid, int) {$/;"	f	package:shardcfg	typeref:typename:(tester.Tgid, int, tester.Tgid, int)
+annotateContinuousColor	src/tester1/annotation.go	/^func (an *Annotation) annotateContinuousColor($/;"	f	struct:tester.Annotation
+annotateContinuousEnd	src/tester1/annotation.go	/^func (an *Annotation) annotateContinuousEnd(tag string) {$/;"	f	struct:tester.Annotation
+annotateFault	src/tester1/annotation.go	/^func annotateFault() {$/;"	f	package:tester
+annotateIntervalColor	src/tester1/annotation.go	/^func (an *Annotation) annotateIntervalColor($/;"	f	struct:tester.Annotation
+annotatePointColor	src/tester1/annotation.go	/^func (an *Annotation) annotatePointColor($/;"	f	struct:tester.Annotation
+annotation	src/tester1/annotation.go	/^var annotation *Annotation = mkAnnotation()$/;"	v	package:tester	typeref:typename:*Annotation
+annotations	src/tester1/annotation.go	/^	annotations []porcupine.Annotation$/;"	m	struct:tester.Annotation	typeref:typename:[]porcupine.Annotation
+applier	src/raft1/server.go	/^func (rs *rfsrv) applier(applyCh chan raftapi.ApplyMsg) {$/;"	f	struct:raft.rfsrv
+applierSnap	src/raft1/server.go	/^func (rs *rfsrv) applierSnap(applyCh chan raftapi.ApplyMsg) {$/;"	f	struct:raft.rfsrv
+applyCh	src/kvraft1/rsm/rsm.go	/^	applyCh      chan raftapi.ApplyMsg$/;"	m	struct:rsm.RSM	typeref:typename:chan raftapi.ApplyMsg
+applyErr	src/raft1/test.go	/^	applyErr string      \/\/ server's applyErr$/;"	m	struct:raft.raftServer	typeref:typename:string
+args	src/labrpc/labrpc.go	/^	args    []byte$/;"	m	struct:labrpc.reqMsg	typeref:typename:[]byte
+args	src/tester1/group.go	/^	args        []string$/;"	m	struct:tester.ServerGrp	typeref:typename:[]string
+args	src/tester1/group.go	/^	args    []string$/;"	m	struct:tester.Groups	typeref:typename:[]string
+bgcolor	src/tester1/annotation.go	/^	bgcolor string$/;"	m	struct:tester.Continuous	typeref:typename:string
+bytes	src/labrpc/labrpc.go	/^	bytes          int64         \/\/ total bytes send, for statistics$/;"	m	struct:labrpc.Network	typeref:typename:int64
+call	src/mr/worker.go	/^func call(rpcname string, args any, reply any) bool {$/;"	f	package:mr	typeref:typename:bool
+callMap	src/tester1/demux/callmap.go	/^type callMap struct {$/;"	s	package:demux
+callf	src/labrpc/labrpc.go	/^	callf   Fcall$/;"	m	struct:labrpc.ClientEnd	typeref:typename:Fcall
+callmap	src/tester1/demux/dmxclnt.go	/^	callmap *callMap$/;"	m	struct:demux.DemuxClnt	typeref:typename:*callMap
+calls	src/tester1/demux/callmap.go	/^	calls  map[Ttag]chan reply$/;"	m	struct:demux.callMap	typeref:typename:map[Ttag]chan reply
+captureSignal	src/tester1/annotation.go	/^func captureSignal() struct{} {$/;"	f	package:tester	typeref:typename:struct{}
+cfg	src/tester1/testsrv.go	/^	cfg *Config$/;"	m	struct:tester.TesterRPC	typeref:typename:*Config
+ch	src/labrpc/labrpc.go	/^	ch      chan reqMsg   \/\/ copy of Network.endCh$/;"	m	struct:labrpc.ClientEnd	typeref:typename:chan reqMsg
+ch	src/tester1/daemonsrv.go	/^	ch        chan *Persister$/;"	m	struct:tester.DaemonSrv	typeref:typename:chan *Persister
+check-%	Makefile	/^check-%:$/;"	t
+check-version	src/Makefile	/^check-version:$/;"	t
+checkCounter	src/kvraft1/rsm/test.go	/^func (ts *Test) checkCounter(v int, nsrv int) {$/;"	f	struct:rsm.Test
+checkDefault	src/labgob/labgob.go	/^func checkDefault(value interface{}) {$/;"	f	package:labgob
+checkDefault1	src/labgob/labgob.go	/^func checkDefault1(value reflect.Value, depth int, name string) {$/;"	f	package:labgob
+checkFinished	src/raft1/test.go	/^func (ts *Test) checkFinished() bool {$/;"	f	struct:raft.Test	typeref:typename:bool
+checkMember	src/shardkv1/test.go	/^func (ts *Test) checkMember(sck *shardctrler.ShardCtrler, gid tester.Tgid) bool {$/;"	f	struct:shardkv.Test	typeref:typename:bool
+checkNoAgreement	src/raft1/test.go	/^func (ts *Test) checkNoAgreement(index int) {$/;"	f	struct:raft.Test
+checkNoLeader	src/raft1/test.go	/^func (ts *Test) checkNoLeader() {$/;"	f	struct:raft.Test
+checkOneLeader	src/raft1/test.go	/^func (ts *Test) checkOneLeader() int {$/;"	f	struct:raft.Test	typeref:typename:int
+checkPorcupine	src/kvtest1/porcupine.go	/^func checkPorcupine(t *testing.T, opLog *OpLog, nsec time.Duration) {$/;"	f	package:kvtest
+checkShutdownSharding	src/shardkv1/test.go	/^func (ts *Test) checkShutdownSharding(down tester.Tgid, ka []string, va []string) {$/;"	f	struct:shardkv.Test
+checkTerms	src/raft1/test.go	/^func (ts *Test) checkTerms() int {$/;"	f	struct:raft.Test	typeref:typename:int
+checkType	src/labgob/labgob.go	/^func checkType(t reflect.Type) {$/;"	f	package:labgob
+checkValue	src/labgob/labgob.go	/^func checkValue(value interface{}) {$/;"	f	package:labgob
+check_cmd	.check-build	/^check_cmd() {$/;"	f
+check_lab1	.check-build	/^check_lab1() {$/;"	f
+check_lab2	.check-build	/^check_lab2() {$/;"	f
+check_lab3	.check-build	/^check_lab3() {$/;"	f
+check_lab4	.check-build	/^check_lab4() {$/;"	f
+check_lab5	.check-build	/^check_lab5() {$/;"	f
+check_same_config	src/shardkv1/shardcfg/shardcfg_test.go	/^func check_same_config(t *testing.T, c1 ShardConfig, c2 ShardConfig) {$/;"	f	package:shardcfg
+checked	src/labgob/labgob.go	/^var checked map[reflect.Type]bool$/;"	v	package:labgob	typeref:typename:map[reflect.Type]bool
+checkpointPersister	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) checkpointPersister() *Persister {$/;"	f	struct:tester.DaemonClnt	typeref:typename:*Persister
+ck	src/kvsrv1/lock/lock.go	/^	ck kvtest.IKVClerk$/;"	m	struct:lock.Lock	typeref:typename:kvtest.IKVClerk
+ckbegin	src/tester1/annotation.go	/^	ckbegin   CheckerBegin$/;"	m	struct:tester.FrameworkInfo	typeref:typename:CheckerBegin
+cleanup	src/kvraft1/rsm/test.go	/^func (ts *Test) cleanup() {$/;"	f	struct:rsm.Test
+cleanup	src/kvraft1/test.go	/^func (ts *Test) cleanup() {$/;"	f	struct:kvraft.Test
+cleanup	src/mr/util.go	/^func cleanup() {$/;"	f	package:mr
+cleanup	src/raft1/test.go	/^func (ts *Test) cleanup() {$/;"	f	struct:raft.Test
+cleanup	src/tester1/annotation.go	/^func (an *Annotation) cleanup(failed bool, end string) {$/;"	f	struct:tester.Annotation
+cleanup	src/tester1/clnts.go	/^func (clnts *Clnts) cleanup() {$/;"	f	struct:tester.Clnts
+cleanup	src/tester1/group.go	/^func (gs *Groups) cleanup() {$/;"	f	struct:tester.Groups
+cleanup	src/tester1/testsrv.go	/^func (trpc *TesterRPC) cleanup() {$/;"	f	struct:tester.TesterRPC
+clear	src/tester1/annotation.go	/^func (an *Annotation) clear() {$/;"	f	struct:tester.Annotation
+clerks	src/tester1/clnts.go	/^	clerks map[*Clnt]struct{}$/;"	m	struct:tester.Clnts	typeref:typename:map[*Clnt]struct{}
+clnt	src/kvraft1/client.go	/^	clnt    *tester.Clnt$/;"	m	struct:kvraft.Clerk	typeref:typename:*tester.Clnt
+clnt	src/kvsrv1/client.go	/^	clnt   *tester.Clnt$/;"	m	struct:kvsrv.Clerk	typeref:typename:*tester.Clnt
+clnt	src/shardkv1/client.go	/^	clnt *tester.Clnt$/;"	m	struct:shardkv.Clerk	typeref:typename:*tester.Clnt
+clnt	src/shardkv1/shardctrler/shardctrler.go	/^	clnt *tester.Clnt$/;"	m	struct:shardctrler.ShardCtrler	typeref:typename:*tester.Clnt
+clnt	src/tester1/daemonclnt.go	/^	clnt     *Clnt$/;"	m	struct:tester.DaemonClnt	typeref:typename:*Clnt
+clnt	src/tester1/sockrpc/rpcclnt.go	/^	clnt   string$/;"	m	struct:sockrpc.RPCClnt	typeref:typename:string
+clntEnd	src/tester1/demux/dmxclnt.go	/^	clntEnd string$/;"	m	struct:demux.DemuxClnt	typeref:typename:string
+clntEnd	src/tester1/demux/dmxsrv.go	/^	clntEnd string$/;"	m	struct:demux.DemuxSrv	typeref:typename:string
+clntEnds	src/tester1/srv.go	/^	clntEnds []*labrpc.ClientEnd$/;"	m	struct:tester.Server	typeref:typename:[]*labrpc.ClientEnd
+clone	src/tester1/persister.go	/^func clone(orig []byte) []byte {$/;"	f	package:tester	typeref:typename:[]byte
+close	src/tester1/demux/callmap.go	/^func (cm *callMap) close() error {$/;"	f	struct:demux.callMap	typeref:typename:error
+closed	src/tester1/demux/callmap.go	/^	closed bool$/;"	m	struct:demux.callMap	typeref:typename:bool
+closed	src/tester1/demux/dmxsrv.go	/^	closed  bool$/;"	m	struct:demux.DemuxSrv	typeref:typename:bool
+cmd	src/tester1/daemonclnt.go	/^	cmd      *exec.Cmd$/;"	m	struct:tester.DaemonClnt	typeref:typename:*exec.Cmd
+concurCtrler	src/shardkv1/test.go	/^func (ts *Test) concurCtrler(ck kvtest.IKVClerk, ka, va []string) {$/;"	f	struct:shardkv.Test
+concurrentClerk	src/shardkv1/shardkv_test.go	/^func concurrentClerk(t *testing.T, nclnt int, reliable bool, part string) {$/;"	f	package:shardkv
+conn	src/tester1/demux/transport.go	/^	conn net.Conn$/;"	m	struct:demux.transport	typeref:typename:net.Conn
+connect	src/kvraft1/rsm/test.go	/^func (ts *Test) connect(i int) {$/;"	f	struct:rsm.Test
+connect	src/tester1/group.go	/^func (sg *ServerGrp) connect(i int, to []int) {$/;"	f	struct:tester.ServerGrp
+connect	src/tester1/srv.go	/^func (s *Server) connect(sg *ServerGrp, to []int) {$/;"	f	struct:tester.Server
+connected	src/tester1/annotation.go	/^	connected []bool$/;"	m	struct:tester.FrameworkInfo	typeref:typename:[]bool
+connected	src/tester1/group.go	/^	connected   []bool \/\/ whether each server is on the net$/;"	m	struct:tester.ServerGrp	typeref:typename:[]bool
+connections	src/labrpc/labrpc.go	/^	connections    map[interface{}]interface{} \/\/ endname -> servername$/;"	m	struct:labrpc.Network	typeref:typename:map[interface{}]interface{}
+continuous	src/tester1/annotation.go	/^	continuous  map[string]Continuous$/;"	m	struct:tester.Annotation	typeref:typename:map[string]Continuous
+coordSockName	src/mr/worker.go	/^var coordSockName string \/\/ socket for coordinator$/;"	v	package:mr	typeref:typename:string
+coordinatorSock	src/mr/util.go	/^func coordinatorSock() string {$/;"	f	package:mr	typeref:typename:string
+count	src/labrpc/labrpc.go	/^	count          int32         \/\/ total RPC count, for statistics$/;"	m	struct:labrpc.Network	typeref:typename:int32
+count	src/labrpc/labrpc.go	/^	count     int \/\/ incoming RPCs$/;"	m	struct:labrpc.Server	typeref:typename:int
+count	src/mrapps/jobcount.go	/^var count int$/;"	v	package:main	typeref:typename:int
+countPattern	src/mr/util.go	/^func countPattern(files []string, p string) int {$/;"	f	package:mr	typeref:typename:int
+countPatternFile	src/mr/util.go	/^func countPatternFile(f, p string) int {$/;"	f	package:mr	typeref:typename:int
+countValue	src/kvraft1/rsm/test.go	/^func (ts *Test) countValue(v int) int {$/;"	f	struct:rsm.Test	typeref:typename:int
+counter	src/kvraft1/rsm/server.go	/^	counter int$/;"	m	struct:rsm.rsmSrv	typeref:typename:int
+crand	src/mr/util.go	/^	crand "crypto\/rand"$/;"	P	package:crypto/rand
+crand	src/mrapps/crash.go	/^import crand "crypto\/rand"$/;"	P	package:crypto/rand
+crand	src/mrapps/nocrash.go	/^import crand "crypto\/rand"$/;"	P	package:crypto/rand
+crand	src/tester1/config.go	/^	crand "crypto\/rand"$/;"	P	package:crypto/rand
+crash	src/kvraft1/test.go	/^	crash        bool$/;"	m	struct:kvraft.Test	typeref:typename:bool
+crashed	src/tester1/annotation.go	/^	crashed   []bool$/;"	m	struct:tester.FrameworkInfo	typeref:typename:[]bool
+currentAttempt	src/mr/coordinator.go	/^	currentAttempt uint$/;"	m	struct:mr.task	typeref:typename:uint
+dc	src/kvraft1/rsm/proxy.go	/^	dc *tester.DaemonClnt$/;"	m	struct:rsm.RSMproxy	typeref:typename:*tester.DaemonClnt
+dc	src/raft1/proxy.go	/^	dc *tester.DaemonClnt$/;"	m	struct:raft.Rfproxy	typeref:typename:*tester.DaemonClnt
+dc	src/tester1/srv.go	/^	dc       *DaemonClnt$/;"	m	struct:tester.Server	typeref:typename:*DaemonClnt
+delete	src/tester1/group.go	/^func (gs *Groups) delete(gid Tgid) {$/;"	f	struct:tester.Groups
+demux	src/tester1/demux/callmap.go	/^package demux$/;"	p
+demux	src/tester1/demux/dmxclnt.go	/^package demux$/;"	p
+demux	src/tester1/demux/dmxsrv.go	/^package demux$/;"	p
+demux	src/tester1/demux/transport.go	/^package demux$/;"	p
+desp	src/tester1/annotation.go	/^	desp    string$/;"	m	struct:tester.Continuous	typeref:typename:string
+details	src/tester1/annotation.go	/^	details string$/;"	m	struct:tester.CheckerBegin	typeref:typename:string
+details	src/tester1/annotation.go	/^	details string$/;"	m	struct:tester.Continuous	typeref:typename:string
+dial	src/tester1/sockrpc/rpcclnt.go	/^func dial(srvEnd string) (net.Conn, error) {$/;"	f	package:sockrpc	typeref:typename:(net.Conn, error)
+die	.check-build	/^die() {$/;"	f
+disconnect	src/tester1/group.go	/^func (sg *ServerGrp) disconnect(i int, from []int) {$/;"	f	struct:tester.ServerGrp
+disconnect	src/tester1/srv.go	/^func (s *Server) disconnect(from []int) {$/;"	f	struct:tester.Server
+disconnectLeader	src/kvraft1/rsm/test.go	/^func (ts *Test) disconnectLeader() int {$/;"	f	struct:rsm.Test	typeref:typename:int
+dispatch	src/labrpc/labrpc.go	/^func (rs *Server) dispatch(servername interface{}, req reqMsg) replyMsg {$/;"	f	struct:labrpc.Server	typeref:typename:replyMsg
+dispatch	src/labrpc/labrpc.go	/^func (svc *Service) dispatch(methname string, req reqMsg) replyMsg {$/;"	f	struct:labrpc.Service	typeref:typename:replyMsg
+dispatchf	src/labrpc/labrpc.go	/^	dispatchf Fdispatch$/;"	m	struct:labrpc.Server	typeref:typename:Fdispatch
+dmx	src/tester1/sockrpc/rpcclnt.go	/^	dmx    *demux.DemuxClnt$/;"	m	struct:sockrpc.RPCClnt	typeref:typename:*demux.DemuxClnt
+dmxclnt	src/tester1/daemonclnt.go	/^	dmxclnt  *demux.DemuxClnt$/;"	m	struct:tester.DaemonClnt	typeref:typename:*demux.DemuxClnt
+done	src/labrpc/labrpc.go	/^	done           chan struct{} \/\/ closed when Network is cleaned up$/;"	m	struct:labrpc.Network	typeref:typename:chan struct{}
+done	src/labrpc/labrpc.go	/^	done    chan struct{} \/\/ closed when Network is cleaned up$/;"	m	struct:labrpc.ClientEnd	typeref:typename:chan struct{}
+enabled	src/labrpc/labrpc.go	/^	enabled        map[interface{}]bool        \/\/ by end name$/;"	m	struct:labrpc.Network	typeref:typename:map[interface{}]bool
+end	src/tester1/clnts.go	/^	end  *labrpc.ClientEnd$/;"	m	struct:tester.end	typeref:typename:*labrpc.ClientEnd
+end	src/tester1/clnts.go	/^type end struct {$/;"	s	package:tester
+endCh	src/labrpc/labrpc.go	/^	endCh          chan reqMsg$/;"	m	struct:labrpc.Network	typeref:typename:chan reqMsg
+endName	src/tester1/config.go	/^	endName string \/\/ name of tester$/;"	m	struct:tester.Config	typeref:typename:string
+endName	src/tester1/daemonclnt.go	/^	endName  string$/;"	m	struct:tester.DaemonClnt	typeref:typename:string
+endName	src/tester1/daemonsrv.go	/^	endName   string$/;"	m	struct:tester.DaemonSrv	typeref:typename:string
+endName	src/tester1/group.go	/^	endName     string$/;"	m	struct:tester.ServerGrp	typeref:typename:string
+endName	src/tester1/group.go	/^	endName string$/;"	m	struct:tester.Groups	typeref:typename:string
+endNames	src/tester1/srv.go	/^	endNames []string$/;"	m	struct:tester.Server	typeref:typename:[]string
+endname	src/labrpc/labrpc.go	/^	endname interface{}   \/\/ this end-point's name$/;"	m	struct:labrpc.ClientEnd	typeref:typename:interface{}
+endname	src/labrpc/labrpc.go	/^	endname interface{} \/\/ name of sending ClientEnd$/;"	m	struct:labrpc.reqMsg	typeref:typename:interface{}
+ends	src/labrpc/labrpc.go	/^	ends           map[interface{}]*ClientEnd  \/\/ ends, by name$/;"	m	struct:labrpc.Network	typeref:typename:map[interface{}]*ClientEnd
+ends	src/tester1/clnts.go	/^	ends map[string]end$/;"	m	struct:tester.Clnt	typeref:typename:map[string]end
+entry	src/kvtest1/kvtest.go	/^type entry struct {$/;"	s	package:kvtest
+entry	src/raft1/test.go	/^func (rs *raftServer) entry(i int) (any, bool) {$/;"	f	struct:raft.raftServer	typeref:typename:(any, bool)
+err	src/tester1/demux/dmxclnt.go	/^	err error$/;"	m	struct:demux.reply	typeref:typename:error
+errorCount	src/labgob/labgob.go	/^var errorCount int \/\/ for TestCapital$/;"	v	package:labgob	typeref:typename:int
+fatalf	src/shardkv1/shardcfg/shardcfg.go	/^func fatalf(t *testing.T, format string, args ...any) {$/;"	f	package:shardcfg
+finalize	src/tester1/annotation.go	/^func (an *Annotation) finalize() []porcupine.Annotation {$/;"	f	struct:tester.Annotation	typeref:typename:[]porcupine.Annotation
+finalized	src/tester1/annotation.go	/^	finalized   bool$/;"	m	struct:tester.Annotation	typeref:typename:bool
+findFiles	src/mr/util.go	/^func findFiles(dir, s string) []string {$/;"	f	package:mr	typeref:typename:[]string
+findFilesPre	src/mr/util.go	/^func findFilesPre(dir, s, pre string) []string {$/;"	f	package:mr	typeref:typename:[]string
+finfo	src/tester1/annotation.go	/^var finfo *FrameworkInfo$/;"	v	package:tester	typeref:typename:*FrameworkInfo
+finished	src/raft1/test.go	/^	finished int32$/;"	m	struct:raft.Test	typeref:typename:int32
+forward	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) forward(method string, args []byte) ([]byte, bool) {$/;"	f	struct:tester.DaemonClnt	typeref:typename:([]byte, bool)
+forward	src/tester1/daemonsrv.go	/^func (ds *DaemonSrv) forward(end, method string, b []byte) ([]byte, bool) {$/;"	f	struct:tester.DaemonSrv	typeref:typename:([]byte, bool)
+g	src/kvraft1/rsm/test.go	/^	g            *tester.ServerGrp$/;"	m	struct:rsm.Test	typeref:typename:*tester.ServerGrp
+g	src/raft1/test.go	/^	g *tester.ServerGrp$/;"	m	struct:raft.Test	typeref:typename:*tester.ServerGrp
+getDmx	src/tester1/sockrpc/rpcclnt.go	/^func getDmx(clntEnd, srvEnd string) *demux.DemuxClnt {$/;"	f	package:sockrpc	typeref:typename:*demux.DemuxClnt
+getLeader	src/kvraft1/rsm/test.go	/^func (ts *Test) getLeader() int {$/;"	f	struct:rsm.Test	typeref:typename:int
+getRSM	src/kvraft1/rsm/test.go	/^func (rs *rsmServer) getRSM() IRSMServer {$/;"	f	struct:rsm.rsmServer	typeref:typename:IRSMServer
+getTask	src/mr/worker.go	/^func getTask() (bool, TaskInput) {$/;"	f	package:mr	typeref:typename:(bool, TaskInput)
+getraft	src/raft1/server.go	/^func (rs *rfsrv) getraft() raftapi.Raft {$/;"	f	struct:raft.rfsrv	typeref:typename:raftapi.Raft
+gid	src/shardkv1/shardgrp/server.go	/^	gid tester.Tgid$/;"	m	struct:shardgrp.KVServer	typeref:typename:tester.Tgid
+gid	src/tester1/daemonsrv.go	/^	gid       Tgid$/;"	m	struct:tester.DaemonSrv	typeref:typename:Tgid
+gid	src/tester1/group.go	/^	gid         Tgid$/;"	m	struct:tester.ServerGrp	typeref:typename:Tgid
+gob	src/labgob/labgob.go	/^	gob *gob.Decoder$/;"	m	struct:labgob.LabDecoder	typeref:typename:*gob.Decoder
+gob	src/labgob/labgob.go	/^	gob *gob.Encoder$/;"	m	struct:labgob.LabEncoder	typeref:typename:*gob.Encoder
+groups	src/shardkv1/test.go	/^func (ts *Test) groups(n int) []tester.Tgid {$/;"	f	struct:shardkv.Test	typeref:typename:[]tester.Tgid
+grps	src/tester1/group.go	/^	grps    map[Tgid]*ServerGrp$/;"	m	struct:tester.Groups	typeref:typename:map[Tgid]*ServerGrp
+handleGetTask	src/mr/coordinator.go	/^func handleGetTask(lock *sync.RWMutex, nReduce uint, tasksQue chan uint, tasksStatus []task, tas/;"	f	package:mr
+handleMap	src/mr/worker.go	/^func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, []uint, error) {$/;"	f	package:mr	typeref:typename:([]string, []uint, error)
+handleReduce	src/mr/worker.go	/^func handleReduce(task TaskInput, reducef func(string, []string) string) ([]string, error) {$/;"	f	package:mr	typeref:typename:([]string, error)
+id	src/tester1/daemonsrv.go	/^	id        atomic.Int64$/;"	m	struct:tester.DaemonSrv	typeref:typename:atomic.Int64
+ihash	src/mr/worker.go	/^func ihash(key string) int {$/;"	f	package:mr	typeref:typename:int
+inPartition	src/kvraft1/rsm/test.go	/^func inPartition(s int, p []int) bool {$/;"	f	package:rsm	typeref:typename:bool
+ingestSnap	src/raft1/server.go	/^func (rs *rfsrv) ingestSnap(snapshot []byte, index int) string {$/;"	f	struct:raft.rfsrv	typeref:typename:string
+init	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) init(persister *Persister) {$/;"	f	struct:tester.DaemonClnt
+init	src/tester1/daemonclnt.go	/^func init() {$/;"	f	package:tester
+inputFiles	src/mr/coordinator.go	/^	inputFiles     []string$/;"	m	struct:mr.task	typeref:typename:[]string
+internalChurn	src/raft1/raft_test.go	/^func internalChurn(t *testing.T, reliable bool) {$/;"	f	package:raft
+isClosed	src/tester1/demux/callmap.go	/^func (cm *callMap) isClosed() bool {$/;"	f	struct:demux.callMap	typeref:typename:bool
+isDone	src/mr/coordinator.go	/^	isDone         bool$/;"	m	struct:mr.task	typeref:typename:bool
+isFinalized	src/tester1/annotation.go	/^func (an *Annotation) isFinalized() bool {$/;"	f	struct:tester.Annotation	typeref:typename:bool
+isServerDead	src/labrpc/labrpc.go	/^func (rn *Network) isServerDead(endname interface{}, servername interface{}, server *Server) boo/;"	f	struct:labrpc.Network	typeref:typename:bool
+join	src/shardkv1/test.go	/^func (ts *Test) join(sck *shardctrler.ShardCtrler, gid tester.Tgid, srvs []string) {$/;"	f	struct:shardkv.Test
+joinGroups	src/shardkv1/test.go	/^func (ts *Test) joinGroups(sck *shardctrler.ShardCtrler, gids []tester.Tgid) bool {$/;"	f	struct:shardkv.Test	typeref:typename:bool
+joinLeave5A	src/shardkv1/shardkv_test.go	/^func joinLeave5A(t *testing.T, reliable bool, part string) {$/;"	f	package:shardkv
+kill	src/kvraft1/rsm/test.go	/^func (ts *Test) kill(srvs []int) {$/;"	f	struct:rsm.Test
+kill	src/raft1/test.go	/^func (ts *Test) kill(srvs []int) {$/;"	f	struct:raft.Test
+kill	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) kill() {$/;"	f	struct:tester.DaemonClnt
+killall	src/kvraft1/test.go	/^func (ts *Test) killall() {$/;"	f	struct:kvraft.Test
+killed	src/shardkv1/shardctrler/shardctrler.go	/^	killed int32 \/\/ set by Kill()$/;"	m	struct:shardctrler.ShardCtrler	typeref:typename:int32
+kvraft	src/kvraft1/client.go	/^package kvraft$/;"	p
+kvraft	src/kvraft1/kvraft_test.go	/^package kvraft$/;"	p
+kvraft	src/kvraft1/server.go	/^package kvraft$/;"	p
+kvraft	src/kvraft1/test.go	/^package kvraft$/;"	p
+kvsrv	src/kvsrv1/client.go	/^package kvsrv$/;"	p
+kvsrv	src/kvsrv1/kvsrv_test.go	/^package kvsrv$/;"	p
+kvsrv	src/kvsrv1/server.go	/^package kvsrv$/;"	p
+kvsrv	src/kvsrv1/test.go	/^package kvsrv$/;"	p
+kvtest	src/kvtest1/kvtest.go	/^package kvtest$/;"	p
+kvtest	src/kvtest1/porcupine.go	/^package kvtest$/;"	p
+l	src/tester1/sockrpc/rpcsrv.go	/^	l    net.Listener$/;"	m	struct:sockrpc.RPCSrv	typeref:typename:net.Listener
+labgob	src/labgob/labgob.go	/^package labgob$/;"	p
+labgob	src/labgob/test_test.go	/^package labgob$/;"	p
+labrpc	src/labrpc/labrpc.go	/^package labrpc$/;"	p
+labrpc	src/labrpc/test_test.go	/^package labrpc$/;"	p
+lastApplied	src/raft1/server.go	/^	lastApplied int$/;"	m	struct:raft.rfsrv	typeref:typename:int
+leader	src/kvraft1/client.go	/^	leader int \/\/ last successful leader (index into servers[])$/;"	m	struct:kvraft.Clerk	typeref:typename:int
+leader	src/kvraft1/rsm/test.go	/^	leader       int$/;"	m	struct:rsm.Test	typeref:typename:int
+leader	src/shardkv1/shardgrp/client.go	/^	leader int \/\/ last successful leader (index into servers[])$/;"	m	struct:shardgrp.Clerk	typeref:typename:int
+least	src/shardkv1/shardcfg/shardcfg.go	/^func least(c *ShardConfig) tester.Tgid {$/;"	f	package:shardcfg	typeref:typename:tester.Tgid
+leave	src/shardkv1/test.go	/^func (ts *Test) leave(sck *shardctrler.ShardCtrler, gid tester.Tgid) {$/;"	f	struct:shardkv.Test
+leaveGroups	src/shardkv1/test.go	/^func (ts *Test) leaveGroups(sck *shardctrler.ShardCtrler, gids []tester.Tgid) bool {$/;"	f	struct:shardkv.Test	typeref:typename:bool
+linearizabilityCheckTimeout	src/kvtest1/porcupine.go	/^const linearizabilityCheckTimeout = 1 * time.Second$/;"	c	package:kvtest
+listen	src/tester1/sockrpc/rpcsrv.go	/^func (rpcs *RPCSrv) listen() {$/;"	f	struct:sockrpc.RPCSrv
+loadPlugin	src/main/mrsequential.go	/^func loadPlugin(filename string) (func(string, string) []mr.KeyValue, func(string, []string) str/;"	f	package:main	typeref:typename:(func(string, string) []mr.KeyValue, func(string, []string) string)
+loadPlugin	src/main/mrworker.go	/^func loadPlugin(filename string) (func(string, string) []mr.KeyValue, func(string, []string) str/;"	f	package:main	typeref:typename:(func(string, string) []mr.KeyValue, func(string, []string) string)
+lock	src/kvsrv1/lock/lock.go	/^package lock$/;"	p
+lock	src/kvsrv1/lock/lock_test.go	/^package lock$/;"	p
+lock	src/mr/coordinator.go	/^	lock     sync.RWMutex$/;"	m	struct:mr.Coordinator	typeref:typename:sync.RWMutex
+lock1	src/Makefile	/^lock1: .FORCE check-version lock1-build$/;"	t
+lock1-build	src/Makefile	/^lock1-build: .FORCE kvsrv1-build ;$/;"	t
+log	src/raft1/server.go	/^	log  map[int]any \/\/ for snapshots$/;"	m	struct:raft.rfsrv	typeref:typename:map[int]any
+log1	src/labrpc/test_test.go	/^	log1 []string$/;"	m	struct:labrpc.JunkServer	typeref:typename:[]string
+log2	src/labrpc/test_test.go	/^	log2 []int$/;"	m	struct:labrpc.JunkServer	typeref:typename:[]int
+logs	src/raft1/test.go	/^	logs     map[int]any \/\/ copy of server's committed entries$/;"	m	struct:raft.raftServer	typeref:typename:map[int]any
+longDelays	src/labrpc/labrpc.go	/^	longDelays     bool                        \/\/ pause a long time on send on disabled connectio/;"	m	struct:labrpc.Network	typeref:typename:bool
+longReordering	src/labrpc/labrpc.go	/^	longReordering bool                        \/\/ sometimes delay replies a long time$/;"	m	struct:labrpc.Network	typeref:typename:bool
+lookupGroup	src/tester1/group.go	/^func (gs *Groups) lookupGroup(gid Tgid) *ServerGrp {$/;"	f	struct:tester.Groups	typeref:typename:*ServerGrp
+main	.check-build	/^main() {$/;"	f
+main	src/main/diskvd.go	/^func main() {$/;"	f	package:main
+main	src/main/diskvd.go	/^package main$/;"	p
+main	src/main/kvraft1d.go	/^func main() {$/;"	f	package:main
+main	src/main/kvraft1d.go	/^package main$/;"	p
+main	src/main/kvsrv1d.go	/^func main() {$/;"	f	package:main
+main	src/main/kvsrv1d.go	/^package main$/;"	p
+main	src/main/lockc.go	/^func main() {$/;"	f	package:main
+main	src/main/lockc.go	/^package main$/;"	p
+main	src/main/lockd.go	/^func main() {$/;"	f	package:main
+main	src/main/lockd.go	/^package main$/;"	p
+main	src/main/mrcoordinator.go	/^func main() {$/;"	f	package:main
+main	src/main/mrcoordinator.go	/^package main$/;"	p
+main	src/main/mrsequential.go	/^func main() {$/;"	f	package:main
+main	src/main/mrsequential.go	/^package main$/;"	p
+main	src/main/mrworker.go	/^func main() {$/;"	f	package:main
+main	src/main/mrworker.go	/^package main$/;"	p
+main	src/main/pbc.go	/^func main() {$/;"	f	package:main
+main	src/main/pbc.go	/^package main$/;"	p
+main	src/main/pbd.go	/^func main() {$/;"	f	package:main
+main	src/main/pbd.go	/^package main$/;"	p
+main	src/main/raft1d.go	/^func main() {$/;"	f	package:main
+main	src/main/raft1d.go	/^package main$/;"	p
+main	src/main/rsm1d.go	/^func main() {$/;"	f	package:main
+main	src/main/rsm1d.go	/^package main$/;"	p
+main	src/main/shardgrp1d.go	/^func main() {$/;"	f	package:main
+main	src/main/shardgrp1d.go	/^package main$/;"	p
+main	src/main/viewd.go	/^func main() {$/;"	f	package:main
+main	src/main/viewd.go	/^package main$/;"	p
+main	src/mrapps/crash.go	/^package main$/;"	p
+main	src/mrapps/early_exit.go	/^package main$/;"	p
+main	src/mrapps/indexer.go	/^package main$/;"	p
+main	src/mrapps/jobcount.go	/^package main$/;"	p
+main	src/mrapps/mtiming.go	/^package main$/;"	p
+main	src/mrapps/nocrash.go	/^package main$/;"	p
+main	src/mrapps/rtiming.go	/^package main$/;"	p
+main	src/mrapps/wc.go	/^package main$/;"	p
+makeClntTo	src/tester1/clnts.go	/^func makeClntTo(net *labrpc.Network, srvs []string) *Clnt {$/;"	f	package:tester	typeref:typename:*Clnt
+makeClnts	src/tester1/clnts.go	/^func makeClnts(net *labrpc.Network) *Clnts {$/;"	f	package:tester	typeref:typename:*Clnts
+makeEnd	src/tester1/clnts.go	/^func (clnt *Clnt) makeEnd(server string) end {$/;"	f	struct:tester.Clnt	typeref:typename:end
+makeEnd	src/tester1/clnts.go	/^func (clnts *Clnts) makeEnd(servername string) *labrpc.ClientEnd {$/;"	f	struct:tester.Clnts	typeref:typename:*labrpc.ClientEnd
+makeKVClerk	src/shardkv1/test.go	/^func (ts *Test) makeKVClerk() *kvsrv.Clerk {$/;"	f	struct:shardkv.Test	typeref:typename:*kvsrv.Clerk
+makeSeed	src/tester1/config.go	/^func makeSeed() int64 {$/;"	f	package:tester	typeref:typename:int64
+makeServer	src/tester1/srv.go	/^func makeServer(net *labrpc.Network, gid Tgid, nsrv int) *Server {$/;"	f	package:tester	typeref:typename:*Server
+makeShardCtrler	src/shardkv1/test.go	/^func (ts *Test) makeShardCtrler() *shardctrler.ShardCtrler {$/;"	f	struct:shardkv.Test	typeref:typename:*shardctrler.ShardCtrler
+makeShardCtrlerClnt	src/shardkv1/test.go	/^func (ts *Test) makeShardCtrlerClnt() (*shardctrler.ShardCtrler, *tester.Clnt) {$/;"	f	struct:shardkv.Test	typeref:typename:(*shardctrler.ShardCtrler, *tester.Clnt)
+makeSrvGrp	src/tester1/group.go	/^func makeSrvGrp(net *labrpc.Network, prog string, args []string, endName string, gid Tgid, n int/;"	f	package:tester	typeref:typename:*ServerGrp
+makeTest	src/kvraft1/rsm/test.go	/^func makeTest(t *testing.T, maxraftstate int) *Test {$/;"	f	package:rsm	typeref:typename:*Test
+makeTest	src/raft1/test.go	/^func makeTest(t *testing.T, n int, reliable bool, snapshot bool) *Test {$/;"	f	package:raft	typeref:typename:*Test
+makeTitle	src/kvraft1/test.go	/^func (ts *Test) makeTitle() string {$/;"	f	struct:kvraft.Test	typeref:typename:string
+mapTasksQue	src/mr/coordinator.go	/^	mapTasksQue        chan uint$/;"	m	struct:mr.Coordinator	typeref:typename:chan uint
+mapTasksStatus	src/mr/coordinator.go	/^	mapTasksStatus     []task$/;"	m	struct:mr.Coordinator	typeref:typename:[]task
+maxIndex	src/raft1/test.go	/^	maxIndex int$/;"	m	struct:raft.Test	typeref:typename:int
+maxraftstate	src/kvraft1/rsm/rsm.go	/^	maxraftstate int \/\/ snapshot if log grows this big$/;"	m	struct:rsm.RSM	typeref:typename:int
+maxraftstate	src/kvraft1/rsm/test.go	/^	maxraftstate int$/;"	m	struct:rsm.Test	typeref:typename:int
+maxraftstate	src/kvraft1/test.go	/^	maxraftstate int$/;"	m	struct:kvraft.Test	typeref:typename:int
+maxraftstate	src/shardkv1/test.go	/^	maxraftstate int$/;"	m	struct:shardkv.Test	typeref:typename:int
+maybeCrash	src/mrapps/crash.go	/^func maybeCrash() {$/;"	f	package:main
+maybeCrash	src/mrapps/nocrash.go	/^func maybeCrash() {$/;"	f	package:main
+mck	src/kvtest1/kvtest.go	/^	mck        IClerkMaker$/;"	m	struct:kvtest.Test	typeref:typename:IClerkMaker
+me	src/kvraft1/rsm/rsm.go	/^	me           int$/;"	m	struct:rsm.RSM	typeref:typename:int
+me	src/kvraft1/rsm/server.go	/^	me int$/;"	m	struct:rsm.rsmSrv	typeref:typename:int
+me	src/kvraft1/server.go	/^	me  int$/;"	m	struct:kvraft.KVServer	typeref:typename:int
+me	src/raft1/raft.go	/^	me        int                 \/\/ this peer's index into peers[]$/;"	m	struct:raft.Raft	typeref:typename:int
+me	src/raft1/server.go	/^	me          int$/;"	m	struct:raft.rfsrv	typeref:typename:int
+me	src/shardkv1/shardgrp/server.go	/^	me  int$/;"	m	struct:shardgrp.KVServer	typeref:typename:int
+memSize	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) memSize() uint64 {$/;"	f	struct:tester.DaemonClnt	typeref:typename:uint64
+memSize	src/tester1/srv.go	/^func (s *Server) memSize() uint64 {$/;"	f	struct:tester.Server	typeref:typename:uint64
+mergeOutput	src/mr/util.go	/^func mergeOutput(out string) {$/;"	f	package:mr
+methods	src/labrpc/labrpc.go	/^	methods map[string]reflect.Method$/;"	m	struct:labrpc.Service	typeref:typename:map[string]reflect.Method
+mkAnnotation	src/tester1/annotation.go	/^func mkAnnotation() *Annotation {$/;"	f	package:tester	typeref:typename:*Annotation
+mkCorrectOutput	src/mr/util.go	/^func mkCorrectOutput(files []string, app, out string) {$/;"	f	package:mr
+mkFrameworkInfo	src/tester1/annotation.go	/^func mkFrameworkInfo(nservers int) *FrameworkInfo {$/;"	f	package:tester	typeref:typename:*FrameworkInfo
+mkOut	src/mr/util.go	/^func mkOut() {$/;"	f	package:mr
+mksrv	src/kvraft1/rsm/test.go	/^func (ts *Test) mksrv(srv int, dc *tester.DaemonClnt) {$/;"	f	struct:rsm.Test
+mksrv	src/raft1/test.go	/^func (ts *Test) mksrv(srv int, dc *tester.DaemonClnt) {$/;"	f	struct:raft.Test
+models	src/models1/kv.go	/^package models$/;"	p
+mr	src/Makefile	/^mr: .FORCE check-version mr-build$/;"	t
+mr	src/mr/coordinator.go	/^package mr$/;"	p
+mr	src/mr/mr_test.go	/^package mr$/;"	p
+mr	src/mr/rpc.go	/^package mr$/;"	p
+mr	src/mr/util.go	/^package mr$/;"	p
+mr	src/mr/worker.go	/^package mr$/;"	p
+mr-build	src/Makefile	/^mr-build: .FORCE check-version$/;"	t
+msg	src/tester1/demux/transport.go	/^type msg struct {$/;"	s	package:demux
+mu	src/kvraft1/rsm/rsm.go	/^	mu           sync.Mutex$/;"	m	struct:rsm.RSM	typeref:typename:sync.Mutex
+mu	src/kvraft1/rsm/server.go	/^	mu      sync.Mutex$/;"	m	struct:rsm.rsmSrv	typeref:typename:sync.Mutex
+mu	src/kvraft1/rsm/test.go	/^	mu           sync.Mutex$/;"	m	struct:rsm.Test	typeref:typename:sync.Mutex
+mu	src/kvraft1/rsm/test.go	/^	mu  sync.Mutex$/;"	m	struct:rsm.rsmServer	typeref:typename:sync.Mutex
+mu	src/kvraft1/test.go	/^	mu sync.Mutex$/;"	m	struct:kvraft.Test	typeref:typename:sync.Mutex
+mu	src/kvsrv1/server.go	/^	mu sync.Mutex$/;"	m	struct:kvsrv.KVServer	typeref:typename:sync.Mutex
+mu	src/labgob/labgob.go	/^var mu sync.Mutex$/;"	v	package:labgob	typeref:typename:sync.Mutex
+mu	src/labrpc/labrpc.go	/^	mu             sync.Mutex$/;"	m	struct:labrpc.Network	typeref:typename:sync.Mutex
+mu	src/labrpc/labrpc.go	/^	mu        sync.Mutex$/;"	m	struct:labrpc.Server	typeref:typename:sync.Mutex
+mu	src/labrpc/test_test.go	/^	mu   sync.Mutex$/;"	m	struct:labrpc.JunkServer	typeref:typename:sync.Mutex
+mu	src/raft1/raft.go	/^	mu        sync.Mutex          \/\/ Lock to protect shared access to this peer's state$/;"	m	struct:raft.Raft	typeref:typename:sync.Mutex
+mu	src/raft1/server.go	/^	mu   sync.Mutex$/;"	m	struct:raft.rfsrv	typeref:typename:sync.Mutex
+mu	src/raft1/test.go	/^	mu       sync.Mutex$/;"	m	struct:raft.Test	typeref:typename:sync.Mutex
+mu	src/raft1/test.go	/^	mu       sync.Mutex$/;"	m	struct:raft.raftServer	typeref:typename:sync.Mutex
+mu	src/shardkv1/test.go	/^	mu   sync.Mutex$/;"	m	struct:shardkv.Test	typeref:typename:sync.Mutex
+mu	src/tester1/annotation.go	/^	mu          *sync.Mutex$/;"	m	struct:tester.Annotation	typeref:typename:*sync.Mutex
+mu	src/tester1/annotation.go	/^	mu        *sync.Mutex$/;"	m	struct:tester.FrameworkInfo	typeref:typename:*sync.Mutex
+mu	src/tester1/clnts.go	/^	mu     sync.Mutex$/;"	m	struct:tester.Clnts	typeref:typename:sync.Mutex
+mu	src/tester1/clnts.go	/^	mu   sync.Mutex$/;"	m	struct:tester.Clnt	typeref:typename:sync.Mutex
+mu	src/tester1/daemonclnt.go	/^	mu       sync.Mutex$/;"	m	struct:tester.DaemonClnt	typeref:typename:sync.Mutex
+mu	src/tester1/demux/dmxclnt.go	/^	mu      sync.Mutex$/;"	m	struct:demux.DemuxClnt	typeref:typename:sync.Mutex
+mu	src/tester1/demux/dmxsrv.go	/^	mu      sync.Mutex$/;"	m	struct:demux.DemuxSrv	typeref:typename:sync.Mutex
+mu	src/tester1/group.go	/^	mu          sync.Mutex$/;"	m	struct:tester.ServerGrp	typeref:typename:sync.Mutex
+mu	src/tester1/group.go	/^	mu      sync.Mutex$/;"	m	struct:tester.Groups	typeref:typename:sync.Mutex
+mu	src/tester1/persister.go	/^	mu        sync.Mutex$/;"	m	struct:tester.Persister	typeref:typename:sync.Mutex
+mu	src/tester1/srv.go	/^	mu       sync.Mutex$/;"	m	struct:tester.Server	typeref:typename:sync.Mutex
+n	src/raft1/test.go	/^	n int$/;"	m	struct:raft.Test	typeref:typename:int
+nCommitted	src/raft1/test.go	/^func (ts *Test) nCommitted(index int) (int, any) {$/;"	f	struct:raft.Test	typeref:typename:(int, any)
+nReduce	src/mr/coordinator.go	/^	nReduce               uint$/;"	m	struct:mr.Coordinator	typeref:typename:uint
+nRemainingMapTasks	src/mr/coordinator.go	/^	nRemainingMapTasks uint$/;"	m	struct:mr.Coordinator	typeref:typename:uint
+nRemainingReduceTasks	src/mr/coordinator.go	/^	nRemainingReduceTasks uint$/;"	m	struct:mr.Coordinator	typeref:typename:uint
+name	src/labrpc/labrpc.go	/^	name    string$/;"	m	struct:labrpc.Service	typeref:typename:string
+name	src/tester1/clnts.go	/^	name string$/;"	m	struct:tester.end	typeref:typename:string
+nclients	src/kvraft1/test.go	/^	nclients     int$/;"	m	struct:kvraft.Test	typeref:typename:int
+ncpu_once	src/tester1/config.go	/^var ncpu_once sync.Once$/;"	v	package:tester	typeref:typename:sync.Once
+net	src/tester1/clnts.go	/^	net    *labrpc.Network$/;"	m	struct:tester.Clnts	typeref:typename:*labrpc.Network
+net	src/tester1/clnts.go	/^	net  *labrpc.Network$/;"	m	struct:tester.Clnt	typeref:typename:*labrpc.Network
+net	src/tester1/config.go	/^	net *labrpc.Network \/\/ The network shared by clnts and servers$/;"	m	struct:tester.Config	typeref:typename:*labrpc.Network
+net	src/tester1/group.go	/^	net         *labrpc.Network$/;"	m	struct:tester.ServerGrp	typeref:typename:*labrpc.Network
+net	src/tester1/group.go	/^	net     *labrpc.Network$/;"	m	struct:tester.Groups	typeref:typename:*labrpc.Network
+net	src/tester1/srv.go	/^	net      *labrpc.Network$/;"	m	struct:tester.Server	typeref:typename:*labrpc.Network
+newCallMap	src/tester1/demux/callmap.go	/^func newCallMap() *callMap {$/;"	f	package:demux	typeref:typename:*callMap
+newGid	src/shardkv1/test.go	/^func (ts *Test) newGid() tester.Tgid {$/;"	f	struct:shardkv.Test	typeref:typename:tester.Tgid
+newGroups	src/tester1/group.go	/^func newGroups(net *labrpc.Network, prog string, args []string, endName string) *Groups {$/;"	f	package:tester	typeref:typename:*Groups
+newRSMServer	src/kvraft1/rsm/test.go	/^func newRSMServer(rsm IRSMServer) *rsmServer {$/;"	f	package:rsm	typeref:typename:*rsmServer
+newRSMSrv	src/kvraft1/rsm/server.go	/^func newRSMSrv(ends []*labrpc.ClientEnd, srv int, persister *tester.Persister, maxraftstate int)/;"	f	package:rsm	typeref:typename:*rsmSrv
+newRSMproxy	src/kvraft1/rsm/proxy.go	/^func newRSMproxy(dc *tester.DaemonClnt) *RSMproxy {$/;"	f	package:rsm	typeref:typename:*RSMproxy
+newRaftServer	src/raft1/test.go	/^func newRaftServer(srv IraftServer) *raftServer {$/;"	f	package:raft	typeref:typename:*raftServer
+newRfproxy	src/raft1/proxy.go	/^func newRfproxy(dc *tester.DaemonClnt) *Rfproxy {$/;"	f	package:raft	typeref:typename:*Rfproxy
+newRfsrv	src/raft1/server.go	/^func newRfsrv(ts Itester, ends []*labrpc.ClientEnd, grp tester.Tgid, srv int, persister *tester./;"	f	package:raft	typeref:typename:*rfsrv
+newTesterClnt	src/tester1/testclnt.go	/^func newTesterClnt(rpcc *sockrpc.RPCClnt) *TesterClnt {$/;"	f	package:tester	typeref:typename:*TesterClnt
+newTesterProxy	src/raft1/proxy.go	/^func newTesterProxy(tc *tester.TesterClnt) *TesterProxy {$/;"	f	package:raft	typeref:typename:*TesterProxy
+newTesterRPCSrv	src/tester1/testsrv.go	/^func newTesterRPCSrv(cfg *Config) *TesterRPC {$/;"	f	package:tester	typeref:typename:*TesterRPC
+nextTag	src/tester1/demux/dmxclnt.go	/^	nextTag Ttag$/;"	m	struct:demux.DemuxClnt	typeref:typename:Ttag
+ngid	src/shardkv1/test.go	/^	ngid tester.Tgid$/;"	m	struct:shardkv.Test	typeref:typename:tester.Tgid
+no	src/labgob/test_test.go	/^	no  int$/;"	m	struct:labgob.T4	typeref:typename:int
+nparallel	src/mrapps/mtiming.go	/^func nparallel(phase string) int {$/;"	f	package:main	typeref:typename:int
+nparallel	src/mrapps/rtiming.go	/^func nparallel(phase string) int {$/;"	f	package:main	typeref:typename:int
+nservers	src/kvraft1/test.go	/^	nservers     int$/;"	m	struct:kvraft.Test	typeref:typename:int
+nservers	src/tester1/annotation.go	/^	nservers  int$/;"	m	struct:tester.FrameworkInfo	typeref:typename:int
+ok	src/labrpc/labrpc.go	/^	ok    bool$/;"	m	struct:labrpc.replyMsg	typeref:typename:bool
+ok	src/tester1/demux/dmxclnt.go	/^	ok  bool$/;"	m	struct:demux.reply	typeref:typename:bool
+one	src/raft1/test.go	/^func (ts *Test) one(cmd any, expectedServers int, retry bool) int {$/;"	f	struct:raft.Test	typeref:typename:int
+oneClient	src/kvsrv1/lock/lock_test.go	/^func oneClient(t *testing.T, me int, ck kvtest.IKVClerk,$/;"	f	package:lock	typeref:typename:kvtest.ClntRes
+oneInc	src/kvraft1/rsm/test.go	/^func (ts *Test) oneInc() IncRep {$/;"	f	struct:rsm.Test	typeref:typename:IncRep
+oneNull	src/kvraft1/rsm/test.go	/^func (ts *Test) oneNull() NullRep {$/;"	f	struct:rsm.Test	typeref:typename:NullRep
+onePartition	src/kvraft1/rsm/test.go	/^func (ts *Test) onePartition(p []int, req any) any {$/;"	f	struct:rsm.Test	typeref:typename:any
+operations	src/kvtest1/porcupine.go	/^	operations []porcupine.Operation$/;"	m	struct:kvtest.OpLog	typeref:typename:[]porcupine.Operation
+oplog	src/kvtest1/kvtest.go	/^	oplog      *OpLog$/;"	m	struct:kvtest.Test	typeref:typename:*OpLog
+ops	src/tester1/config.go	/^	ops   int32     \/\/ number of clerk get\/put\/append method calls$/;"	m	struct:tester.Config	typeref:typename:int32
+options	src/tester1/daemonclnt.go	/^func options() []string {$/;"	f	package:tester	typeref:typename:[]string
+outputFiles	src/mr/coordinator.go	/^	outputFiles    []string$/;"	m	struct:mr.task	typeref:typename:[]string
+outstanding	src/tester1/demux/callmap.go	/^func (cm *callMap) outstanding() []Ttag {$/;"	f	struct:demux.callMap	typeref:typename:[]Ttag
+part	src/kvraft1/test.go	/^	part         string$/;"	m	struct:kvraft.Test	typeref:typename:string
+part	src/shardkv1/test.go	/^	part      string$/;"	m	struct:shardkv.Test	typeref:typename:string
+partition	src/shardkv1/test.go	/^	partition bool$/;"	m	struct:shardkv.Test	typeref:typename:bool
+partitionCtrler	src/shardkv1/test.go	/^func (ts *Test) partitionCtrler(ck kvtest.IKVClerk, gid tester.Tgid, ka, va []string) {$/;"	f	struct:shardkv.Test
+partitionRecovery5C	src/shardkv1/shardkv_test.go	/^func partitionRecovery5C(t *testing.T, reliable bool, npart, nclnt int) {$/;"	f	package:shardkv
+partitions	src/kvraft1/test.go	/^	partitions   bool$/;"	m	struct:kvraft.Test	typeref:typename:bool
+path	src/tester1/daemonclnt.go	/^func path(prog, cwd string) string {$/;"	f	package:tester	typeref:typename:string
+peers	src/raft1/raft.go	/^	peers     []*labrpc.ClientEnd \/\/ RPC end points of all peers$/;"	m	struct:raft.Raft	typeref:typename:[]*labrpc.ClientEnd
+persist	src/raft1/raft.go	/^func (rf *Raft) persist() {$/;"	f	struct:raft.Raft
+persister	src/raft1/raft.go	/^	persister *tester.Persister   \/\/ Object to hold this peer's persisted state$/;"	m	struct:raft.Raft	typeref:typename:*tester.Persister
+persister	src/raft1/server.go	/^	persister   *tester.Persister$/;"	m	struct:raft.rfsrv	typeref:typename:*tester.Persister
+persister	src/tester1/daemonsrv.go	/^	persister *Persister$/;"	m	struct:tester.DaemonSrv	typeref:typename:*Persister
+processReq	src/labrpc/labrpc.go	/^func (rn *Network) processReq(req reqMsg) {$/;"	f	struct:labrpc.Network
+prog	src/tester1/group.go	/^	prog        string$/;"	m	struct:tester.ServerGrp	typeref:typename:string
+prog	src/tester1/group.go	/^	prog    string$/;"	m	struct:tester.Groups	typeref:typename:string
+put	src/tester1/demux/callmap.go	/^func (cm *callMap) put(tag Ttag, ch chan reply) error {$/;"	f	struct:demux.callMap	typeref:typename:error
+raft	src/raft1/proxy.go	/^package raft$/;"	p
+raft	src/raft1/raft.go	/^package raft$/;"	p
+raft	src/raft1/raft_test.go	/^package raft$/;"	p
+raft	src/raft1/server.go	/^	raft raftapi.Raft$/;"	m	struct:raft.rfsrv	typeref:typename:raftapi.Raft
+raft	src/raft1/server.go	/^package raft$/;"	p
+raft	src/raft1/test.go	/^package raft$/;"	p
+raft	src/raft1/util.go	/^package raft$/;"	p
+raftServer	src/raft1/test.go	/^type raftServer struct {$/;"	s	package:raft
+raftSize	src/tester1/srv.go	/^func (s *Server) raftSize() int {$/;"	f	struct:tester.Server	typeref:typename:int
+raftapi	src/raftapi/raftapi.go	/^package raftapi$/;"	p
+raftstate	src/tester1/persister.go	/^	raftstate []byte$/;"	m	struct:tester.Persister	typeref:typename:[]byte
+random_handles	src/tester1/config.go	/^func random_handles(kvh []*labrpc.ClientEnd) []*labrpc.ClientEnd {$/;"	f	package:tester	typeref:typename:[]*labrpc.ClientEnd
+randomkeys	src/kvraft1/test.go	/^	randomkeys   bool$/;"	m	struct:kvraft.Test	typeref:typename:bool
+randomkeys	src/kvtest1/kvtest.go	/^	randomkeys bool$/;"	m	struct:kvtest.Test	typeref:typename:bool
+rcks	src/shardkv1/client.go	/^	rcks   map[tester.Tgid]*shardgrp.Clerk$/;"	m	struct:shardkv.Clerk	typeref:typename:map[tester.Tgid]*shardgrp.Clerk
+rcvr	src/labrpc/labrpc.go	/^	rcvr    reflect.Value$/;"	m	struct:labrpc.Service	typeref:typename:reflect.Value
+rdr	src/tester1/demux/transport.go	/^	rdr  io.Reader$/;"	m	struct:demux.transport	typeref:typename:io.Reader
+readEndnameInfo	src/labrpc/labrpc.go	/^func (rn *Network) readEndnameInfo(endname interface{}) (enabled bool,$/;"	f	struct:labrpc.Network	typeref:typename:(enabled bool, servername interface{}, server *Server, reliable bool, longreordering bool,)
+readPersist	src/raft1/raft.go	/^func (rf *Raft) readPersist(data []byte) {$/;"	f	struct:raft.Raft
+reader	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) reader() {$/;"	f	struct:demux.DemuxClnt
+reader	src/tester1/demux/dmxsrv.go	/^func (dmx *DemuxSrv) reader() {$/;"	f	struct:demux.DemuxSrv
+reduceTasksQue	src/mr/coordinator.go	/^	reduceTasksQue        chan uint$/;"	m	struct:mr.Coordinator	typeref:typename:chan uint
+reduceTasksStatus	src/mr/coordinator.go	/^	reduceTasksStatus     []task$/;"	m	struct:mr.Coordinator	typeref:typename:[]task
+reliable	src/kvsrv1/test.go	/^	reliable bool$/;"	m	struct:kvsrv.TestKV	typeref:typename:bool
+reliable	src/labrpc/labrpc.go	/^	reliable       bool$/;"	m	struct:labrpc.Network	typeref:typename:bool
+remove	src/tester1/clnts.go	/^func (clnt *Clnt) remove() {$/;"	f	struct:tester.Clnt
+remove	src/tester1/demux/callmap.go	/^func (cm *callMap) remove(tag Ttag) (chan reply, bool) {$/;"	f	struct:demux.callMap	typeref:typename:(chan reply, bool)
+rep	src/tester1/demux/dmxclnt.go	/^	rep []byte$/;"	m	struct:demux.reply	typeref:typename:[]byte
+reply	src/labrpc/labrpc.go	/^	reply []byte$/;"	m	struct:labrpc.replyMsg	typeref:typename:[]byte
+reply	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) reply(tag Ttag, b []byte, oks bool, err error) {$/;"	f	struct:demux.DemuxClnt
+reply	src/tester1/demux/dmxclnt.go	/^type reply struct {$/;"	s	package:demux
+replyCh	src/labrpc/labrpc.go	/^	replyCh chan replyMsg$/;"	m	struct:labrpc.reqMsg	typeref:typename:chan replyMsg
+replyMsg	src/labrpc/labrpc.go	/^type replyMsg struct {$/;"	s	package:labrpc
+reqMsg	src/labrpc/labrpc.go	/^type reqMsg struct {$/;"	s	package:labrpc
+restart	src/kvraft1/rsm/test.go	/^func (ts *Test) restart(srvs []int) {$/;"	f	struct:rsm.Test
+restart	src/raft1/test.go	/^func (ts *Test) restart(srvs []int) {$/;"	f	struct:raft.Test
+restartall	src/kvraft1/test.go	/^func (ts *Test) restartall() {$/;"	f	struct:kvraft.Test
+rf	src/kvraft1/rsm/rsm.go	/^	rf           raftapi.Raft$/;"	m	struct:rsm.RSM	typeref:typename:raftapi.Raft
+rfsrv	src/raft1/server.go	/^type rfsrv struct {$/;"	s	package:raft
+rfsrv	src/raft1/test.go	/^	rfsrv    IraftServer$/;"	m	struct:raft.raftServer	typeref:typename:IraftServer
+rpc	src/kvsrv1/rpc/rpc.go	/^package rpc$/;"	p
+rpcc	src/tester1/annotator.go	/^var rpcc *sockrpc.RPCClnt$/;"	v	package:tester	typeref:typename:*sockrpc.RPCClnt
+rpcc	src/tester1/daemonclnt.go	/^	rpcc     *sockrpc.RPCClnt$/;"	m	struct:tester.DaemonClnt	typeref:typename:*sockrpc.RPCClnt
+rpcc	src/tester1/daemonsrv.go	/^	rpcc      *sockrpc.RPCClnt$/;"	m	struct:tester.DaemonSrv	typeref:typename:*sockrpc.RPCClnt
+rpccClnt	src/tester1/daemonclnt.go	/^	rpccClnt *sockrpc.RPCClnt$/;"	m	struct:tester.DaemonClnt	typeref:typename:*sockrpc.RPCClnt
+rpcs	src/tester1/daemonsrv.go	/^	rpcs      *sockrpc.RPCSrv$/;"	m	struct:tester.DaemonSrv	typeref:typename:*sockrpc.RPCSrv
+rpcs0	src/tester1/config.go	/^	rpcs0 int       \/\/ rpcTotal() at start of test$/;"	m	struct:tester.Config	typeref:typename:int
+rpcsCtl	src/tester1/daemonsrv.go	/^	rpcsCtl   *sockrpc.RPCSrv$/;"	m	struct:tester.DaemonSrv	typeref:typename:*sockrpc.RPCSrv
+rsm	src/kvraft1/rsm/proxy.go	/^package rsm$/;"	p
+rsm	src/kvraft1/rsm/rsm.go	/^package rsm$/;"	p
+rsm	src/kvraft1/rsm/rsm_test.go	/^package rsm$/;"	p
+rsm	src/kvraft1/rsm/server.go	/^	rsm     *RSM$/;"	m	struct:rsm.rsmSrv	typeref:typename:*RSM
+rsm	src/kvraft1/rsm/server.go	/^package rsm$/;"	p
+rsm	src/kvraft1/rsm/test.go	/^	rsm IRSMServer$/;"	m	struct:rsm.rsmServer	typeref:typename:IRSMServer
+rsm	src/kvraft1/rsm/test.go	/^package rsm$/;"	p
+rsm	src/kvraft1/server.go	/^	rsm *rsm.RSM$/;"	m	struct:kvraft.KVServer	typeref:typename:*rsm.RSM
+rsm	src/shardkv1/shardgrp/server.go	/^	rsm *rsm.RSM$/;"	m	struct:shardgrp.KVServer	typeref:typename:*rsm.RSM
+rsm1	src/Makefile	/^rsm1: .FORCE check-version rsm1-build$/;"	t
+rsm1-build	src/Makefile	/^rsm1-build: .FORCE check-version$/;"	t
+rsmServer	src/kvraft1/rsm/test.go	/^type rsmServer struct {$/;"	s	package:rsm
+rsmSrv	src/kvraft1/rsm/server.go	/^type rsmSrv struct {$/;"	s	package:rsm
+runClient	src/kvtest1/kvtest.go	/^func (ts *Test) runClient(me int, ca chan ClntRes, done chan struct{}, mkc IClerkMaker, fn Fclnt/;"	f	struct:kvtest.Test
+runClients	src/kvsrv1/lock/lock_test.go	/^func runClients(t *testing.T, nclnt int, reliable bool) {$/;"	f	package:lock
+runCmp	src/mr/util.go	/^func runCmp(t *testing.T, f1, f2, msg string) {$/;"	f	package:mr
+runDaemon	src/tester1/daemonclnt.go	/^func runDaemon(net *labrpc.Network, prog string, pargs []string, endName string, gid Tgid, srv i/;"	f	package:tester	typeref:typename:(*DaemonClnt, error)
+runMR	src/mr/util.go	/^func runMR(files []string, app string, n int) {$/;"	f	package:mr
+runMRchan	src/mr/util.go	/^func runMRchan(files []string, app string, n int, c chan int, sock string) {$/;"	f	package:mr
+saved	src/tester1/srv.go	/^	saved    *Persister$/;"	m	struct:tester.Server	typeref:typename:*Persister
+sck	src/shardkv1/client.go	/^	sck  *shardctrler.ShardCtrler$/;"	m	struct:shardkv.Clerk	typeref:typename:*shardctrler.ShardCtrler
+sck	src/shardkv1/test.go	/^	sck       *shardctrler.ShardCtrler$/;"	m	struct:shardkv.Test	typeref:typename:*shardctrler.ShardCtrler
+sendRequestVote	src/raft1/raft.go	/^func (rf *Raft) sendRequestVote(server int, args *RequestVoteArgs, reply *RequestVoteReply) bool/;"	f	struct:raft.Raft	typeref:typename:bool
+sendTaskOutput	src/mr/worker.go	/^func sendTaskOutput(task TaskInput, outputFiles []string, bucketIds []uint) bool {$/;"	f	package:mr	typeref:typename:bool
+server	src/kvsrv1/client.go	/^	server string$/;"	m	struct:kvsrv.Clerk	typeref:typename:string
+server	src/mr/coordinator.go	/^func (c *Coordinator) server(sockName string) {$/;"	f	struct:mr.Coordinator
+server	src/tester1/daemonclnt.go	/^	server   string$/;"	m	struct:tester.DaemonClnt	typeref:typename:string
+servernames	src/tester1/group.go	/^	servernames []string$/;"	m	struct:tester.ServerGrp	typeref:typename:[]string
+servers	src/kvraft1/client.go	/^	servers []string$/;"	m	struct:kvraft.Clerk	typeref:typename:[]string
+servers	src/labrpc/labrpc.go	/^	servers        map[interface{}]*Server     \/\/ servers, by name$/;"	m	struct:labrpc.Network	typeref:typename:map[interface{}]*Server
+servers	src/shardkv1/shardgrp/client.go	/^	servers []string$/;"	m	struct:shardgrp.Clerk	typeref:typename:[]string
+services	src/labrpc/labrpc.go	/^	services  map[string]*Service$/;"	m	struct:labrpc.Server	typeref:typename:map[string]*Service
+setClosed	src/tester1/demux/dmxsrv.go	/^func (dmx *DemuxSrv) setClosed() bool {$/;"	f	struct:demux.DemuxSrv	typeref:typename:bool
+setupKVService	src/shardkv1/test.go	/^func (ts *Test) setupKVService() tester.Tgid {$/;"	f	struct:shardkv.Test	typeref:typename:tester.Tgid
+shardcfg	src/shardkv1/shardcfg/shardcfg.go	/^package shardcfg$/;"	p
+shardcfg	src/shardkv1/shardcfg/shardcfg_test.go	/^package shardcfg$/;"	p
+shardctrler	src/shardkv1/shardctrler/shardctrler.go	/^package shardctrler$/;"	p
+shardgrp	src/shardkv1/shardgrp/client.go	/^package shardgrp$/;"	p
+shardgrp	src/shardkv1/shardgrp/server.go	/^package shardgrp$/;"	p
+shardkv	src/Makefile	/^shardkv: .FORCE check-version shardkv-build$/;"	t
+shardkv	src/shardkv1/client.go	/^package shardkv$/;"	p
+shardkv	src/shardkv1/shardkv_test.go	/^package shardkv$/;"	p
+shardkv	src/shardkv1/test.go	/^package shardkv$/;"	p
+shardkv-build	src/Makefile	/^shardkv-build: .FORCE check-version$/;"	t
+shardrpc	src/shardkv1/shardgrp/shardrpc/shardrpc.go	/^package shardrpc$/;"	p
+shutdownLeader	src/shardkv1/test.go	/^func (ts *Test) shutdownLeader(ck *kvtest.TestClerk, gid tester.Tgid) int {$/;"	f	struct:shardkv.Test	typeref:typename:int
+shutdownServer	src/tester1/srv.go	/^func (s *Server) shutdownServer() {$/;"	f	struct:tester.Server
+sid	src/tester1/daemonsrv.go	/^	sid       int$/;"	m	struct:tester.DaemonSrv	typeref:typename:int
+sm	src/kvraft1/rsm/rsm.go	/^	sm           StateMachine$/;"	m	struct:rsm.RSM	typeref:typename:StateMachine
+snapcommon	src/raft1/raft_test.go	/^func snapcommon(t *testing.T, name string, disconnect bool, reliable bool, crash bool) {$/;"	f	package:raft
+snapshot	src/raft1/test.go	/^	snapshot bool$/;"	m	struct:raft.Test	typeref:typename:bool
+snapshot	src/tester1/persister.go	/^	snapshot  []byte$/;"	m	struct:tester.Persister	typeref:typename:[]byte
+snapshotSize	src/tester1/srv.go	/^func (s *Server) snapshotSize() int {$/;"	f	struct:tester.Server	typeref:typename:int
+sock	src/tester1/sockrpc/rpcsrv.go	/^	sock string$/;"	m	struct:sockrpc.RPCSrv	typeref:typename:string
+sockName	src/mr/coordinator.go	/^	sockName string$/;"	m	struct:mr.Coordinator	typeref:typename:string
+sockctl	src/tester1/daemonsrv.go	/^func sockctl(sock string) string {$/;"	f	package:tester	typeref:typename:string
+sockrpc	src/tester1/sockrpc/rpcclnt.go	/^package sockrpc$/;"	p
+sockrpc	src/tester1/sockrpc/rpcsrv.go	/^package sockrpc$/;"	p
+srv	src/tester1/daemonclnt.go	/^	srv      int$/;"	m	struct:tester.DaemonClnt	typeref:typename:int
+srv	src/tester1/demux/dmxsrv.go	/^	srv     ServerI$/;"	m	struct:demux.DemuxSrv	typeref:typename:ServerI
+srv	src/tester1/sockrpc/rpcsrv.go	/^	srv  *labrpc.Server$/;"	m	struct:sockrpc.RPCSrv	typeref:typename:*labrpc.Server
+srvEnd	src/tester1/demux/dmxclnt.go	/^	srvEnd  string$/;"	m	struct:demux.DemuxClnt	typeref:typename:string
+srvEnd	src/tester1/demux/dmxsrv.go	/^	srvEnd  string$/;"	m	struct:demux.DemuxSrv	typeref:typename:string
+srvEnd	src/tester1/sockrpc/rpcclnt.go	/^	srvEnd string$/;"	m	struct:sockrpc.RPCClnt	typeref:typename:string
+srvs	src/kvraft1/rsm/test.go	/^	srvs         []*rsmServer$/;"	m	struct:rsm.Test	typeref:typename:[]*rsmServer
+srvs	src/raft1/test.go	/^	srvs     []*raftServer$/;"	m	struct:raft.Test	typeref:typename:[]*raftServer
+srvs	src/tester1/clnts.go	/^	srvs []string$/;"	m	struct:tester.Clnt	typeref:typename:[]string
+srvs	src/tester1/group.go	/^	srvs        []*Server$/;"	m	struct:tester.ServerGrp	typeref:typename:[]*Server
+start	src/tester1/annotation.go	/^	start   int64$/;"	m	struct:tester.Continuous	typeref:typename:int64
+start	src/tester1/config.go	/^	start time.Time \/\/ time at which make_config() was called$/;"	m	struct:tester.Config	typeref:typename:time.Time
+startServer	src/tester1/srv.go	/^func (s *Server) startServer(gid Tgid) *Server {$/;"	f	struct:tester.Server	typeref:typename:*Server
+startWorker	src/mr/util.go	/^func startWorker(app string, i int, c chan int, sock string) {$/;"	f	package:mr
+stateSize	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) stateSize() (int, int) {$/;"	f	struct:tester.DaemonClnt	typeref:typename:(int, int)
+svcMeth	src/labrpc/labrpc.go	/^	svcMeth string      \/\/ e.g. "Raft.AppendEntries"$/;"	m	struct:labrpc.reqMsg	typeref:typename:string
+t	src/kvraft1/rsm/test.go	/^	t            *testing.T$/;"	m	struct:rsm.Test	typeref:typename:*testing.T
+t	src/kvraft1/test.go	/^	t *testing.T$/;"	m	struct:kvraft.Test	typeref:typename:*testing.T
+t	src/kvsrv1/test.go	/^	t        *testing.T$/;"	m	struct:kvsrv.TestKV	typeref:typename:*testing.T
+t	src/kvtest1/kvtest.go	/^	t          *testing.T$/;"	m	struct:kvtest.Test	typeref:typename:*testing.T
+t	src/raft1/test.go	/^	t *testing.T$/;"	m	struct:raft.Test	typeref:typename:*testing.T
+t	src/shardkv1/test.go	/^	t *testing.T$/;"	m	struct:shardkv.Test	typeref:typename:*testing.T
+t	src/tester1/config.go	/^	t   *testing.T$/;"	m	struct:tester.Config	typeref:typename:*testing.T
+t0	src/kvtest1/porcupine.go	/^var t0 = time.Unix(0, 0)$/;"	v	package:kvtest
+t0	src/tester1/config.go	/^	t0    time.Time \/\/ time at which test_test.go called cfg.begin()$/;"	m	struct:tester.Config	typeref:typename:time.Time
+tag	src/tester1/demux/dmxclnt.go	/^func (dmx *DemuxClnt) tag() Ttag {$/;"	f	struct:demux.DemuxClnt	typeref:typename:Ttag
+task	src/mr/coordinator.go	/^type task struct {$/;"	s	package:mr
+tester	src/kvraft1/kvraft_test.go	/^	tester "6.5840\/tester1"$/;"	P	package:6.5840/tester1
+tester	src/tester1/annotation.go	/^package tester$/;"	p
+tester	src/tester1/annotator.go	/^package tester$/;"	p
+tester	src/tester1/clnts.go	/^package tester$/;"	p
+tester	src/tester1/config.go	/^package tester$/;"	p
+tester	src/tester1/daemonclnt.go	/^package tester$/;"	p
+tester	src/tester1/daemonsrv.go	/^package tester$/;"	p
+tester	src/tester1/group.go	/^package tester$/;"	p
+tester	src/tester1/persister.go	/^package tester$/;"	p
+tester	src/tester1/srv.go	/^package tester$/;"	p
+tester	src/tester1/testclnt.go	/^package tester$/;"	p
+tester	src/tester1/testsrv.go	/^package tester$/;"	p
+ticker	src/raft1/raft.go	/^func (rf *Raft) ticker() {$/;"	f	struct:raft.Raft
+timestamp	src/tester1/annotation.go	/^func timestamp() int64 {$/;"	f	package:tester	typeref:typename:int64
+tmp	src/mr/util.go	/^var tmp string$/;"	v	package:mr	typeref:typename:string
+trans	src/tester1/demux/dmxclnt.go	/^	trans   TransportI$/;"	m	struct:demux.DemuxClnt	typeref:typename:TransportI
+trans	src/tester1/demux/dmxsrv.go	/^	trans   TransportI$/;"	m	struct:demux.DemuxSrv	typeref:typename:TransportI
+transport	src/tester1/demux/transport.go	/^type transport struct {$/;"	s	package:demux
+trpc	src/tester1/config.go	/^	trpc *TesterRPC$/;"	m	struct:tester.Config	typeref:typename:*TesterRPC
+ts	src/raft1/server.go	/^	ts          Itester$/;"	m	struct:raft.rfsrv	typeref:typename:Itester
+ts	src/tester1/annotation.go	/^	ts      int64$/;"	m	struct:tester.CheckerBegin	typeref:typename:int64
+typ	src/labrpc/labrpc.go	/^	typ     reflect.Type$/;"	m	struct:labrpc.Service	typeref:typename:reflect.Type
+unit	src/tester1/annotation.go	/^var unit struct{} = captureSignal()$/;"	v	package:tester	typeref:typename:struct{}
+usage	src/main/diskvd.go	/^func usage() {$/;"	f	package:main
+usage	src/main/lockc.go	/^func usage() {$/;"	f	package:main
+usage	src/main/pbc.go	/^func usage() {$/;"	f	package:main
+wait	src/raft1/test.go	/^func (ts *Test) wait(index int, n int, startTerm int) any {$/;"	f	struct:raft.Test	typeref:typename:any
+waitInit	src/tester1/daemonclnt.go	/^func (dc *DaemonClnt) waitInit() {$/;"	f	struct:tester.DaemonClnt
+wrt	src/tester1/demux/transport.go	/^	wrt  *bufio.Writer$/;"	m	struct:demux.transport	typeref:typename:*bufio.Writer
