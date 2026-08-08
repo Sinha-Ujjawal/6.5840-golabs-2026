@@ -1,17 +1,21 @@
 package mr
 
 import (
+	"fmt"
 	"log"
 	"net"
 	"net/http"
 	"net/rpc"
 	"os"
+	"strings"
 	"sync"
 	"time"
 )
 
 const MAX_WAIT_TIME_FOR_TASK time.Duration = time.Second * 10 // Wait for max 10 seconds for the workers to respond
 const DEFAULT_N_REDUCE int = 10                               // Default nReduce
+
+var coordinatorId string
 
 type task struct {
 	isDone         bool
@@ -36,7 +40,7 @@ type Coordinator struct {
 
 func handleGetTask(lock *sync.RWMutex, nReduce uint, tasksQue chan uint, tasksStatus []task, taskKind TaskKind, args *GetTaskArgs, reply *TaskInput) {
 	_ = args
-	log.Printf("Coordinator %d: Run handleGetTask for taskKind: %s\n", os.Getpid(), TaskKindAsString(taskKind))
+	log.Printf("Coordinator %s: Run handleGetTask for taskKind: %s\n", coordinatorId, TaskKindAsString(taskKind))
 	taskId := <-tasksQue
 	reply.Kind = taskKind
 	reply.TaskId = taskId
@@ -59,7 +63,7 @@ func handleGetTask(lock *sync.RWMutex, nReduce uint, tasksQue chan uint, tasksSt
 			// Task not done within the wait time, i.e.; no response from the worker in max wait time
 			// Reschedule the task id
 			tasksStatus[taskId].currentAttempt += 1 // Increment attempt
-			log.Printf("Coordinator %d: TaskKind: %s, TaskId: %d not done within %v duration, Rescheduling\n", os.Getpid(), TaskKindAsString(taskKind), taskId, MAX_WAIT_TIME_FOR_TASK)
+			log.Printf("Coordinator %s: TaskKind: %s, TaskId: %d not done within %v duration, Rescheduling\n", coordinatorId, TaskKindAsString(taskKind), taskId, MAX_WAIT_TIME_FOR_TASK)
 			reschedule = true
 		}
 	}()
@@ -93,7 +97,7 @@ func (c *Coordinator) GetTask(args *GetTaskArgs, reply *TaskInput) error {
 
 func (c *Coordinator) SendTaskOutput(args *TaskOutput, reply *SendTaskOutputReply) error {
 	_ = reply
-	log.Printf("Coordinator %d: TaskOutput: %+v\n", os.Getpid(), args)
+	log.Printf("Coordinator %s: TaskOutput: %+v\n", coordinatorId, args)
 	c.lock.Lock()
 	defer c.lock.Unlock()
 	switch args.Kind {
@@ -129,7 +133,7 @@ func (c *Coordinator) SendTaskOutput(args *TaskOutput, reply *SendTaskOutputRepl
 			}
 		}
 	default:
-		log.Printf("Coordinator %d: TaskKind %s not supported yet!\n", os.Getpid(), TaskKindAsString(args.Kind))
+		log.Printf("Coordinator %s: TaskKind %s not supported yet!\n", coordinatorId, TaskKindAsString(args.Kind))
 	}
 	return nil
 }
@@ -139,9 +143,18 @@ func (c *Coordinator) server(sockName string) {
 	rpc.Register(c)
 	rpc.HandleHTTP()
 	os.Remove(sockName)
-	l, e := net.Listen("unix", sockName)
+	var e error
+	var l net.Listener
+	sockName, isTCP := strings.CutPrefix(sockName, "tcp://")
+	if isTCP {
+		log.Printf("Coordinator %s: Listening on tcp://%s\n", coordinatorId, sockName)
+		l, e = net.Listen("tcp", sockName)
+	} else {
+		log.Printf("Coordinator %s: Listening on unix socker: %s\n", coordinatorId, sockName)
+		l, e = net.Listen("unix", sockName)
+	}
 	if e != nil {
-		log.Fatalf("Coordinator %d: listen error %s: %v", os.Getpid(), sockName, e)
+		log.Fatalf("Coordinator %s: listen error %s: %v", coordinatorId, sockName, e)
 	}
 	go http.Serve(l, nil)
 }
@@ -151,7 +164,7 @@ func (c *Coordinator) server(sockName string) {
 func (c *Coordinator) Done() bool {
 	c.lock.RLock()
 	defer c.lock.RUnlock()
-	log.Printf("Coordinator %d: nRemainingMapTasks: %d, nRemainingReduceTasks: %d\n", os.Getpid(), c.nRemainingMapTasks, c.nRemainingReduceTasks)
+	log.Printf("Coordinator %s: nRemainingMapTasks: %d, nRemainingReduceTasks: %d\n", coordinatorId, c.nRemainingMapTasks, c.nRemainingReduceTasks)
 	return c.nRemainingMapTasks == 0 && c.nRemainingReduceTasks == 0
 }
 
@@ -159,6 +172,11 @@ func (c *Coordinator) Done() bool {
 // main/mrcoordinator.go calls this function.
 // nReduce is the number of reduce tasks to use.
 func MakeCoordinator(sockName string, files []string, nReduce int) *Coordinator {
+	coordinatorHostname, err := os.Hostname()
+	if err != nil {
+		log.Fatalf("failed to get worker hostname: %v", err)
+	}
+	coordinatorId = fmt.Sprintf("%s-%d", coordinatorHostname, os.Getpid())
 	if nReduce <= 0 {
 		nReduce = DEFAULT_N_REDUCE
 	}

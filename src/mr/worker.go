@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/rpc"
 	"os"
+	"strings"
 )
 
 // Map functions return a slice of KeyValue.
@@ -25,6 +26,7 @@ func ihash(key string) int {
 }
 
 var coordSockName string // socket for coordinator
+var workerId string      // worker id
 
 func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, []uint, error) {
 	if len(task.InputFiles) == 0 {
@@ -35,11 +37,11 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 	for _, file := range task.InputFiles {
 		content, err := os.ReadFile(file)
 		if err != nil {
-			log.Printf("Worker %d: Error while reading file `%s`: %+v\n", os.Getpid(), file, err)
+			log.Printf("Worker %s: Error while reading file `%s`: %+v\n", workerId, file, err)
 			return nil, nil, err
 		} else {
 			kvs := mapf(file, string(content))
-			log.Printf("Worker %d: Map for file: `%s` => %d kvs\n", os.Getpid(), file, len(kvs))
+			log.Printf("Worker %s: Map for file: `%s` => %d kvs\n", workerId, file, len(kvs))
 			for _, kv := range kvs {
 				bucketId := uint(ihash(kv.Key) % int(task.NReduce))
 				var tempOutputFd *os.File
@@ -50,14 +52,14 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 					isFirst = true
 					tempOutputFd, err = os.CreateTemp("", fmt.Sprintf("mr-%d-%d-*", task.TaskId, bucketId))
 					if err != nil {
-						log.Printf("Worker %d: Error while creating output file `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						log.Printf("Worker %s: Error while creating output file: %+v\n", workerId, err)
 						return nil, nil, err
 					}
-					log.Printf("Worker %d: Writing for Bucket Id: %d to %s\n", os.Getpid(), bucketId, tempOutputFd.Name())
+					log.Printf("Worker %s: Writing for Bucket Id: %d to %s\n", workerId, bucketId, tempOutputFd.Name())
 					tempBufioWriter = bufio.NewWriter(tempOutputFd)
 					_, err = tempBufioWriter.WriteString("[")
 					if err != nil {
-						log.Printf("Worker %d: Error while writing '[' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						log.Printf("Worker %s: Error while writing '[' to `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 						return nil, nil, err
 					}
 					bucketIdToTempOutputFd[bucketId] = tempOutputFd
@@ -66,7 +68,7 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 				if !isFirst {
 					_, err = tempBufioWriter.WriteString(",")
 					if err != nil {
-						log.Printf("Worker %d: Error while writing ',' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+						log.Printf("Worker %s: Error while writing ',' to `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 						return nil, nil, err
 					}
 				}
@@ -76,7 +78,7 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 				}
 				_, err = tempBufioWriter.Write(jsonBytes)
 				if err != nil {
-					log.Printf("Worker %d: Error while writing map output to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+					log.Printf("Worker %s: Error while writing map output to `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 					return nil, nil, err
 				}
 			}
@@ -88,24 +90,24 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 		tempBufioWriter := bucketIdToBufioWriter[bucketId]
 		_, err := tempBufioWriter.WriteString("]")
 		if err != nil {
-			log.Printf("Worker %d: Error while writing ']' to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+			log.Printf("Worker %s: Error while writing ']' to `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 			return nil, nil, err
 		}
 		err = tempBufioWriter.Flush()
 		if err != nil {
-			log.Printf("Worker %d: Error while flushing to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+			log.Printf("Worker %s: Error while flushing to `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 			return nil, nil, err
 		}
 		err = tempOutputFd.Close()
 		if err != nil {
-			log.Printf("Worker %d: Error while closing file `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+			log.Printf("Worker %s: Error while closing file `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 			return nil, nil, err
 		}
 		outputFile := fmt.Sprintf("mr-%d-%d", task.TaskId, bucketId)
-		log.Printf("Worker %d: Renaming `%s` to `%s`\n", os.Getpid(), tempOutputFd.Name(), outputFile)
+		log.Printf("Worker %s: Renaming `%s` to `%s`\n", workerId, tempOutputFd.Name(), outputFile)
 		err = os.Rename(tempOutputFd.Name(), outputFile)
 		if err != nil {
-			log.Printf("Worker %d: Error while renaming `%s` to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), outputFile, err)
+			log.Printf("Worker %s: Error while renaming `%s` to `%s`: %+v\n", workerId, tempOutputFd.Name(), outputFile, err)
 			return nil, nil, err
 		}
 		outputFiles = append(outputFiles, outputFile)
@@ -122,13 +124,13 @@ func handleReduce(task TaskInput, reducef func(string, []string) string) ([]stri
 	for _, file := range task.InputFiles {
 		content, err := os.ReadFile(file)
 		if err != nil {
-			log.Printf("Worker %d: Error while reading file `%s`: %+v\n", os.Getpid(), file, err)
+			log.Printf("Worker %s: Error while reading file `%s`: %+v\n", workerId, file, err)
 			return nil, err
 		} else {
 			kvArray := []KeyValue{}
 			err := json.Unmarshal(content, &kvArray)
 			if err != nil {
-				log.Printf("Worker %d: Cannot unmarshal file `%s` into []KeyValue: %+v\n", os.Getpid(), file, err)
+				log.Printf("Worker %s: Cannot unmarshal file `%s` into []KeyValue: %+v\n", workerId, file, err)
 				return nil, err
 			}
 			for _, kv := range kvArray {
@@ -138,7 +140,7 @@ func handleReduce(task TaskInput, reducef func(string, []string) string) ([]stri
 	}
 	tempOutputFd, err := os.CreateTemp("", fmt.Sprintf("mr-out-%d-*", task.TaskId))
 	if err != nil {
-		log.Printf("Worker %d: Cannot create file `%s` for writing reduce task output: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+		log.Printf("Worker %s: Cannot create file for writing reduce task output: %+v\n", workerId, err)
 		return nil, err
 	}
 	defer tempOutputFd.Close()
@@ -151,26 +153,26 @@ func handleReduce(task TaskInput, reducef func(string, []string) string) ([]stri
 		} else {
 			_, err := tempOutputBufioWriter.WriteString("\n")
 			if err != nil {
-				log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), tempOutputFd.Name(), k, v, err)
+				log.Printf("Worker %s: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", workerId, tempOutputFd.Name(), k, v, err)
 				return nil, err
 			}
 		}
 		_, err := fmt.Fprintf(tempOutputBufioWriter, "%v %v", k, v)
 		if err != nil {
-			log.Printf("Worker %d: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", os.Getpid(), tempOutputFd.Name(), k, v, err)
+			log.Printf("Worker %s: Cannot write to file `%s` for key/value: `%v %v`: %+v\n", workerId, tempOutputFd.Name(), k, v, err)
 			return nil, err
 		}
 	}
 	err = tempOutputBufioWriter.Flush()
 	if err != nil {
-		log.Printf("Worker %d: Cannot flush file `%s` to disk: %+v\n", os.Getpid(), tempOutputFd.Name(), err)
+		log.Printf("Worker %s: Cannot flush file `%s` to disk: %+v\n", workerId, tempOutputFd.Name(), err)
 		return nil, err
 	}
 	outputFile := fmt.Sprintf("mr-out-%d", task.TaskId)
-	log.Printf("Worker %d: Renaming `%s` to `%s`\n", os.Getpid(), tempOutputFd.Name(), outputFile)
+	log.Printf("Worker %s: Renaming `%s` to `%s`\n", workerId, tempOutputFd.Name(), outputFile)
 	err = os.Rename(tempOutputFd.Name(), outputFile)
 	if err != nil {
-		log.Printf("Worker %d: Error while renaming `%s` to `%s`: %+v\n", os.Getpid(), tempOutputFd.Name(), outputFile, err)
+		log.Printf("Worker %s: Error while renaming `%s` to `%s`: %+v\n", workerId, tempOutputFd.Name(), outputFile, err)
 		return nil, err
 	}
 	return []string{outputFile}, nil
@@ -183,13 +185,18 @@ func Worker(
 	reducef func(string, []string) string) {
 
 	coordSockName = sockname
+	workerHostname, err := os.Hostname()
+	if err != nil {
+		log.Fatalf("failed to get worker hostname: %v", err)
+	}
+	workerId = fmt.Sprintf("%s-%d", workerHostname, os.Getpid())
 
 	for {
 		ok, task := getTask()
 		if !ok || task.Kind == TaskKindDone {
 			break
 		}
-		log.Printf("Worker %d: Task %+v\n", os.Getpid(), task)
+		log.Printf("Worker %s: Task %+v\n", workerId, task)
 		switch task.Kind {
 		case TaskKindMap:
 			outputFiles, bucketIds, err := handleMap(task, mapf)
@@ -197,16 +204,16 @@ func Worker(
 				sendTaskOutput(task, outputFiles, bucketIds)
 			}
 		case TaskKindReduce:
-			// log.Printf("Worker %d: Invalid Task Kind: %s\n", os.Getpid(), TaskKindAsString(task.Kind))
+			// log.Printf("Worker %s: Invalid Task Kind: %s\n", workerId, TaskKindAsString(task.Kind))
 			outputFiles, err := handleReduce(task, reducef)
 			if err == nil {
 				sendTaskOutput(task, outputFiles, nil)
 			}
 		default:
-			log.Printf("Worker %d: Unknown taskKind: %s\n", os.Getpid(), TaskKindAsString(task.Kind))
+			log.Printf("Worker %s: Unknown taskKind: %s\n", workerId, TaskKindAsString(task.Kind))
 		}
 	}
-	log.Printf("Worker %d: Ending Worker\n", os.Getpid())
+	log.Printf("Worker %s: Ending Worker\n", workerId)
 }
 
 func getTask() (bool, TaskInput) {
@@ -232,19 +239,26 @@ func sendTaskOutput(task TaskInput, outputFiles []string, bucketIds []uint) bool
 // usually returns true.
 // returns false if something goes wrong.
 func call(rpcname string, args any, reply any) bool {
-	// c, err := rpc.DialHTTP("tcp", "127.0.0.1"+":1234")
-	c, err := rpc.DialHTTP("unix", coordSockName)
+	var err error
+	var c *rpc.Client
+	coordSockName, isTCP := strings.CutPrefix(coordSockName, "tcp://")
+	if isTCP {
+		// c, err := rpc.DialHTTP("tcp", "127.0.0.1"+":1234")
+		c, err = rpc.DialHTTP("tcp", coordSockName)
+	} else {
+		c, err = rpc.DialHTTP("unix", coordSockName)
+	}
 	if err != nil {
-		log.Fatalf("Worker %d: dialing: %v\n", os.Getpid(), err)
+		log.Fatalf("Worker %s: dialing: %v\n", workerId, err)
 	}
 	defer c.Close()
 
-	log.Printf("Worker %d: call to `%s`, args: %+v\n", os.Getpid(), rpcname, args)
+	log.Printf("Worker %s: call to `%s`, args: %+v\n", workerId, rpcname, args)
 	if err := c.Call(rpcname, args, reply); err == nil {
-		// log.Printf("Worker %d: call to `%s`, args: %+v successfull, returning True\n", os.Getpid(), rpcname, args)
+		// log.Printf("Worker %s: call to `%s`, args: %+v successfull, returning True\n", workerId, rpcname, args)
 		return true
 	}
-	log.Printf("Worker %d: call to `%s`, args: %+v failed, return False, err: %+v\n", os.Getpid(), rpcname, args, err)
+	log.Printf("Worker %s: call to `%s`, args: %+v failed, return False, err: %+v\n", workerId, rpcname, args, err)
 
 	return false
 }
