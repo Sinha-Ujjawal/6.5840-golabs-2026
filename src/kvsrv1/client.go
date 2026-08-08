@@ -1,6 +1,10 @@
 package kvsrv
 
 import (
+	"fmt"
+	"os"
+	"time"
+
 	"6.5840/kvsrv1/rpc"
 	"6.5840/kvtest1"
 	"6.5840/tester1"
@@ -16,6 +20,14 @@ func MakeClerk(clnt *tester.Clnt, server string) kvtest.IKVClerk {
 	return ck
 }
 
+func mintRequestId(requestLabel string) string {
+	hostName, err := os.Hostname()
+	if err != nil {
+		hostName = "unknown"
+	}
+	return fmt.Sprintf("%s-%s-%d-%s", requestLabel, hostName, os.Getpid(), time.Now().Format(time.RFC3339Nano))
+}
+
 // Get fetches the current value and version for a key.  It returns
 // ErrNoKey if the key does not exist. It keeps trying forever in the
 // face of all other errors.
@@ -29,7 +41,13 @@ func MakeClerk(clnt *tester.Clnt, server string) kvtest.IKVClerk {
 func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {
 	args := rpc.GetArgs{Key: key}
 	reply := rpc.GetReply{}
-	ck.clnt.Call(ck.server, "KVServer.Get", &args, &reply)
+	for {
+		if !ck.clnt.Call(ck.server, "KVServer.Get", &args, &reply) {
+			time.Sleep(100 * time.Millisecond)
+			continue
+		}
+		break
+	}
 	return reply.Value, reply.Version, reply.Err
 }
 
@@ -51,8 +69,19 @@ func (ck *Clerk) Get(key string) (string, rpc.Tversion, rpc.Err) {
 // must match the declared types of the RPC handler function's
 // arguments. Additionally, reply must be passed as a pointer.
 func (ck *Clerk) Put(key, value string, version rpc.Tversion) rpc.Err {
-	args := rpc.PutArgs{Key: key, Value: value, Version: version}
+	args := rpc.PutArgs{RequestId: mintRequestId("PutRequest"), Key: key, Value: value, Version: version}
 	reply := rpc.PutReply{}
-	ck.clnt.Call(ck.server, "KVServer.Put", &args, &reply)
+	retransmitted := false
+	for {
+		if !ck.clnt.Call(ck.server, "KVServer.Put", &args, &reply) {
+			retransmitted = true
+			time.Sleep(100 * time.Millisecond)
+			continue
+		}
+		break
+	}
+	if retransmitted && reply.Err == rpc.ErrVersion {
+		reply.Err = rpc.ErrMaybe
+	}
 	return reply.Err
 }

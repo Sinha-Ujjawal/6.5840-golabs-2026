@@ -24,13 +24,15 @@ type value struct {
 }
 
 type KVServer struct {
-	mu      sync.RWMutex
-	mapping map[string]value
+	mu                     sync.RWMutex
+	lastReplyForPutRequest map[string]rpc.PutReply
+	mapping                map[string]value
 }
 
 func MakeKVServer() *KVServer {
 	kv := &KVServer{}
 	kv.mu = sync.RWMutex{}
+	kv.lastReplyForPutRequest = make(map[string]rpc.PutReply)
 	kv.mapping = make(map[string]value)
 	return kv
 }
@@ -57,11 +59,20 @@ func (kv *KVServer) Get(args *rpc.GetArgs, reply *rpc.GetReply) {
 // args.Version is 0, and returns ErrNoKey otherwise.
 func (kv *KVServer) Put(args *rpc.PutArgs, reply *rpc.PutReply) {
 	kv.mu.Lock()
-	defer kv.mu.Unlock()
+	defer func() {
+		kv.lastReplyForPutRequest[args.RequestId] = *reply
+		kv.mu.Unlock()
+	}()
 	DPrintf("Mapping: %+v, Put(args: %+v)\n", kv.mapping, args)
 	reply.Err = rpc.OK
 	var ok bool
 	var oldValue value
+	var lastReply rpc.PutReply
+	lastReply, ok = kv.lastReplyForPutRequest[args.RequestId]
+	if ok {
+		*reply = lastReply
+		return
+	}
 	oldValue, ok = kv.mapping[args.Key]
 	if !ok && args.Version != 0 {
 		reply.Err = rpc.ErrNoKey
