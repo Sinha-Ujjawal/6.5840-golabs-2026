@@ -103,7 +103,7 @@ func handleMap(task TaskInput, mapf func(string, string) []KeyValue) ([]string, 
 			log.Printf("Worker %s: Error while closing file `%s`: %+v\n", workerId, tempOutputFd.Name(), err)
 			return nil, nil, err
 		}
-		outputFile := fmt.Sprintf("mr-%d-%d", task.TaskId, bucketId)
+		outputFile := fmt.Sprintf("mr-%s-%d-%d", workerId, task.TaskId, bucketId)
 		log.Printf("Worker %s: Renaming `%s` to `%s`\n", workerId, tempOutputFd.Name(), outputFile)
 		err = os.Rename(tempOutputFd.Name(), outputFile)
 		if err != nil {
