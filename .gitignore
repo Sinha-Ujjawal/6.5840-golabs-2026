@@ -7,3 +7,4 @@ src/mr/workspace-*
 src/main/mr-*-*
 src/main/mr-out-*
 mr-job-tmp-*
+tags
